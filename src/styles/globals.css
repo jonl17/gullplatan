@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  src: url('/fonts/BuenosAires-Black.otf');
+  font-family: 'buenos-aires-black';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  src: url('/fonts/BuenosAires-Light.otf');
+  font-family: 'buenos-aires-light';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply font-buenos-light;
+    @apply font-light;
+    @apply text-current;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-buenos-black;
+    @apply font-black;
+    @apply uppercase;
+  }
+}
