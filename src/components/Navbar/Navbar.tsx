@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import Seperator from '~/components/Seperator'
+import Text from '~/components/Text'
 
 const Navbar = () => {
   return (
@@ -8,7 +9,9 @@ const Navbar = () => {
       <div className="container flex h-full justify-between">
         <Link href="/" passHref>
           <a className="flex place-items-center">
-            <h1 className="text-[40px] h-auto">Gullplatan</h1>
+            <Text variant="navbar" as="h1">
+              Gullplatan
+            </Text>
           </a>
         </Link>
         <div>menu here</div>

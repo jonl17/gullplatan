@@ -1,6 +1,12 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    fontSize: {
+      '60/72': ['60px', '72px'],
+      '40/48': ['40px', '48px'],
+      '20/24': ['20px', '24px'],
+      '14/16.8': ['14px', '16.8px'],
+    },
     fontFamily: {
       'buenos-black': ['buenos-aires-black', 'sans-serif'],
       'buenos-light': ['buenos-aires-light', 'sans-serif'],

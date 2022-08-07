@@ -16,22 +16,3 @@
   font-style: normal;
   font-display: swap;
 }
-
-@layer base {
-  body {
-    @apply font-buenos-light;
-    @apply font-light;
-    @apply text-current;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-buenos-black;
-    @apply font-black;
-    @apply uppercase;
-  }
-}
