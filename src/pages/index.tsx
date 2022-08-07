@@ -3,7 +3,7 @@ import Text from '~/components/Text'
 
 const Home: NextPage = () => {
   return (
-    <div className="h-screen text-cream">
+    <div className="h-screen text-cream container">
       <Text variant="heading1" as="h1">
         heading 1
       </Text>

@@ -5,7 +5,7 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
-  return <main className="bg-purple">{children}</main>
+  return <main className="bg-deep-purple">{children}</main>
 }
 
 export default Layout
