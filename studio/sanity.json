@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "gullplatan"
+    "name": "gullplatan",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "mks2cn9z",
@@ -15,9 +16,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

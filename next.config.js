@@ -10,7 +10,7 @@ const STUDIO_REWRITE = {
 
 const nextConfig = {
   reactStrictMode: true,
-  rewrites: () => STUDIO_REWRITE,
+  rewrites: () => [STUDIO_REWRITE],
 }
 
 module.exports = nextConfig
