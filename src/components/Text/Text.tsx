@@ -19,13 +19,14 @@ const sizes: Record<keyof typeof variants, string> = /*tw*/ {
   /**
    * Define mobile and desktop text sizes
    */
-  heading1: ' text-20/24 md:text-60/72',
+  heading1: 'text-20/24 md:text-60/72',
   heading2: 'text-14/16.8 md:text-40/48',
   heading3: 'text-20/24',
   paragraph1: 'text-20/24 md:text-40/48',
   paragraph2: 'text-14/16.8 md:text-20/24',
   paragraph3: 'text-14/16.8',
   logo: 'text-20/24 md:text-40/48',
+  pageHeading: 'text-41/49.2 md:text-126/151.2',
 }
 
 export type GetTextStylesProps = Pick<ITextProps, 'variant'>
@@ -38,6 +39,7 @@ const variants = {
   paragraph2: 'font-buenos-light font-light',
   paragraph3: 'font-buenos-light font-light',
   logo: 'font-buenos-black font-black uppercase',
+  pageHeading: 'font-buenos-black font-black lowercase',
 }
 
 export const getTextStyles = (
