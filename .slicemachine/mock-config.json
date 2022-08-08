@@ -1,0 +1,20 @@
+{
+  "_cts": {
+    "page": {}
+  },
+  "slices": {
+    "PageHeadSection": {
+      "default": {
+        "primary": {},
+        "items": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 2
+            }
+          }
+        }
+      }
+    }
+  }
+}

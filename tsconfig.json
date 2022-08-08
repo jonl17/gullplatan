@@ -17,9 +17,15 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
-      "@cms/*": ["sanity-lib/*"]
+      "@cms/*": ["sanity-lib/*"],
+      "@root/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/slice-simulator.js"
+  ],
   "exclude": ["node_modules"]
 }
