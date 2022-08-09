@@ -1,0 +1,42 @@
+{
+  "id": "menu",
+  "label": "menu",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "pages": {
+        "type": "Group",
+        "config": {
+          "label": "pages",
+          "fields": {
+            "page": {
+              "type": "Link",
+              "config": {
+                "label": "page",
+                "select": "document",
+                "customtypes": [
+                  "page"
+                ]
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "label",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

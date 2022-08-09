@@ -38,7 +38,6 @@ type Props = {
 }
 
 const UIDPage: NextPage<Props> = ({ page }) => {
-  console.log(page)
   return <SliceZone slices={page.data.slices} components={components} />
 }
 

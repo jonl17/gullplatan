@@ -1,6 +1,10 @@
 {
   "_cts": {
-    "page": {}
+    "page": {},
+    "homepage": {},
+    "menu": {
+      "pages": {}
+    }
   },
   "slices": {
     "PageHeadSection": {

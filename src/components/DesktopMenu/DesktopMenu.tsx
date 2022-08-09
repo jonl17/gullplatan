@@ -1,15 +1,28 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Text from '~/components/Text'
+import { serviceMenu } from '~/services'
 import { IMenuItem } from '~/types'
 
-type Props = {
-  items: IMenuItem[]
-}
-
-const DesktopMenu = ({ items }: Props) => {
+const DesktopMenu = () => {
   const { query, asPath } = useRouter()
+
+  const [items, setItems] = useState<IMenuItem[]>([])
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      const result = await serviceMenu()
+      const pages: IMenuItem[] = result.data.pages.map(
+        (item: { label: string; page: any }) => ({
+          label: item.label,
+          page: item.page,
+        })
+      )
+      setItems(pages)
+    }
+    fetchMenu()
+  }, [])
 
   return (
     <div className="gap-3 h-[85px] absolute bottom-0 right-0 hidden md:flex">
@@ -24,11 +37,11 @@ const DesktopMenu = ({ items }: Props) => {
         </a>
       </Link>
       {items.map((item, key) => (
-        <Link key={key} passHref href={item.slug}>
+        <Link key={key} passHref href={`/${item.page.uid}`}>
           <a>
             <Text
-              className={query.slug === item.slug ? 'uppercase' : undefined}
-              variant={query.slug === item.slug ? 'paragraph2' : 'heading3'}
+              className={query.uid === item.page.uid ? 'uppercase' : undefined}
+              variant={query.uid === item.page.uid ? 'paragraph2' : 'heading3'}
             >
               {item.label}
             </Text>

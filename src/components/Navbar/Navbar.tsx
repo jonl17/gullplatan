@@ -5,11 +5,7 @@ import Text from '~/components/Text'
 import { IMenuItem } from '~/types'
 import DesktopMenu from '../DesktopMenu'
 
-type Props = {
-  items: IMenuItem[]
-}
-
-const Navbar = ({ items }: Props) => {
+const Navbar = () => {
   return (
     <nav className="h-[130px] md:h-[300px] text-cream relative">
       <div className="container flex h-full justify-between relative">
@@ -20,7 +16,7 @@ const Navbar = ({ items }: Props) => {
             </Text>
           </a>
         </Link>
-        <DesktopMenu items={items} />
+        <DesktopMenu />
       </div>
       <Seperator double />
     </nav>

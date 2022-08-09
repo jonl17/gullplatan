@@ -1,4 +1,4 @@
 export interface IMenuItem {
-  slug: string
+  page: any
   label: string
 }
