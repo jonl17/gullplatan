@@ -4,7 +4,8 @@
     "homepage": {},
     "menu": {
       "pages": {}
-    }
+    },
+    "sound": {}
   },
   "slices": {
     "PageHeadSection": {
@@ -15,6 +16,26 @@
             "config": {
               "patternType": "PARAGRAPH",
               "blocks": 2
+            }
+          }
+        }
+      }
+    },
+    "Sounds": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "description_of_sound": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
             }
           }
         }

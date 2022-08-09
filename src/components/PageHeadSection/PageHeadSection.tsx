@@ -9,7 +9,7 @@ import Seperator from '~/components/Seperator'
 const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
   return (
     <section className="py-12 md:py-24 text-green-blue relative">
-      <div className="container">
+      <div className="container max-w-6xl mx-auto">
         <div className="max-w-xl mx-auto">
           <span className="relative bg-white inline-block">
             <Text variant="pageHeading" as="h1">

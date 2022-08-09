@@ -26,6 +26,9 @@
           "choices": {
             "page_head_section": {
               "type": "SharedSlice"
+            },
+            "sounds": {
+              "type": "SharedSlice"
             }
           }
         }

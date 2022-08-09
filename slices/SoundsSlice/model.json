@@ -1,0 +1,45 @@
+{
+  "id": "sounds",
+  "type": "SharedSlice",
+  "name": "Sounds",
+  "description": "Sounds",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Sounds",
+      "primary": {
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading1"
+          }
+        }
+      },
+      "items": {
+        "sound": {
+          "type": "Link",
+          "config": {
+            "label": "sound",
+            "select": "document"
+          }
+        },
+        "description_of_sound": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description of sound",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "heading2,paragraph"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
