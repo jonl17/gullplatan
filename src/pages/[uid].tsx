@@ -1,7 +1,9 @@
-import { createClient, linkResolver } from '@root/prismicio'
+import { createClient } from '@root/prismicio'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { SliceZone } from '@prismicio/react'
 import { components } from '@root/slices'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
@@ -38,7 +40,14 @@ type Props = {
 }
 
 const UIDPage: NextPage<Props> = ({ page }) => {
-  return <SliceZone slices={page.data.slices} components={components} />
+  return (
+    <>
+      <Head>
+        <title>{page.data.title}</title>
+      </Head>
+      <SliceZone slices={page.data.slices} components={components} />
+    </>
+  )
 }
 
 export default UIDPage

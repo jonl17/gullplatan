@@ -30,7 +30,7 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
           )}
         </div>
         {slice.items && (
-          <div className="md:flex gap-10 text-cream pt-6 md:py-12">
+          <div className="md:flex gap-10 text-cream pt-6 md:pt-12">
             {slice.items.map((item, key) => (
               <div key={key}>
                 <RichText data={item.text} />
