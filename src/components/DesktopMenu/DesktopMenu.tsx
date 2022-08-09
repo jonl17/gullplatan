@@ -24,6 +24,10 @@ const DesktopMenu = () => {
     fetchMenu()
   }, [])
 
+  if (items.length === 0) {
+    return null
+  }
+
   return (
     <div className="gap-3 h-[85px] absolute bottom-0 right-0 hidden md:flex">
       <Link passHref href="/">
