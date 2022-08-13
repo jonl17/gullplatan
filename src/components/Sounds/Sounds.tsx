@@ -28,7 +28,7 @@ type SingleSoundProps = {
 
 const SingleSound = ({ sound, description }: SingleSoundProps) => {
   return (
-    <div className="flex justify-between gap-10">
+    <div className="flex flex-col md:flex-row text-center md:text-left md:justify-between gap-10">
       <div>
         <RichText fieldMapOverwrite={fieldMapOverwrite} data={description} />
       </div>

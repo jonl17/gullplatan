@@ -29,7 +29,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
 
       <span
         className={cn(
-          'pointer-events-none absolute top-0 left-0 h-full border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
+          'pointer-events-none absolute top-0 left-0 h-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
           {
             'animate-border-appear-first': discovered,
           }
@@ -37,7 +37,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
       />
       <span
         className={cn(
-          'pointer-events-none absolute top-0 left-0 h-full border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
+          'pointer-events-none absolute top-0 left-0 h-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
           {
             'animate-border-appear-second': discovered,
           }
@@ -46,12 +46,15 @@ const BorderBox = ({ children, connector = false }: Props) => {
       {connector && (
         <span
           className={cn(
-            'md:w-[10px] bg-green-blue absolute -bottom-12 left-1/2 -ml-[5px]',
-            {
-              'animate-connector-grow': discovered,
-            }
+            'w-[6px] md:w-[10px] h-6 md:h-12 absolute -bottom-5 md:-bottom-12 left-1/2 -ml-[3px] md:-ml-[5px]'
           )}
-        />
+        >
+          <span
+            className={cn('w-full bg-green-blue absolute', {
+              'animate-connector-grow': discovered,
+            })}
+          />
+        </span>
       )}
     </div>
   )

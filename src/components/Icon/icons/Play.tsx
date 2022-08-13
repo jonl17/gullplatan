@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PlayButton = () => {
+const PlayButton = ({ ...props }) => {
   return (
     <svg
       width="82"
@@ -8,6 +8,7 @@ const PlayButton = () => {
       viewBox="0 0 82 82"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <circle
         cx="41"

@@ -42,8 +42,15 @@ const AudioPlayer = ({ soundId }: Props) => {
           src={sound.file.url}
         />
       )}
-      <button onClick={clickHandler}>
-        {playing ? <PauseButton /> : <PlayButton />}
+      <button
+        className="flex place-content-center pb-2 md:pt-2"
+        onClick={clickHandler}
+      >
+        {playing ? (
+          <PauseButton className="h-12 md:h-16" />
+        ) : (
+          <PlayButton className="h-12 md:h-16" />
+        )}
       </button>
     </>
   )
