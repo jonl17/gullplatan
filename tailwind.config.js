@@ -20,6 +20,66 @@ module.exports = {
       'deep-purple': '#5E364A',
       green: '#9ACA3D',
       current: 'currentColor',
+      transparent: 'transparent',
+    },
+    keyframes: {
+      'border-appear-first': {
+        '0%': {
+          width: '0',
+          height: '0',
+          'border-top-color': '#41B3A3',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+        },
+        '50%': {
+          width: '100%',
+          height: '0',
+          'border-top-color': '#41B3A3',
+          'border-left-color': '#41B3A3',
+          'border-right-color': '#41B3A3',
+          'border-bottom-color': 'transparent',
+        },
+        '100%': {
+          width: '100%',
+          height: '100%',
+          'border-top-color': '#41B3A3',
+          'border-left-color': '#41B3A3',
+          'border-right-color': '#41B3A3',
+          'border-bottom-color': 'transparent',
+        },
+      },
+      'border-appear-second': {
+        '0%': {
+          width: '0',
+          height: '100%',
+          'border-top-color': 'transparent',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+        },
+        '100%': {
+          width: '100%',
+          height: '100%',
+          'border-top-color': 'transparent',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': '#41B3A3',
+        },
+      },
+      'connector-grow': {
+        '0%': {
+          height: '0',
+        },
+        '100%': {
+          height: '3rem',
+        },
+      },
+    },
+    animation: {
+      'border-appear-first': 'border-appear-first 0.5s forwards',
+      'border-appear-second': 'border-appear-second 0.5s 0.4s forwards',
+      'connector-grow': 'connector-grow 0.2s 0.8s forwards',
     },
     extend: {
       container: {
