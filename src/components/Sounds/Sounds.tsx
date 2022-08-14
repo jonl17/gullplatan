@@ -12,7 +12,7 @@ const renderPrismicParagraph = ({
   key,
   children,
 }: FieldRenderFunctionInput) => (
-  <Text variant="paragraph1" className="my-4 pb-3" key={key}>
+  <Text variant="paragraph2" className="mb-2" key={key}>
     {children}
   </Text>
 )
@@ -45,7 +45,7 @@ const MultipleSounds = ({ slice }: ISoundsSlice) => {
   return (
     <section className="py-12 md:py-24 relative">
       <div className="container max-w-6xl mx-auto text-cream">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 mb-5 md:mb-10">
           <RichText data={slice.primary.description} />
         </div>
         <div className="grid gap-10">
