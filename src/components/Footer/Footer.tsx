@@ -1,4 +1,3 @@
-import { RichTextBlock } from 'prismic-reactjs'
 import React, { useEffect, useState } from 'react'
 import Seperator from '~/components/Seperator'
 import { serviceFooter } from '~/services'
@@ -11,7 +10,7 @@ const Footer = () => {
   useEffect(() => {
     const fetchFooter = async () => {
       const data = await serviceFooter()
-      setData({ text: data.text, links: data.links })
+      setData({ links: data.links })
     }
     fetchFooter()
   }, [])

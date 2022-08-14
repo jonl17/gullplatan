@@ -23,48 +23,84 @@ module.exports = {
       transparent: 'transparent',
     },
     keyframes: {
-      'border-appear-first': {
+      'border-appear-top-left': {
         '0%': {
-          width: '0',
-          height: '0',
           'border-top-color': '#41B3A3',
           'border-left-color': 'transparent',
           'border-right-color': 'transparent',
           'border-bottom-color': 'transparent',
-        },
-        '50%': {
-          width: '100%',
-          height: '0',
-          'border-top-color': '#41B3A3',
-          'border-left-color': '#41B3A3',
-          'border-right-color': '#41B3A3',
-          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 50% 0 50%)',
         },
         '100%': {
-          width: '100%',
-          height: '100%',
           'border-top-color': '#41B3A3',
-          'border-left-color': '#41B3A3',
-          'border-right-color': '#41B3A3',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
           'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 50% 0 0%)',
         },
       },
-      'border-appear-second': {
+      'border-appear-top-right': {
         '0%': {
-          width: '0',
-          height: '100%',
+          'border-top-color': '#41B3A3',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 50% 0 50%)',
+        },
+        '100%': {
+          'border-top-color': '#41B3A3',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 0% 0 50%)',
+        },
+      },
+      'border-appear-sides': {
+        '0%': {
           'border-top-color': 'transparent',
           'border-left-color': 'transparent',
           'border-right-color': 'transparent',
           'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 0 100% 0)',
         },
         '100%': {
-          width: '100%',
-          height: '100%',
+          'border-top-color': 'transparent',
+          'border-left-color': '#41B3A3',
+          'border-right-color': '#41B3A3',
+          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 0 0 0)',
+        },
+      },
+      'border-appear-bottom-right': {
+        '0%': {
+          'border-top-color': 'transparent',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 0 0 100%)',
+        },
+        '100%': {
           'border-top-color': 'transparent',
           'border-left-color': 'transparent',
           'border-right-color': 'transparent',
           'border-bottom-color': '#41B3A3',
+          'clip-path': 'inset(0 50% 0 100%)',
+        },
+      },
+      'border-appear-bottom-left': {
+        '0%': {
+          'border-top-color': 'transparent',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': 'transparent',
+          'clip-path': 'inset(0 100% 0 0)',
+        },
+        '100%': {
+          'border-top-color': 'transparent',
+          'border-left-color': 'transparent',
+          'border-right-color': 'transparent',
+          'border-bottom-color': '#41B3A3',
+          'clip-path': 'inset(0 50% 0 0)',
         },
       },
       'connector-grow': {
@@ -77,9 +113,14 @@ module.exports = {
       },
     },
     animation: {
-      'border-appear-first': 'border-appear-first 0.5s forwards',
-      'border-appear-second': 'border-appear-second 0.5s 0.4s forwards',
-      'connector-grow': 'connector-grow 0.2s 0.8s forwards',
+      'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
+      'border-appear-top-left': 'border-appear-top-left 0.5s forwards',
+      'border-appear-sides': 'border-appear-sides 0.5s 0.4s forwards',
+      'border-appear-bottom-right':
+        'border-appear-bottom-right 0.5s 0.8s forwards',
+      'border-appear-bottom-left':
+        'border-appear-bottom-left 0.5s 0.8s forwards',
+      'connector-grow': 'connector-grow 0.2s 1.2s forwards',
     },
     extend: {
       container: {

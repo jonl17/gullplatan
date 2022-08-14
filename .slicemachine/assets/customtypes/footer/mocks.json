@@ -11,20 +11,13 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "text": [
-      {
-        "type": "paragraph",
-        "text": "Ut dolore aute ex nostrud ullamco pariatur ut cupidatat amet laborum duis. Occaecat reprehenderit sit eiusmod proident labore esse ipsum est excepteur sint eiusmod exercitation dolor.",
-        "spans": []
-      }
-    ],
     "links": [
       {
         "link": {
           "link_type": "Web",
           "url": "http://twitter.com"
         },
-        "label": "hat"
+        "label": "composed"
       }
     ]
   }

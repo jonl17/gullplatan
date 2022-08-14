@@ -6,14 +6,7 @@
       "pages": {}
     },
     "sound": {},
-    "footer": {
-      "text": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      }
-    }
+    "footer": {}
   },
   "slices": {
     "PageHeadSection": {

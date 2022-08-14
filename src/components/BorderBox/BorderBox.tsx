@@ -29,17 +29,41 @@ const BorderBox = ({ children, connector = false }: Props) => {
 
       <span
         className={cn(
-          'pointer-events-none absolute top-0 left-0 h-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
+          'pointer-events-none absolute top-0 left-0 h-full w-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px] box-clip-top-center',
           {
-            'animate-border-appear-first': discovered,
+            'animate-border-appear-top-left': discovered,
           }
         )}
       />
       <span
         className={cn(
-          'pointer-events-none absolute top-0 left-0 h-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px]',
+          'pointer-events-none absolute top-0 left-0  border-t-[6px] md:border-[10px] w-full h-full border-green-blue transition-all rounded-[18px] md:rounded-[53px] box-clip-top-center',
           {
-            'animate-border-appear-second': discovered,
+            'animate-border-appear-top-right': discovered,
+          }
+        )}
+      />
+      <span
+        className={cn(
+          'pointer-events-none absolute top-0 left-0 border-t-[6px] md:border-[10px] w-full h-full border-green-blue transition-all rounded-[18px] md:rounded-[53px] box-clip-sides',
+          {
+            'animate-border-appear-sides': discovered,
+          }
+        )}
+      />
+      <span
+        className={cn(
+          'pointer-events-none absolute bottom-0 left-0  border-b-[6px] md:border-[10px] w-full h-full border-green-blue transition-all rounded-[18px] md:rounded-[53px] box-clip-bottom-right',
+          {
+            'animate-border-appear-bottom-right': discovered,
+          }
+        )}
+      />
+      <span
+        className={cn(
+          'pointer-events-none absolute bottom-0 right-0 h-full w-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px] box-clip-bottom-left',
+          {
+            'animate-border-appear-bottom-left': discovered,
           }
         )}
       />

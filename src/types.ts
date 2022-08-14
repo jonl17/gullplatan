@@ -6,7 +6,6 @@ export interface IMenuItem {
 }
 
 export interface IFooter {
-  text: RichTextBlock[]
   links: {
     label: string
     link: {
