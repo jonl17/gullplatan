@@ -84,7 +84,7 @@ module.exports = {
           'border-left-color': 'transparent',
           'border-right-color': 'transparent',
           'border-bottom-color': '#41B3A3',
-          'clip-path': 'inset(0 50% 0 100%)',
+          'clip-path': 'inset(0 0 0 50%)',
         },
       },
       'border-appear-bottom-left': {

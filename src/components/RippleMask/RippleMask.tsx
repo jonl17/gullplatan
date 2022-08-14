@@ -5,7 +5,7 @@ type Props = {
   className?: string
 }
 
-const RippleMask = ({ className = 'bg-deep-purple' }: Props) => {
+const RippleMask = ({ className = 'bg-current' }: Props) => {
   return (
     <span className="absolute top-0 left-0 h-full w-full inline-flex justify-between pointer-events-none">
       {Array.from(Array(45)).map((_, idx) => (
