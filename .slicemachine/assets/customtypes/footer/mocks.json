@@ -1,0 +1,31 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "footer",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Ut dolore aute ex nostrud ullamco pariatur ut cupidatat amet laborum duis. Occaecat reprehenderit sit eiusmod proident labore esse ipsum est excepteur sint eiusmod exercitation dolor.",
+        "spans": []
+      }
+    ],
+    "links": [
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "label": "hat"
+      }
+    ]
+  }
+}

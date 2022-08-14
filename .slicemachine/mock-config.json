@@ -5,7 +5,15 @@
     "menu": {
       "pages": {}
     },
-    "sound": {}
+    "sound": {},
+    "footer": {
+      "text": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "PageHeadSection": {

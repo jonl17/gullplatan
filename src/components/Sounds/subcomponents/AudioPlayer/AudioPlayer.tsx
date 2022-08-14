@@ -43,7 +43,7 @@ const AudioPlayer = ({ soundId }: Props) => {
         />
       )}
       <button
-        className="flex place-content-center pb-2 md:pt-2"
+        className="md:flex md:place-content-center pb-2 md:pt-2"
         onClick={clickHandler}
       >
         {playing ? (
