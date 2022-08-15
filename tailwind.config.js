@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -132,5 +134,16 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.grain': {
+          'background-image': 'url(/grain.png)',
+          'background-size': '25%',
+          'background-position': 'center',
+          'background-repeat': 'repeat',
+        },
+      })
+    }),
+  ],
 }
