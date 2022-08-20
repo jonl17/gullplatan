@@ -15,7 +15,7 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
             <Text variant="pageHeading" as="h1">
               {slice.primary.title}
             </Text>
-            <RippleMask className="bg-purple" />
+            {/* <RippleMask className="bg-purple" /> */}
           </span>
           <Text>{slice.primary.subtitle}</Text>
           {slice.primary.image && (
