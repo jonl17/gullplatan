@@ -38,7 +38,7 @@ const variants = {
   paragraph1: 'font-buenos-light font-light',
   paragraph2: 'font-buenos-light font-light',
   paragraph3: 'font-buenos-light font-light',
-  logo: 'font-buenos-black font-black uppercase',
+  logo: 'font-buenos-black font-black lowercase',
   pageHeading: 'font-buenos-black font-black lowercase',
 }
 

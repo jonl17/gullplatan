@@ -13,3 +13,12 @@ export interface IFooter {
     }
   }[]
 }
+
+export type ImageType = {
+  url: string
+  alt: string
+  dimensions: {
+    width: number
+    height: number
+  }
+}

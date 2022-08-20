@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link href="/" passHref>
           <a className="flex place-items-center">
             <Text variant="logo" as="h1">
-              Gullplatan
+              gullplatan
             </Text>
           </a>
         </Link>

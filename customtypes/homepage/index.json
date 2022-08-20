@@ -11,6 +11,14 @@
           "label": "name",
           "placeholder": ""
         }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "image",
+          "constraint": {},
+          "thumbnails": []
+        }
       }
     }
   }
