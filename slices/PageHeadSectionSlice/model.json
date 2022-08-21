@@ -32,6 +32,15 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "border_box": {
+          "type": "Boolean",
+          "config": {
+            "label": "border box",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

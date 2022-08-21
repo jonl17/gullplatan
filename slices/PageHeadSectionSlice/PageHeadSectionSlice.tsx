@@ -10,6 +10,7 @@ export interface IPageHeadSectionSlice {
         url: string
         alt: string
       }
+      border_box: boolean
     }
     items?: {
       text: any

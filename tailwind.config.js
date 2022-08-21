@@ -117,7 +117,7 @@ module.exports = {
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
       'border-appear-top-left': 'border-appear-top-left 0.5s forwards',
-      'border-appear-sides': 'border-appear-sides 0.5s 0.3s forwards',
+      'border-appear-sides': 'border-appear-sides 0.3s 0.3s forwards',
       'border-appear-bottom-right':
         'border-appear-bottom-right 0.5s 0.4s forwards',
       'border-appear-bottom-left':

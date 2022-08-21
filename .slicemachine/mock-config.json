@@ -6,7 +6,15 @@
       "pages": {}
     },
     "sound": {},
-    "footer": {}
+    "footer": {},
+    "crew": {
+      "about": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "PageHeadSection": {
@@ -41,6 +49,7 @@
           }
         }
       }
-    }
+    },
+    "PageHeadSectionSlice": {}
   }
 }
