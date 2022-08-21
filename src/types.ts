@@ -22,3 +22,9 @@ export type ImageType = {
     height: number
   }
 }
+
+export type CrewType = {
+  name: string
+  about: RichTextBlock[]
+  image: ImageType
+}

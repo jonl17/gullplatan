@@ -1,4 +1,4 @@
-import { ISoundsSlice } from '@root/slices/SoundsSlice'
+import { ISoundsSlice } from '@root/slices/Sounds'
 import React from 'react'
 import RichText from '~/components/RichText'
 import { FieldRenderFunctionInput, FieldRenderMap } from '../RichText/types'

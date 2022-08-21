@@ -1,0 +1,29 @@
+{
+  "id": "crew_section_slice",
+  "type": "SharedSlice",
+  "name": "CrewSectionSlice",
+  "description": "CrewSectionSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "CrewSectionSlice",
+      "primary": {},
+      "items": {
+        "crew": {
+          "type": "Link",
+          "config": {
+            "label": "crew",
+            "select": "document",
+            "customtypes": [
+              "crew"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
