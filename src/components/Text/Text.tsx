@@ -26,7 +26,7 @@ const sizes: Record<keyof typeof variants, string> = /*tw*/ {
   paragraph2: 'text-14/16.8 md:text-20/24',
   paragraph3: 'text-14/16.8',
   logo: 'text-20/24 md:text-40/48',
-  pageHeading: 'text-41/49.2 md:text-126/151.2',
+  pageHeading: 'text-41/49.2 md:text-120/151.2',
 }
 
 export type GetTextStylesProps = Pick<ITextProps, 'variant'>

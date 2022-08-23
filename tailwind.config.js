@@ -9,7 +9,7 @@ module.exports = {
       '20/24': ['20px', '24px'],
       '14/16.8': ['14px', '16.8px'],
       '41/49.2': ['41px', '49.2px'],
-      '126/151.2': ['126px', '151.2px'],
+      '120/151.2': ['120px', '151.2px'],
     },
     fontFamily: {
       'buenos-black': ['buenos-aires-black', 'sans-serif'],
@@ -142,6 +142,12 @@ module.exports = {
           'background-size': '25%',
           'background-position': 'center',
           'background-repeat': 'repeat',
+        },
+        '.hide-vertically': {
+          'clip-path': 'inset(0 0 100% 0)',
+        },
+        '.clip-path-0': {
+          'clip-path': 'inset(0)',
         },
       })
     }),

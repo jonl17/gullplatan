@@ -4,6 +4,8 @@ import { SliceZone } from '@prismicio/react'
 import { components } from '@root/slices'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Navbar from '~/components/Navbar'
+import Footer from '~/components/Footer'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
@@ -45,7 +47,9 @@ const UIDPage: NextPage<Props> = ({ page }) => {
       <Head>
         <title>{page.data.title}</title>
       </Head>
+      <Navbar />
       <SliceZone slices={page.data.slices} components={components} />
+      <Footer />
     </>
   )
 }

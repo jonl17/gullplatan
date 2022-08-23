@@ -1,8 +1,5 @@
 import React from 'react'
-import Navbar from '~/components/Navbar'
-import Footer from '~/components/Footer'
 import { useRouter } from 'next/router'
-import cn from 'classnames'
 
 type Props = {
   children: React.ReactNode
@@ -26,9 +23,7 @@ const Layout = ({ children }: Props) => {
       style={{ backgroundColor: findBackgroundColor() }}
       className="grain min-h-screen transition-colors"
     >
-      <Navbar />
       {children}
-      <Footer />
     </main>
   )
 }
