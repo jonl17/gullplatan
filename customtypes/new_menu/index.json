@@ -1,7 +1,7 @@
 {
-  "id": "menu",
-  "label": "menu",
-  "repeatable": false,
+  "id": "new_menu",
+  "label": "new menu",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
@@ -10,6 +10,14 @@
         "config": {
           "label": "label",
           "placeholder": ""
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "submenu": {
@@ -24,30 +32,15 @@
                 "placeholder": ""
               }
             },
-            "page": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "page",
+                "label": "link",
                 "placeholder": "",
                 "select": null
               }
             }
           }
-        }
-      },
-      "mobile_image": {
-        "type": "Image",
-        "config": {
-          "label": "mobile image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
         }
       }
     }
