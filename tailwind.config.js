@@ -139,7 +139,7 @@ module.exports = {
       addUtilities({
         '.grain': {
           'background-image': 'url(/grain.png)',
-          'background-size': '25%',
+          'background-size': '10%',
           'background-position': 'center',
           'background-repeat': 'repeat',
         },
