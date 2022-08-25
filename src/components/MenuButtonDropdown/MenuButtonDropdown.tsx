@@ -1,8 +1,8 @@
+import cn from 'classnames'
 import React, { useState } from 'react'
 import { IMenu } from '~/types'
-import Text from '../Text'
-import cn from 'classnames'
 import SubmenuItem from '../SubmenuItem'
+import Text from '../Text'
 
 const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
   const [open, setOpen] = useState(false)

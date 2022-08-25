@@ -1,9 +1,9 @@
+import { createClient, linkResolver } from '@root/prismicio'
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
-import { createClient, linkResolver } from '@root/prismicio'
-import { ImageType, IMenu } from '~/types'
 import DesktopFrontpage from '~/components/DesktopFrontpage'
 import MobileFrontpage from '~/components/MobileFrontpage/MobileFrontpage'
+import { ImageType, IMenu } from '~/types'
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData })

@@ -1,5 +1,5 @@
-import React from 'react'
 import { useRouter } from 'next/router'
+import React from 'react'
 
 type Props = {
   children: React.ReactNode
@@ -21,7 +21,7 @@ const Layout = ({ children }: Props) => {
   return (
     <main
       style={{ backgroundColor: findBackgroundColor() }}
-      className="grain min-h-screen transition-colors"
+      className="grain transition-colors"
     >
       {children}
     </main>
