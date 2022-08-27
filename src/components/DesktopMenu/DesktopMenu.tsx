@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Text from '~/components/Text'
 import { serviceMenu } from '~/services'
-import { IMenuItem } from '~/types'
+import { MenuItemType } from '~/types'
 
 const DesktopMenu = () => {
   const { query, asPath } = useRouter()
@@ -13,7 +13,7 @@ const DesktopMenu = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       const result = await serviceMenu()
-      const pages: IMenuItem[] = result.data.pages.map(
+      const pages: MenuItemType[] = result.data.pages.map(
         (item: { label: string; page: any }) => ({
           label: item.label,
           page: item.page,
