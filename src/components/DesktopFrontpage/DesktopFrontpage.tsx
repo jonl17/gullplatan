@@ -8,7 +8,7 @@ type Props = {
 
 const DesktopFrontpage = ({ image, menu }: Props) => {
   return (
-    <div className="relative top-0 min-h-screen w-full hidden lg:block">
+    <div className="relative top-0 w-full hidden lg:block">
       <div>
         {/* <Image
           className="h-full"
@@ -20,7 +20,7 @@ const DesktopFrontpage = ({ image, menu }: Props) => {
         /> */}
       </div>
 
-      <div className="absolute top-0 left-0 w-full">
+      <div className="w-full">
         <div className="text-center grid gap-2 place-content-center h-full">
           {menu.map((item, key) => (
             <MenuButtonDropdown {...item} key={key} />

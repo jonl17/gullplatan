@@ -38,10 +38,8 @@ const Home: NextPage<HomePageProps> = ({ desktopImage, menu }) => {
       <Head>
         <title>Gullplatan</title>
       </Head>
-      <div className="h-screen text-cream relative">
-        <DesktopFrontpage image={desktopImage} menu={mainmenu} />
-        <MobileFrontpage menu={mainmenu} />
-      </div>
+      <DesktopFrontpage image={desktopImage} menu={mainmenu} />
+      <MobileFrontpage menu={mainmenu} />
     </>
   )
 }

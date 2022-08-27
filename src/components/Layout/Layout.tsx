@@ -22,7 +22,7 @@ const Layout = ({ children }: Props) => {
   return (
     <main
       style={{ backgroundColor: findBackgroundColor() }}
-      className="grain transition-colors"
+      className="grain transition-colors min-h-screen"
     >
       <Navbar seperator={asPath !== '/'} />
       {children}
