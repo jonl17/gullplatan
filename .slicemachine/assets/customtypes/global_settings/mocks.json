@@ -25,8 +25,8 @@
         }
       }
     ],
-    "page_title": "inch",
-    "page_description": "slight",
+    "page_title": "port",
+    "page_description": "happened",
     "page_image": {
       "dimensions": {
         "width": 1200,
@@ -34,7 +34,16 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+    },
+    "logo": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0"
     }
   }
 }
