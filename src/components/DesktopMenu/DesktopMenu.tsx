@@ -3,12 +3,18 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import Text from '~/components/Text'
 import { serviceMenu } from '~/services'
-import { MenuItemType } from '~/types'
+
+type MenuItemType = {
+  label: string,
+  page: {
+    uid: string
+  }
+}
 
 const DesktopMenu = () => {
   const { query, asPath } = useRouter()
 
-  const [items, setItems] = useState<IMenuItem[]>([])
+  const [items, setItems] = useState<MenuItemType[]>([])
 
   useEffect(() => {
     const fetchMenu = async () => {
