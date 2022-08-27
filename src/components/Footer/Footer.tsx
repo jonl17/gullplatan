@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import Seperator from '~/components/Seperator'
+import Text from '~/components/Text'
 import { serviceFooter } from '~/services'
 import { IFooter } from '~/types'
-import Text from '~/components/Text'
 
 const Footer = () => {
   const [data, setData] = useState<IFooter>()
@@ -19,7 +20,7 @@ const Footer = () => {
     <footer className="relative h-[300px] md:h-[500px] bg-purple">
       <Seperator double className="top-0 h-6 md:h-12" />
       <div className="grid place-content-center h-full">
-        <div className="h-24 text-center text-cream">
+        <motion.div initial={{ y: '100%' }} whileInView={{ y: '0%' }} className="h-24 text-center text-cream">
           <Text variant="heading3">Hafa samband</Text>
           <a className="underline" href="mailto:thykjo@thykjo.com">
             <Text variant="paragraph3">thykjo@thykjo.com</Text>
@@ -37,7 +38,7 @@ const Footer = () => {
                 </a>
               ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   )

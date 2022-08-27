@@ -1,5 +1,5 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import React from 'react'
 import Seperator from '~/components/Seperator'
 import Text from '~/components/Text'
 
@@ -12,11 +12,11 @@ const Navbar = ({ seperator = true }: Props) => {
     <nav className="h-[100px] md:h-[200px] text-cream relative">
       <div className="container flex h-full justify-between relative">
         <Link href="/" passHref>
-          <a className="flex place-items-center">
+          <motion.a initial={{ x: -25, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="flex place-items-center">
             <Text className="mb-5 md:mb-10" variant="logo" as="h1">
               gullplatan
             </Text>
-          </a>
+          </motion.a>
         </Link>
       </div>
       {seperator && <Seperator double />}

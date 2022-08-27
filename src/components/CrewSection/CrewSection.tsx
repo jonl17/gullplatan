@@ -1,8 +1,8 @@
 import { createClient } from '@root/prismicio'
 import { ICrewSectionSlice } from '@root/slices/CrewSectionSlice'
-import React, { useEffect, useState } from 'react'
-import { CrewType } from '~/types'
+import { useEffect, useState } from 'react'
 import CrewBox from '~/components/CrewBox'
+import { CrewType } from '~/types'
 
 const CrewSection = ({ slice }: ICrewSectionSlice) => {
   const [theCrew, setTheCrew] = useState<CrewType[]>([])
@@ -27,7 +27,7 @@ const CrewSection = ({ slice }: ICrewSectionSlice) => {
     <section className="py-12 md:py-24 container">
       <div className="grid lg:grid-cols-2 gap-24 2xl:gap-44">
         {theCrew.map((crew, key) => (
-          <CrewBox {...crew} key={key} />
+          <CrewBox {...crew} connector={key !== theCrew.length - 1 && key !== theCrew.length - 2} key={key} />
         ))}
       </div>
     </section>

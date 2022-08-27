@@ -1,12 +1,12 @@
 import { IPageHeadSectionSlice } from '@root/slices/PageHeadSectionSlice'
-import React from 'react'
-import Text from '~/components/Text'
+import cn from 'classnames'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { RichTextBlock } from 'prismic-reactjs'
+import BorderBox from '~/components/BorderBox'
 import RichText from '~/components/RichText'
 import Seperator from '~/components/Seperator'
-import BorderBox from '~/components/BorderBox'
-import { RichTextBlock } from 'prismic-reactjs'
-import cn from 'classnames'
+import Text from '~/components/Text'
 
 type TextAreaProps = {
   items: {
@@ -35,20 +35,22 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
         >
           <span className="relative bg-white inline-block">
             <Text variant="pageHeading" as="h1">
-              {slice.primary.title}
+              <motion.span initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
+                {slice.primary.title}
+              </motion.span>
             </Text>
             {/* <RippleMask className="bg-purple" /> */}
           </span>
           <Text>{slice.primary.subtitle}</Text>
           {slice.primary.image.url && (
-            <div className="w-full relative aspect-video">
+            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="w-full relative aspect-video">
               <Image
                 objectFit="contain"
                 layout="fill"
                 src={slice.primary.image.url}
                 alt={slice.primary.image.alt ?? ''}
               />
-            </div>
+            </motion.div>
           )}
         </div>
         {slice.items &&

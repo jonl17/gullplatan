@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import cn from 'classnames'
+import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 type Props = {
@@ -70,7 +70,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
       {connector && (
         <span
           className={cn(
-            'w-[6px] md:w-[10px] h-6 md:h-12 absolute -bottom-5 md:-bottom-12 left-1/2 -ml-[3px] md:-ml-[5px]'
+            'hidden md:block w-[6px] md:w-[10px] h-6 md:h-12 absolute -bottom-5 md:-bottom-12 left-1/2 -ml-[3px] md:-ml-[5px]'
           )}
         >
           <span

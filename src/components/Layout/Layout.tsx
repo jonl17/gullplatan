@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React from 'react'
+import Navbar from '../Navbar'
 
 type Props = {
   children: React.ReactNode
@@ -23,6 +24,7 @@ const Layout = ({ children }: Props) => {
       style={{ backgroundColor: findBackgroundColor() }}
       className="grain transition-colors"
     >
+      <Navbar seperator={asPath !== '/'} />
       {children}
     </main>
   )

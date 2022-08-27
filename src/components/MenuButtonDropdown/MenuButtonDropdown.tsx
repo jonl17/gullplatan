@@ -1,8 +1,8 @@
 import cn from 'classnames'
-import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { IMenu } from '~/types'
 import SubmenuItem from '../SubmenuItem'
-import Text from '../Text'
 
 const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
   const [open, setOpen] = useState(false)
@@ -14,7 +14,23 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
         'text-green': open,
       })}
     >
-      <Text variant="pageHeading">{label}</Text>
+      <motion.h1 variants={{
+        hidden: { opacity: 0, y: '25%' },
+        show: {
+          opacity: 1,
+          y: '0%',
+          transition: {
+            delayChildren: 0.05
+          }
+        }
+      }} initial="hidden" animate="show" className='font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2'>{label.split("").map((char, key) => (
+        <motion.span variants={{
+          hidden: { opacity: 0, y: '25%' },
+          show: { opacity: 1, y: '0%' }
+        }} key={key}>
+          {char}
+        </motion.span>
+      ))}</motion.h1>
       <ul
         className={cn('grid gap-3 transition-all', {
           'hide-vertically text-cream': !open,
