@@ -1,5 +1,6 @@
 import { createClient } from '@root/prismicio'
-import React, { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { PauseButton, PlayButton } from '~/components/Icon'
 
 type Props = {
@@ -42,7 +43,8 @@ const AudioPlayer = ({ soundId }: Props) => {
           src={sound.file.url}
         />
       )}
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         className="md:flex md:place-content-center pb-2 md:pt-2"
         onClick={clickHandler}
       >
@@ -51,7 +53,7 @@ const AudioPlayer = ({ soundId }: Props) => {
         ) : (
           <PlayButton className="h-12 md:h-16" />
         )}
-      </button>
+      </motion.button>
     </>
   )
 }

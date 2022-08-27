@@ -9,6 +9,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   src: url('/fonts/BuenosAires-Light.otf');
   font-family: 'buenos-aires-light';
@@ -21,13 +22,22 @@
   .box-clip-top-center {
     clip-path: inset(0 50% 0 50%);
   }
+
   .box-clip-bottom-right {
     clip-path: inset(0 0 0 100%);
   }
+
   .box-clip-bottom-left {
     clip-path: inset(0 100% 0 0);
   }
+
   .box-clip-sides {
     clip-path: inset(0 0 100% 0);
+  }
+
+  .svg-text-mask {
+    @apply font-buenos-black font-black lowercase;
+    @apply fill-green-blue;
+    mask: url("#mask");
   }
 }
