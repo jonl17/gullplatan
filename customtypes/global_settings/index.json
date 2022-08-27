@@ -37,21 +37,26 @@
           "placeholder": ""
         }
       },
-      "page_image": {
-        "type": "Image",
-        "config": {
-          "label": "page image",
-          "constraint": {
-            "width": 1200,
-            "height": 630
-          },
-          "thumbnails": []
-        }
-      },
       "logo": {
         "type": "Image",
         "config": {
           "label": "logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "front_left_image": {
+        "type": "Image",
+        "config": {
+          "label": "front left image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "front_right_image": {
+        "type": "Image",
+        "config": {
+          "label": "front right image",
           "constraint": {},
           "thumbnails": []
         }

@@ -11,10 +11,12 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const globalSettings = await client.getSingle('global_settings')
   const menuIds = globalSettings.data.main_menu.map((item: any) => item.menu.id)
   const menu = await client.getAllByIDs(menuIds)
+  const heroImages: Array<ImageType> = [globalSettings.data.front_left_image, globalSettings.data.front_right_image]
   return {
     props: {
       desktopImage: homepage.data.image,
       menu,
+      heroImages
     },
   }
 }
@@ -22,9 +24,10 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
 type HomePageProps = {
   desktopImage: ImageType
   menu: any[]
+  heroImages: Array<ImageType>
 }
 
-const Home: NextPage<HomePageProps> = ({ desktopImage, menu }) => {
+const Home: NextPage<HomePageProps> = ({ menu, heroImages }) => {
   const mainmenu: IMenu[] = menu.map((item) => ({
     label: item.data.label,
     submenu: item.data.submenu.map((item: any) => ({
@@ -38,7 +41,7 @@ const Home: NextPage<HomePageProps> = ({ desktopImage, menu }) => {
       <Head>
         <title>Gullplatan</title>
       </Head>
-      <DesktopFrontpage image={desktopImage} menu={mainmenu} />
+      <DesktopFrontpage heroImages={heroImages} menu={mainmenu} />
       <MobileFrontpage menu={mainmenu} />
     </>
   )

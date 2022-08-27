@@ -34,10 +34,9 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
             'mb-12': slice.primary.border_box,
           })}
         >
-          <motion.span initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }}>
-            <RippleMask fill='transparent' color='fill-green-blue' text={slice.primary.title} />
+          <motion.span initial={{ opacity: 0, }} animate={{ opacity: 1 }}>
+            <RippleMask color='fill-green-blue' text={slice.primary.title} />
           </motion.span>
-          {/* <RippleMask className="bg-purple" /> */}
           <Text>{slice.primary.subtitle}</Text>
           {slice.primary.image.url && (
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="w-full relative aspect-video">

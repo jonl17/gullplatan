@@ -4,10 +4,9 @@ import cn from 'classnames'
 type Props = {
   text: string
   color?: string
-  fill?: string
 }
 
-const RippleMask = ({ text, color = '#fff', fill = 'red' }: Props) => {
+const RippleMask = ({ text, color = '#fff' }: Props) => {
   return (
     <svg className={cn('svg-text-mask h-full w-full text-41/49.2 md:text-120/151.2', color)}>
       <defs>
