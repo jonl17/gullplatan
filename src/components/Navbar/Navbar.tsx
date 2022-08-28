@@ -41,18 +41,21 @@ const Navbar = ({ seperator = true }: Props) => {
 
   return (
     <>
-      <motion.nav animate={controls} className="h-16 md:h-36 text-cream sticky -top-14 z-50">
+      <motion.nav animate={controls} className="h-16 md:h-36 text-cream z-50 absolute top-0 left-0">
         <div className="container flex h-full justify-between relative">
           <Link href="/" passHref>
             <motion.a onClick={() => setGlobalAudioState('paused')} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="grid grid-cols-[auto,1fr] gap-5 justify-start place-items-center">
-              {logo && <Record logo={logo} />}
+              <span className='w-14 h-14' />
               <Text variant="logo" as="h1">
                 gullplatan
               </Text>
             </motion.a>
           </Link>
+
         </div>
       </motion.nav>
+
+      {logo && <Record logo={logo} />}
     </>
   )
 }
