@@ -10,6 +10,7 @@ module.exports = {
       '14/16.8': ['14px', '16.8px'],
       '41/49.2': ['41px', '49.2px'],
       '120/151.2': ['120px', '151.2px'],
+      '30/40': ['30px', '40px']
     },
     fontFamily: {
       'buenos-black': ['buenos-aires-black', 'sans-serif'],
