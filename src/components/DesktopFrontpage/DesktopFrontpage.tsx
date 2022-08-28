@@ -11,7 +11,7 @@ type Props = {
 const DesktopFrontpage = ({ heroImages, menu }: Props) => {
   return (
     <div className="relative top-24 w-full hidden lg:block">
-      <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-1/4 fixed left-0 top-28'>
+      <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-[22.5%] fixed left-5 top-32'>
         <Image
           objectFit="contain"
           layout="responsive"
@@ -21,7 +21,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
           alt={heroImages[0].alt ?? 'frontpage image'}
         />
       </motion.div>
-      <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-1/4 fixed right-0 top-28'>
+      <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-[22.5%] fixed right-5 top-32'>
         <Image
           objectFit="contain"
           layout="responsive"

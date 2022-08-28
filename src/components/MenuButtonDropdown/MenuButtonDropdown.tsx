@@ -15,18 +15,14 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
       })}
     >
       <motion.h1 variants={{
-        hidden: { opacity: 0, y: '25%' },
+        hidden: { opacity: 0 },
         show: {
           opacity: 1,
-          y: '0%',
-          transition: {
-            delayChildren: 0.05
-          }
         }
       }} initial="hidden" animate="show" className='font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2'>{label.split("").map((char, key) => (
         <motion.span variants={{
-          hidden: { opacity: 0, y: '25%' },
-          show: { opacity: 1, y: '0%' }
+          hidden: { opacity: 0 },
+          show: { opacity: 1 }
         }} key={key}>
           {char}
         </motion.span>

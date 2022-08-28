@@ -41,8 +41,7 @@ export default function Record({ logo }: Props) {
   }, [asPath, controls])
 
   return (
-
-    <motion.button animate={controls} className="sticky left-5 z-50">
+    <motion.button initial={{ top: '2.5rem' }} animate={controls} className="sticky left-5 z-50">
       <Image className="transition-transform" style={{ transform: `rotate(${spin}deg)` }} height={logo.dimensions.height} width={logo.dimensions.width} layout='fixed' alt='Gullplatan' src={logo.url} />
     </motion.button>
   )
