@@ -113,6 +113,14 @@ module.exports = {
           height: '3rem',
         },
       },
+      'album-spin': {
+        '0%': {
+          transform: 'rotate(0deg)'
+        },
+        '100%': {
+          transform: 'rotate(360deg)'
+        }
+      }
     },
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
@@ -123,6 +131,7 @@ module.exports = {
       'border-appear-bottom-left':
         'border-appear-bottom-left 0.5s 0.4s forwards',
       'connector-grow': 'connector-grow 0.2s 0.9s forwards',
+      'album-spin': 'album-spin 5s linear forwards infinite'
     },
     extend: {
       container: {

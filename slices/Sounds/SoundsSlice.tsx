@@ -1,5 +1,4 @@
 import { RichTextBlock } from 'prismic-reactjs'
-import React from 'react'
 import Sounds from '~/components/Sounds'
 
 export interface ISoundsSlice {
@@ -9,7 +8,7 @@ export interface ISoundsSlice {
     }
     items?: {
       sound: {
-        url: string
+        id: string
       }
       description_of_sound: RichTextBlock[]
     }[]

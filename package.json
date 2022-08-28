@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "slicemachine": "start-slicemachine",
-    "deploy-main": "yarn lint && git push"
+    "deploy": "yarn lint && git push"
   },
   "dependencies": {
     "@prismicio/client": "^6.6.4",
@@ -23,7 +23,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "zustand": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "18.0.6",
