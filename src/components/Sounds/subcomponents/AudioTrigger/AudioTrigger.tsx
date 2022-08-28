@@ -47,6 +47,9 @@ const AudioTrigger = ({ audioFile }: Props) => {
           }
         }}
       >
+        {currentAudioFile && <audio autoPlay>
+          <source src={currentAudioFile} />
+        </audio>}
         <PauseButton className="h-12 md:h-16" />
       </motion.button>
     </>

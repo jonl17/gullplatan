@@ -39,6 +39,7 @@ const SingleSound = ({ sound, description }: SingleSoundProps) => {
     fetchData()
   }, [sound])
 
+
   return (
     <div className="md:flex flex-col md:flex-row text-center md:text-left md:justify-between gap-10">
       <div>
