@@ -10,7 +10,7 @@ type Props = {
 
 const DesktopFrontpage = ({ heroImages, menu }: Props) => {
   return (
-    <div className="relative top-0 w-full hidden lg:block">
+    <div className="relative top-24 w-full hidden lg:block">
       <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-1/4 fixed left-0 top-28'>
         <Image
           objectFit="contain"
