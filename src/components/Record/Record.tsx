@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
+import Link from 'next/link';
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import { useAudioStore } from "~/store/audio";
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export default function Record({ logo }: Props) {
-  const { globalAudioState } = useAudioStore()
+  const { globalAudioState, setGlobalAudioState } = useAudioStore()
   const [spin, setSpin] = useState(0)
 
   const { asPath } = useRouter()
@@ -31,18 +32,20 @@ export default function Record({ logo }: Props) {
   useEffect(() => {
     if (asPath !== '/') {
       controls.start({
-        top: '1rem'
+        top: '3.5rem'
       })
     } else {
       controls.start({
-        top: '2.5rem'
+        top: '5rem'
       })
     }
   }, [asPath, controls])
 
   return (
-    <motion.button initial={{ top: '2.5rem' }} animate={controls} className="sticky left-5 z-50">
-      <Image className="transition-transform" style={{ transform: `rotate(${spin}deg)` }} height={logo.dimensions.height} width={logo.dimensions.width} layout='fixed' alt='Gullplatan' src={logo.url} />
-    </motion.button>
+    <Link passHref href='/'>
+      <motion.a onClick={() => setGlobalAudioState('paused')} initial={{ top: '2.5rem' }} animate={controls} className="sticky left-5 z-50">
+        <Image className="transition-transform" style={{ transform: `rotate(${spin}deg)` }} height={logo.dimensions.height} width={logo.dimensions.width} layout='fixed' alt='Gullplatan' src={logo.url} />
+      </motion.a>
+    </Link>
   )
 }
