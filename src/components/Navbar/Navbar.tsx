@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import Text from '~/components/Text'
 import { useAudioStore } from '~/store/audio'
 import { ImageType } from '~/types'
-import Record from '../Record/Record'
+import StickyNavbar from '../StickyNavbar/StickyNavbar'
 
 type Props = {
   seperator?: boolean
@@ -41,18 +41,19 @@ const Navbar = ({ seperator = true }: Props) => {
 
   return (
     <>
-      {logo && <Record logo={logo} />}
+      <StickyNavbar />
 
-      <motion.nav initial={{ height: '9rem' }} animate={controls} className="text-cream z-50 absolute top-0 left-0">
-        <div className="container flex h-full justify-between relative">
+      <motion.nav initial={{ height: '9rem' }} animate={controls} className="text-cream z-50 absolute top-0 left-0 w-full">
+        <div className="flex h-full justify-between relative w-full">
           <Link href="/" passHref>
-            <motion.a onClick={() => setGlobalAudioState('paused')} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="grid grid-cols-[auto,1fr] gap-5 justify-start place-items-center">
+            <motion.a onClick={() => setGlobalAudioState('paused')} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="grid grid-cols-[auto,1fr] gap-10 justify-start place-items-center">
               <span className='w-14 h-14' />
               <Text variant="logo" as="h1">
                 gullplatan
               </Text>
             </motion.a>
           </Link>
+
 
         </div>
       </motion.nav>
