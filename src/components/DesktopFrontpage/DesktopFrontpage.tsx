@@ -9,6 +9,7 @@ type Props = {
 }
 
 const DesktopFrontpage = ({ heroImages, menu }: Props) => {
+
   return (
     <div className="relative top-24 w-full hidden lg:block">
       <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className='w-[22.5%] fixed left-5 top-32'>

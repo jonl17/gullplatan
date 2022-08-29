@@ -14,7 +14,7 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
         'text-green': open,
       })}
     >
-      <motion.h1 variants={{
+      <motion.h1 transition={{ delay: 1 }} variants={{
         hidden: { opacity: 0 },
         show: {
           opacity: 1,
