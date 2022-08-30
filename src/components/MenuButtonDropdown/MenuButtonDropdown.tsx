@@ -14,19 +14,30 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
         'text-green': open,
       })}
     >
-      <motion.h1 transition={{ delay: 1 }} variants={{
-        hidden: { opacity: 0 },
-        show: {
-          opacity: 1,
-        }
-      }} initial="hidden" animate="show" className='font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2'>{label.split("").map((char, key) => (
-        <motion.span variants={{
+      <motion.h1
+        transition={{ delay: 1 }}
+        variants={{
           hidden: { opacity: 0 },
-          show: { opacity: 1 }
-        }} key={key}>
-          {char}
-        </motion.span>
-      ))}</motion.h1>
+          show: {
+            opacity: 1,
+          },
+        }}
+        initial="hidden"
+        animate="show"
+        className="font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2"
+      >
+        {label.split('').map((char, key) => (
+          <motion.span
+            variants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1 },
+            }}
+            key={key}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.h1>
       <ul
         className={cn('grid gap-3 transition-all', {
           'hide-vertically text-cream': !open,
@@ -34,7 +45,9 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
         })}
       >
         {submenu.map((item, key) => (
-          <SubmenuItem {...item} key={key} />
+          <li key={key}>
+            <SubmenuItem {...item} />
+          </li>
         ))}
       </ul>
     </button>

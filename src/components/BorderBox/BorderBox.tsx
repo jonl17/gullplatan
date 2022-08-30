@@ -22,7 +22,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
 
   return (
     <div
-      className="relative px-12 md:px-24 py-5 rounded-[18px] md:rounded-[53px]"
+      className="relative px-6 md:px-24 py-5 rounded-[18px] md:rounded-[53px]"
       ref={ref}
     >
       {children}

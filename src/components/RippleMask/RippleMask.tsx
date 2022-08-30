@@ -1,4 +1,3 @@
-
 import cn from 'classnames'
 
 type Props = {
@@ -8,9 +7,16 @@ type Props = {
 
 const RippleMask = ({ text, color = '#fff' }: Props) => {
   return (
-    <svg className={cn('svg-text-mask h-full w-full text-41/49.2 md:text-120/151.2', color)}>
+    <svg
+      width="100%"
+      height="200px"
+      className={cn(
+        'svg-text-mask h-full w-full text-41/49.2 md:text-120/151.2',
+        color
+      )}
+    >
       <defs>
-        <mask id="mask" x='0' y='0' height='150%' width='150%'>
+        <mask id="mask" x="0" y="0" height="150%" width="150%">
           <g>
             <path d="M449.4 0H448.4V175.34H449.4V0Z" fill="black" />
             <path d="M442.88 0H441.88V175.34H442.88V0Z" fill="black" />
@@ -249,14 +255,18 @@ const RippleMask = ({ text, color = '#fff' }: Props) => {
             <path d="M761.02 0H755.51V175.34H761.02V0Z" fill="white" />
             <path d="M767.53 0H762.02V175.34H767.53V0Z" fill="white" />
             <path d="M774.05 0H768.54V175.34H774.05V0Z" fill="white" />
-
           </g>
-
         </mask>
-
       </defs>
-      <text x='50%' y='70%' fill='fill-current' textAnchor='middle'>{text}</text>
-
+      <text
+        dominantBaseline="hanging"
+        x="0%"
+        y="0%"
+        fill="fill-current"
+        textAnchor="middle"
+      >
+        {text}
+      </text>
     </svg>
   )
 }

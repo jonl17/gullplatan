@@ -1,9 +1,9 @@
 import create from 'zustand'
 
-export type AudioState = 'playing' | 'paused' | 'stopped'
+export type AudioState = 'playing' | 'paused'
 
 interface IAudioStore {
-  globalAudioState: AudioState,
+  globalAudioState: AudioState
   setGlobalAudioState: (globalAudioState: AudioState) => void
   currentAudioFile?: string
   setCurrentAudioFile: (file: string) => void
@@ -12,5 +12,6 @@ interface IAudioStore {
 export const useAudioStore = create<IAudioStore>((set) => ({
   globalAudioState: 'paused',
   setGlobalAudioState: (globalAudioState) => set({ globalAudioState }),
-  setCurrentAudioFile: (incomingAudioFile) => set({ currentAudioFile: incomingAudioFile })
+  setCurrentAudioFile: (incomingAudioFile) =>
+    set({ currentAudioFile: incomingAudioFile }),
 }))

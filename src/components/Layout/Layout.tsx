@@ -1,6 +1,7 @@
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import React from 'react'
+import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
 
 type Props = {
@@ -23,11 +24,12 @@ const Layout = ({ children }: Props) => {
   return (
     <main
       style={{ backgroundColor: findBackgroundColor() }}
-      className={cn("grain transition-all min-h-screen", {
-        'pt-16': asPath !== '/'
+      className={cn('grain transition-all min-h-screen', {
+        'pt-16': asPath !== '/',
       })}
     >
       <Navbar seperator={asPath !== '/'} />
+      <BurgerMenu />
       {children}
     </main>
   )

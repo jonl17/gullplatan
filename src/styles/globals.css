@@ -38,6 +38,7 @@
   .svg-text-mask {
     @apply font-buenos-black font-black lowercase;
     @apply fill-green-blue;
-    mask: url("#mask");
+    font-size: 100px;
+    mask: url('#mask');
   }
 }
