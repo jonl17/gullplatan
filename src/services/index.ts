@@ -1,9 +1,30 @@
-import { createClient } from '@root/prismicio'
+import { createClient, linkResolver } from '@root/prismicio'
+import { ImageType, IMenu } from '~/types'
 
-export const serviceMenu = async () => {
+const resolveMenuItem = (menuItem: any): IMenu => ({
+  label: menuItem.data.label,
+  submenu: menuItem.data.submenu.map((item: any) => ({
+    label: item.label,
+    url: linkResolver(item.link),
+  })),
+  image: menuItem.data.image,
+})
+
+export const serviceGlobalSettings = async () => {
   const client = createClient()
-  const result = await client.getSingle('menu')
-  return result
+  const globalSettings = await client.getSingle('global_settings')
+  const mainmenu = await client.getAllByIDs(
+    globalSettings.data.main_menu.map((item: any) => item.menu.id)
+  )
+  const heroImages: Array<ImageType> = [
+    globalSettings.data.front_left_image,
+    globalSettings.data.front_right_image,
+  ]
+  const menu = mainmenu.map(resolveMenuItem)
+
+  const title: string = globalSettings.data.page_title
+
+  return { menu, heroImages, title }
 }
 
 export const serviceFooter = async () => {

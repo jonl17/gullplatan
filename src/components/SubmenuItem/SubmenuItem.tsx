@@ -3,9 +3,13 @@ import { MenuItemType } from '~/types'
 import Text from '../Text'
 import cn from 'classnames'
 import Link from 'next/link'
+import { useBurgerMenu } from '~/store/burger-menu'
+import { useAudioStore } from '~/store/audio'
 
 const SubmenuItem = ({ label, url }: MenuItemType) => {
   const [hovered, setHovered] = useState(false)
+  const { setOpen } = useBurgerMenu()
+  const { setGlobalAudioState } = useAudioStore()
 
   if (url) {
     return (
@@ -14,6 +18,10 @@ const SubmenuItem = ({ label, url }: MenuItemType) => {
           className="relative inline-block"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
+          onClick={() => {
+            setOpen(false)
+            setGlobalAudioState('paused')
+          }}
         >
           <Text className="mb-1" variant="heading3">
             {label}

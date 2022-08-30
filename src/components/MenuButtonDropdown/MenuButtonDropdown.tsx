@@ -24,7 +24,7 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
         }}
         initial="hidden"
         animate="show"
-        className="font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2"
+        className="font-buenos-black font-black lowercase text-41/49.2 md:text-120/151.2 mb-5"
       >
         {label.split('').map((char, key) => (
           <motion.span

@@ -23,7 +23,7 @@ export default function StickyNavbar() {
     <motion.nav
       initial={{ top: '2.5rem' }}
       animate={controls}
-      className="sticky w-full flex justify-between z-50"
+      className="sticky z-40 w-full flex justify-between"
     >
       <Record />
       {asPath !== '/' && <Burger />}

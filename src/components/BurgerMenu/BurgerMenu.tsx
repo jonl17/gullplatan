@@ -1,25 +1,37 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cn from 'classnames'
 import { useBurgerMenu } from '~/store/burger-menu'
 import Text from '../Text'
 import Link from 'next/link'
 import { useAudioStore } from '~/store/audio'
+import { IMenu } from '~/types'
+import { serviceGlobalSettings } from '~/services'
+import MenuButtonDropdown from '../MenuButtonDropdown'
 
 export default function BurgerMenu() {
   const { open, setOpen } = useBurgerMenu()
   const { setGlobalAudioState } = useAudioStore()
+  const [menu, setMenu] = useState<IMenu[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const { menu } = await serviceGlobalSettings()
+      setMenu(menu)
+    }
+    fetchData()
+  }, [])
 
   return (
     <div
       className={cn(
         'min-h-screen bg-green-blue fixed w-full top-0 left-0 z-[99] overflow-hidden',
         {
-          'w-full pointer-events-auto': open,
-          'w-0 pointer-events-none': !open,
+          'block pointer-events-auto': open,
+          'hidden pointer-events-none': !open,
         }
       )}
     >
-      <nav className="flex justify-between px-5 pt-10 text-cream">
+      <div className="flex justify-between px-5 pt-10 text-cream">
         <Link href="/" passHref>
           <a
             onClick={() => {
@@ -44,7 +56,12 @@ export default function BurgerMenu() {
             <path d="M3 23L28 3" stroke="#A13A71" strokeWidth="2" />
           </svg>
         </button>
-      </nav>
+      </div>
+      <div className="mt-24 text-center grid gap-5 place-content-center h-full">
+        {menu.map((item, key) => (
+          <MenuButtonDropdown {...item} key={key} />
+        ))}
+      </div>
     </div>
   )
 }

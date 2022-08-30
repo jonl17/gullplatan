@@ -23,7 +23,7 @@ const MenuItem = ({ label, image, submenu }: IMenu) => {
         <Text variant="pageHeading">{label}</Text>
       </button>
 
-      <div className="p-4 relative">
+      <div className="p-0 relative">
         <div className="absolute top-4 w-full h-full">
           <Image
             layout="responsive"

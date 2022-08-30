@@ -47,7 +47,7 @@ const Navbar = ({ seperator = true }: Props) => {
       <motion.nav
         initial={{ height: '9rem' }}
         animate={controls}
-        className="text-cream absolute top-0 left-0 w-full"
+        className="text-cream absolute top-0 z-50 left-0"
       >
         <div className="flex h-full justify-between relative w-full">
           <Link href="/" passHref>
