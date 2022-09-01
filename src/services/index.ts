@@ -1,5 +1,5 @@
 import { createClient, linkResolver } from '@root/prismicio'
-import { ImageType, IMenu } from '~/types'
+import { ImageType, IMenu, ISocialMedia } from '~/types'
 
 const resolveMenuItem = (menuItem: any): IMenu => ({
   label: menuItem.data.label,
@@ -31,4 +31,13 @@ export const serviceFooter = async () => {
   const client = createClient()
   const result = await client.getSingle('footer')
   return result.data
+}
+
+export const serviceContactInformation = async () => {
+  const client = createClient()
+  const result = await client.getSingle('global_settings')
+  return {
+    email: result.data.email.url as string,
+    socialMedia: result.data.social_media as ISocialMedia[],
+  }
 }

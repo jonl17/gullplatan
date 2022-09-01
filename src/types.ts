@@ -38,3 +38,10 @@ export interface ISlice {
   items?: any[]
   primary?: any
 }
+
+export interface ISocialMedia {
+  platform: 'facebook' | 'instagram'
+  link: {
+    url: string
+  }
+}

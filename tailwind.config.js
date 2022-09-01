@@ -10,7 +10,8 @@ module.exports = {
       '14/16.8': ['14px', '16.8px'],
       '41/49.2': ['41px', '49.2px'],
       '120/151.2': ['120px', '151.2px'],
-      '30/40': ['30px', '40px']
+      '30/40': ['30px', '40px'],
+      '8vw/1': ['8vw', '1'],
     },
     fontFamily: {
       'buenos-black': ['buenos-aires-black', 'sans-serif'],
@@ -116,12 +117,12 @@ module.exports = {
       },
       'album-spin': {
         '0%': {
-          transform: 'rotate(0deg)'
+          transform: 'rotate(0deg)',
         },
         '100%': {
-          transform: 'rotate(360deg)'
-        }
-      }
+          transform: 'rotate(360deg)',
+        },
+      },
     },
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
@@ -132,7 +133,7 @@ module.exports = {
       'border-appear-bottom-left':
         'border-appear-bottom-left 0.5s 0.4s forwards',
       'connector-grow': 'connector-grow 0.2s 0.9s forwards',
-      'album-spin': 'album-spin 5s linear forwards infinite'
+      'album-spin': 'album-spin 5s linear forwards infinite',
     },
     extend: {
       container: {

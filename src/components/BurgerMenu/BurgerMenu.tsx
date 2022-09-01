@@ -8,11 +8,15 @@ import { IMenu } from '~/types'
 import { serviceGlobalSettings } from '~/services'
 import MenuButtonDropdown from '../MenuButtonDropdown'
 import { motion, AnimatePresence } from 'framer-motion'
+import ContactInfo from '../ContactInfo/ContactInfo'
+import { useLockBodyScroll } from '~/hooks/useLockBodyScroll'
 
 export default function BurgerMenu() {
   const { setOpen } = useBurgerMenu()
   const { setGlobalAudioState } = useAudioStore()
   const [menu, setMenu] = useState<IMenu[]>([])
+
+  useLockBodyScroll()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +29,7 @@ export default function BurgerMenu() {
   return (
     <div
       className={cn(
-        'min-h-screen bg-green-blue fixed w-full lg:w-2/3 top-0 right-0 z-[99] overflow-y-auto'
+        'min-h-screen bg-green-blue fixed w-full top-0 right-0 z-[99] overflow-y-auto mb-12'
       )}
     >
       <div className="flex justify-between px-5 pt-10 text-cream">
@@ -58,11 +62,12 @@ export default function BurgerMenu() {
           </svg>
         </motion.button>
       </div>
-      <div className="mt-24 text-center grid gap-5 place-content-center h-full">
+      <div className="my-8 text-center grid gap-5 place-content-center h-full">
         {menu.map((item, key) => (
           <MenuButtonDropdown {...item} key={key} />
         ))}
       </div>
+      <ContactInfo />
     </div>
   )
 }

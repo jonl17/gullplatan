@@ -61,6 +61,43 @@
           "thumbnails": []
         }
       }
+    },
+    "contact information": {
+      "email": {
+        "type": "Link",
+        "config": {
+          "label": "email",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "social_media": {
+        "type": "Group",
+        "config": {
+          "label": "social media",
+          "fields": {
+            "platform": {
+              "type": "Select",
+              "config": {
+                "label": "platform",
+                "placeholder": "",
+                "options": [
+                  "facebook",
+                  "instagram"
+                ]
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
