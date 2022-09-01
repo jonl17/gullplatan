@@ -32,6 +32,9 @@
             },
             "crew_section_slice": {
               "type": "SharedSlice"
+            },
+            "images": {
+              "type": "SharedSlice"
             }
           }
         }

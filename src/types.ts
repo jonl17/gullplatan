@@ -33,3 +33,8 @@ export interface IMenu {
   image: ImageType
   submenu: MenuItemType[]
 }
+
+export interface ISlice {
+  items?: any[]
+  primary?: any
+}
