@@ -7,9 +7,10 @@ import { useAudioStore } from '~/store/audio'
 import { IMenu } from '~/types'
 import { serviceGlobalSettings } from '~/services'
 import MenuButtonDropdown from '../MenuButtonDropdown'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function BurgerMenu() {
-  const { open, setOpen } = useBurgerMenu()
+  const { setOpen } = useBurgerMenu()
   const { setGlobalAudioState } = useAudioStore()
   const [menu, setMenu] = useState<IMenu[]>([])
 
@@ -24,11 +25,7 @@ export default function BurgerMenu() {
   return (
     <div
       className={cn(
-        'min-h-screen bg-green-blue fixed w-full top-0 left-0 z-[99] overflow-hidden',
-        {
-          'block pointer-events-auto': open,
-          'hidden pointer-events-none': !open,
-        }
+        'min-h-screen bg-green-blue fixed w-full lg:w-2/3 top-0 right-0 z-[99] overflow-y-auto'
       )}
     >
       <div className="flex justify-between px-5 pt-10 text-cream">
@@ -44,7 +41,11 @@ export default function BurgerMenu() {
             </Text>
           </a>
         </Link>
-        <button onClick={() => setOpen(false)}>
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          className="md:pr-5 top-10"
+          onClick={() => setOpen(false)}
+        >
           <svg
             width="30"
             height="26"
@@ -55,7 +56,7 @@ export default function BurgerMenu() {
             <path d="M2 3L28 23" stroke="#A13A71" strokeWidth="6" />
             <path d="M3 23L28 3" stroke="#A13A71" strokeWidth="2" />
           </svg>
-        </button>
+        </motion.button>
       </div>
       <div className="mt-24 text-center grid gap-5 place-content-center h-full">
         {menu.map((item, key) => (

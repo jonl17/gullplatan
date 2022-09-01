@@ -1,6 +1,7 @@
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
 
@@ -10,6 +11,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const { asPath, query } = useRouter()
+  const { open } = useBurgerMenu()
 
   const findBackgroundColor = () => {
     if (asPath === '/') {
@@ -29,7 +31,7 @@ const Layout = ({ children }: Props) => {
       })}
     >
       <Navbar seperator={asPath !== '/'} />
-      <BurgerMenu />
+      {open && <BurgerMenu />}
       {children}
     </main>
   )

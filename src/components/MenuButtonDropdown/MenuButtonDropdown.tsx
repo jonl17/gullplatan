@@ -15,7 +15,6 @@ const MenuButtonDropdown = ({ label, submenu }: IMenu) => {
       })}
     >
       <motion.h1
-        transition={{ delay: 1 }}
         variants={{
           hidden: { opacity: 0 },
           show: {
