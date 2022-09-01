@@ -9,14 +9,11 @@ import { serviceGlobalSettings } from '~/services'
 import MenuButtonDropdown from '../MenuButtonDropdown'
 import { motion, AnimatePresence } from 'framer-motion'
 import ContactInfo from '../ContactInfo/ContactInfo'
-import { useLockBodyScroll } from '~/hooks/useLockBodyScroll'
 
 export default function BurgerMenu() {
   const { setOpen } = useBurgerMenu()
   const { setGlobalAudioState } = useAudioStore()
   const [menu, setMenu] = useState<IMenu[]>([])
-
-  useLockBodyScroll()
 
   useEffect(() => {
     const fetchData = async () => {
