@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
@@ -24,15 +24,19 @@ const Layout = ({ children }: Props) => {
     } else return '#41B3A3'
   }
 
+  useEffect(() => {
+    if (document) {
+      document.body.style.background = findBackgroundColor()
+      document.body.className = 'grain'
+    }
+  }, [findBackgroundColor])
+
   return (
     <>
       <Head>
         <link rel="icon" type="image/png" href="/favicon.png"></link>
       </Head>
-      <main
-        style={{ backgroundColor: findBackgroundColor() }}
-        className={cn('grain transition-all min-h-screen h-full', {})}
-      >
+      <main className={cn('grain transition-all min-h-screen h-full')}>
         <Navbar seperator={asPath !== '/'} />
         {open && <BurgerMenu />}
         {children}

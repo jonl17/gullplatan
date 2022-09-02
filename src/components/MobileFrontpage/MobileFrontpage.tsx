@@ -14,7 +14,7 @@ const MenuItem = ({ label, image, submenu, svgImage }: IMenu) => {
   return (
     <div
       className={cn(
-        'p-10 w-full h-full hover:text-green transition-colors relative',
+        'py-10 px-5 w-full h-full hover:text-green transition-colors relative',
         {
           'text-green': open,
           'text-cream': !open,
@@ -45,7 +45,7 @@ const MenuItem = ({ label, image, submenu, svgImage }: IMenu) => {
           />
         </div>
         <ul
-          className={cn('grid gap-3 transition-all mt-5', {
+          className={cn('grid gap-16 transition-all mt-5', {
             'hide-vertically text-cream': !open,
             'clip-path-0 text-green': open,
           })}
