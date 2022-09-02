@@ -4,6 +4,7 @@ import React from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
+import Head from 'next/head'
 
 type Props = {
   children: React.ReactNode
@@ -24,14 +25,19 @@ const Layout = ({ children }: Props) => {
   }
 
   return (
-    <main
-      style={{ backgroundColor: findBackgroundColor() }}
-      className={cn('grain transition-all min-h-screen h-full', {})}
-    >
-      <Navbar seperator={asPath !== '/'} />
-      {open && <BurgerMenu />}
-      {children}
-    </main>
+    <>
+      <Head>
+        <link rel="icon" type="image/png" href="/favicon.png"></link>
+      </Head>
+      <main
+        style={{ backgroundColor: findBackgroundColor() }}
+        className={cn('grain transition-all min-h-screen h-full', {})}
+      >
+        <Navbar seperator={asPath !== '/'} />
+        {open && <BurgerMenu />}
+        {children}
+      </main>
+    </>
   )
 }
 
