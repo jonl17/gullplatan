@@ -41,6 +41,14 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "svg_title": {
+          "type": "Image",
+          "config": {
+            "label": "svg title",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {

@@ -35,9 +35,19 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
           })}
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <Text variant="pageHeading" as="h1">
-              {slice.primary.title}
-            </Text>
+            {slice.primary.svg_title && slice.primary.svg_title.url ? (
+              <Image
+                src={slice.primary.svg_title?.url}
+                alt={slice.primary.svg_title?.alt}
+                height={slice.primary.svg_title?.dimensions.height}
+                width={slice.primary.svg_title?.dimensions.width}
+                layout="responsive"
+              />
+            ) : (
+              <Text variant="pageHeading" as="h1">
+                {slice.primary.title}
+              </Text>
+            )}
             {/* <RippleMask color='fill-green-blue' text={slice.primary.title} /> */}
           </motion.span>
           <Text>{slice.primary.subtitle}</Text>

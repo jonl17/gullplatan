@@ -1,10 +1,12 @@
 import React from 'react'
 import PageHeadSection from '~/components/PageHeadSection'
+import { ImageType } from '~/types'
 
 export interface IPageHeadSectionSlice {
   slice: {
     primary: {
       title: string
+      svg_title?: ImageType
       subtitle: string
       image: {
         url: string
