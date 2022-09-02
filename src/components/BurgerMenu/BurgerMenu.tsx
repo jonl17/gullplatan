@@ -38,7 +38,8 @@ export default function BurgerMenu() {
                 setGlobalAudioState('paused')
               }}
             >
-              <Text variant="logo" as="h1">
+              <span className="hidden lg:block" />
+              <Text className="block lg:hidden" variant="logo" as="h1">
                 Gullplatan
               </Text>
             </a>
