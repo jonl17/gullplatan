@@ -5,9 +5,10 @@ import React, { useState } from 'react'
 import { IMenu } from '~/types'
 import ContactInfo from '../ContactInfo/ContactInfo'
 import SubmenuItem from '../SubmenuItem'
+import SvgTitle from '../SvgTitle'
 import Text from '../Text'
 
-const MenuItem = ({ label, image, submenu }: IMenu) => {
+const MenuItem = ({ label, image, submenu, svgImage }: IMenu) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -20,8 +21,12 @@ const MenuItem = ({ label, image, submenu }: IMenu) => {
         }
       )}
     >
-      <button onClick={() => setOpen(!open)}>
-        <Text variant="pageHeading">{label}</Text>
+      <button className="w-[200px]" onClick={() => setOpen(!open)}>
+        {svgImage ? (
+          <SvgTitle image={svgImage} />
+        ) : (
+          <Text variant="pageHeading">{label}</Text>
+        )}
       </button>
 
       <div className="p-0 relative">
