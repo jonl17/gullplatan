@@ -12,6 +12,14 @@
           "placeholder": ""
         }
       },
+      "svg_title": {
+        "type": "Image",
+        "config": {
+          "label": "svg title",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "image": {
         "type": "Image",
         "config": {

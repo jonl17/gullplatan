@@ -30,6 +30,7 @@ export type MenuItemType = {
 }
 export interface IMenu {
   label: string
+  svgImage: ImageType
   image: ImageType
   submenu: MenuItemType[]
 }

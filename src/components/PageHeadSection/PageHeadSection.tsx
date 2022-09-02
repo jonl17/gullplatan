@@ -8,6 +8,7 @@ import RichText from '~/components/RichText'
 import Seperator from '~/components/Seperator'
 import Text from '~/components/Text'
 import RippleMask from '../RippleMask'
+import SvgTitle from '../SvgTitle'
 
 type TextAreaProps = {
   items: {
@@ -36,16 +37,7 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             {slice.primary.svg_title && slice.primary.svg_title.url ? (
-              <div className="pr-16 md:pr-0">
-                <Image
-                  className="w-full"
-                  src={slice.primary.svg_title?.url}
-                  alt={slice.primary.svg_title?.alt}
-                  height={slice.primary.svg_title?.dimensions.height}
-                  width={slice.primary.svg_title?.dimensions.width}
-                  layout="responsive"
-                />
-              </div>
+              <SvgTitle image={slice.primary.svg_title} />
             ) : (
               <Text variant="pageHeading" as="h1">
                 {slice.primary.title}

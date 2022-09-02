@@ -3,6 +3,7 @@ import { ImageType, IMenu, ISocialMedia } from '~/types'
 
 const resolveMenuItem = (menuItem: any): IMenu => ({
   label: menuItem.data.label,
+  svgImage: menuItem.data.svg_title,
   submenu: menuItem.data.submenu.map((item: any) => ({
     label: item.label,
     url: linkResolver(item.link),
