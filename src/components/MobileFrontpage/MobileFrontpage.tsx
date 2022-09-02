@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { IMenu } from '~/types'
+import ContactInfo from '../ContactInfo/ContactInfo'
 import SubmenuItem from '../SubmenuItem'
 import Text from '../Text'
 
@@ -61,12 +62,13 @@ type Props = {
 
 const MobileFrontpage = ({ menu }: Props) => {
   return (
-    <div className="block h-full lg:hidden px-4 mt-10">
-      <div className="grid align-middle gap-14 h-full text-center">
+    <div className="block relative h-full lg:hidden px-4 mt-10">
+      <div className="grid align-middle gap-14 mb-14 text-center h-full">
         {menu.map((item, key) => (
           <MenuItem {...item} key={key} />
         ))}
       </div>
+      <ContactInfo />
     </div>
   )
 }

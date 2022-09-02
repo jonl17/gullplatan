@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 type Props = {
@@ -11,7 +11,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
   const [discovered, setDiscovered] = useState(false)
 
   const { inView, ref } = useInView({
-    threshold: 1,
+    threshold: 0.5,
   })
 
   useEffect(() => {

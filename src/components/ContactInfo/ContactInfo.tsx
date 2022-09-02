@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Text from '~/components/Text'
 import { serviceContactInformation } from '~/services'
 import { ISocialMedia } from '~/types'
+import { Facebook, Instagram } from './icons'
 
 export default function ContactInfo() {
   const [email, setEmail] = useState<string>()
@@ -16,6 +17,12 @@ export default function ContactInfo() {
     }
     fetchData()
   }, [])
+
+  const platformIcons: { [key in 'facebook' | 'instagram']: React.ReactNode } =
+    {
+      facebook: <Facebook />,
+      instagram: <Instagram />,
+    }
 
   return (
     <div className="grid place-content-center h-full">
@@ -31,10 +38,10 @@ export default function ContactInfo() {
             <Text variant="paragraph3">{email.replace('mailto:', '')}</Text>
           </a>
         )}
-        <div className="grid gap-3 mt-5">
+        <div className="flex justify-center gap-3 mt-5">
           {socialMedia.map((item, key) => (
             <a rel="noreferrer" target="_blank" href={item.link.url} key={key}>
-              <Text variant="heading3">{item.platform}</Text>
+              {platformIcons[item.platform]}
             </a>
           ))}
         </div>

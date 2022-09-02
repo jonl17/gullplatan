@@ -7,7 +7,6 @@ import { serviceGlobalSettings } from '~/services'
 import { ImageType, IMenu } from '~/types'
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
-  const client = createClient({ previewData })
   const { menu, heroImages, title } = await serviceGlobalSettings()
   return {
     props: {

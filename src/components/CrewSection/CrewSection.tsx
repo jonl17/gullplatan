@@ -25,9 +25,13 @@ const CrewSection = ({ slice }: ICrewSectionSlice) => {
 
   return (
     <section className="py-12 md:py-24 container">
-      <div className="grid lg:grid-cols-2 gap-24 2xl:gap-44">
+      <div className="grid lg:grid-cols-2 gap-24 2xl:gap-44 items-baseline">
         {theCrew.map((crew, key) => (
-          <CrewBox {...crew} connector={key !== theCrew.length - 1 && key !== theCrew.length - 2} key={key} />
+          <CrewBox
+            {...crew}
+            connector={key !== theCrew.length - 1 && key !== theCrew.length - 2}
+            key={key}
+          />
         ))}
       </div>
     </section>
