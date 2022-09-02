@@ -16,7 +16,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[22.5%] fixed left-10 top-32"
+        className="w-[25vw] fixed left-10 top-32"
       >
         <Image
           objectFit="contain"
@@ -31,7 +31,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
         initial={{ opacity: 0, x: 10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[22.5%] fixed right-10 top-32"
+        className="w-[25vw] fixed right-10 top-32"
       >
         <Image
           objectFit="contain"
@@ -42,7 +42,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
           alt={heroImages[1].alt ?? 'frontpage image'}
         />
       </motion.div>
-      <div className="text-center grid gap-2 place-content-center h-full mb-10">
+      <div className="text-center grid gap-2 place-content-center h-full mb-16 md:mb-36">
         {menu.map((item, key) => (
           <MenuButtonDropdown {...item} key={key} />
         ))}

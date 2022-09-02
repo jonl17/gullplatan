@@ -16,7 +16,7 @@ const MenuButtonDropdown = ({ label, submenu, svgImage }: IMenu) => {
       })}
     >
       {svgImage.url ? (
-        <SvgTitle className="w-[300px] md:w-[450px]" image={svgImage} />
+        <SvgTitle className="w-[300px] md:w-[550px]" image={svgImage} />
       ) : (
         <motion.h1
           variants={{
