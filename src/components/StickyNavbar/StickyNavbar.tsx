@@ -8,17 +8,6 @@ export default function StickyNavbar() {
   const { asPath } = useRouter()
   const controls = useAnimation()
 
-  useEffect(() => {
-    if (asPath !== '/') {
-      controls.start({
-        top: '1.5rem',
-      })
-    } else {
-      controls.start({
-        top: '2.5rem',
-      })
-    }
-  }, [asPath, controls])
   return (
     <motion.nav
       initial={{ top: '2.5rem' }}

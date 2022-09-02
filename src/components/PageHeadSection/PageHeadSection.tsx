@@ -27,7 +27,7 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
   )
 
   return (
-    <section className="py-12 text-green-blue relative">
+    <section className="pt-24 pb-12 text-green-blue relative">
       <div className="container max-w-6xl mx-auto">
         <div
           className={cn('max-w-xl mx-auto', {

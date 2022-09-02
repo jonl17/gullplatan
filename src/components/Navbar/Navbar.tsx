@@ -19,18 +19,6 @@ const Navbar = ({ seperator = true }: Props) => {
   const { setGlobalAudioState } = useAudioStore()
 
   useEffect(() => {
-    if (asPath !== '/') {
-      controls.start({
-        height: '12rem',
-      })
-    } else {
-      controls.start({
-        height: '9rem',
-      })
-    }
-  }, [asPath, controls])
-
-  useEffect(() => {
     const fetchData = async () => {
       const client = createClient()
       await client
@@ -44,11 +32,7 @@ const Navbar = ({ seperator = true }: Props) => {
     <>
       <StickyNavbar />
 
-      <motion.nav
-        initial={{ height: '9rem' }}
-        animate={controls}
-        className="text-cream absolute top-0 z-50 left-0"
-      >
+      <motion.nav className="text-cream absolute top-0 z-50 left-0 h-36">
         <div className="flex h-full justify-between relative w-full">
           <Link href="/" passHref>
             <motion.a

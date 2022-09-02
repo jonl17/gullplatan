@@ -63,12 +63,14 @@ type Props = {
 const MobileFrontpage = ({ menu }: Props) => {
   return (
     <div className="block relative h-full lg:hidden px-4 mt-10">
-      <div className="grid align-middle gap-14 mb-14 text-center h-full">
+      <div className="grid align-middle gap-12 mb-14 text-center h-full">
         {menu.map((item, key) => (
           <MenuItem {...item} key={key} />
         ))}
       </div>
-      <ContactInfo />
+      <div className="my-36">
+        <ContactInfo />
+      </div>
     </div>
   )
 }

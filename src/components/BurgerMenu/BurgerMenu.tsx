@@ -29,8 +29,8 @@ export default function BurgerMenu() {
         onClick={() => setOpen(false)}
         className="w-full bg-transparent h-full hidden lg:block"
       ></button>
-      <div className="grid bg-green-blue w-full h-full overflow-y-auto mb-12">
-        <div className="flex justify-between px-5 pt-10 text-cream">
+      <div className="grid bg-green-blue content-start w-full h-full overflow-y-auto mb-12">
+        <div className="flex justify-between h-36 items-baseline px-5 pt-10 text-cream">
           <Link href="/" passHref>
             <a
               onClick={() => {
@@ -45,7 +45,7 @@ export default function BurgerMenu() {
           </Link>
           <motion.button
             whileTap={{ scale: 0.9 }}
-            className="md:pr-5 top-10"
+            className="md:pr-5 pt-5"
             onClick={() => setOpen(false)}
           >
             <svg
@@ -60,7 +60,7 @@ export default function BurgerMenu() {
             </svg>
           </motion.button>
         </div>
-        <div className="my-8 text-center grid gap-5 place-content-center h-full">
+        <div className="text-center grid gap-5 place-content-center h-full mb-24">
           {menu.map((item, key) => (
             <MenuButtonDropdown {...item} key={key} />
           ))}

@@ -43,9 +43,6 @@ const SubmenuItem = ({ label, url }: MenuItemType) => {
   return (
     <div className="inline-flex">
       <Text variant="heading3">{label}</Text>
-      <Text className="ml-2" variant="paragraph2">
-        {'(væntanlegt)'}
-      </Text>
     </div>
   )
 }

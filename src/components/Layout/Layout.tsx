@@ -26,9 +26,7 @@ const Layout = ({ children }: Props) => {
   return (
     <main
       style={{ backgroundColor: findBackgroundColor() }}
-      className={cn('grain transition-all min-h-screen h-full', {
-        'pt-16': asPath !== '/',
-      })}
+      className={cn('grain transition-all min-h-screen h-full', {})}
     >
       <Navbar seperator={asPath !== '/'} />
       {open && <BurgerMenu />}

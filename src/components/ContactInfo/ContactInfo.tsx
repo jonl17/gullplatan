@@ -30,7 +30,7 @@ export default function ContactInfo() {
         initial={{ opacity: 0, y: '100%' }}
         animate={{ opacity: 1, y: '0%' }}
         className="h-24 text-center text-cream"
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.75 }}
       >
         <Text variant="heading3">Hafa samband</Text>
         {email && (
