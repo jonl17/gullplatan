@@ -25,7 +25,7 @@ const CrewSection = ({ slice }: ICrewSectionSlice) => {
   }, [slice])
 
   return (
-    <section className="py-12 md:py-24 container">
+    <section className="pb-12 md:py-24 container">
       <SvgTitle
         className="w-[150px] md:w-[300px] mx-auto mb-24"
         image={slice.primary.svg_title}
