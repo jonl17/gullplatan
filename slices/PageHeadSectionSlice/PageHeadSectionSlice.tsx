@@ -13,6 +13,7 @@ export interface IPageHeadSectionSlice {
         alt: string
       }
       border_box: boolean
+      arrow_connector: boolean
     }
     items?: {
       text: any

@@ -18,7 +18,16 @@
               "docURL": "...",
               "version": "sktwi1xtmkfgx8626",
               "description": "CrewSectionSlice",
-              "primary": {},
+              "primary": {
+                "svg_title": {
+                  "type": "Image",
+                  "config": {
+                    "label": "svg title",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
               "items": {
                 "crew": {
                   "type": "Link",
@@ -53,7 +62,17 @@
                 }
               }
             ],
-            "primary": {},
+            "primary": {
+              "svg_title": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
+              }
+            },
             "slice_type": "crew_section_slice"
           }
         },
@@ -196,6 +215,15 @@
                     "constraint": {},
                     "thumbnails": []
                   }
+                },
+                "arrow_connector": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "arrow connector",
+                    "default_value": false,
+                    "placeholder_true": "true",
+                    "placeholder_false": "false"
+                  }
                 }
               },
               "items": {
@@ -222,15 +250,15 @@
                 "text": [
                   {
                     "type": "paragraph",
-                    "text": "Consectetur quis Lorem est id culpa excepteur ea ex dolore anim aliquip ipsum.",
+                    "text": "Enim aliquip ea elit excepteur occaecat excepteur eiusmod non excepteur. Proident aliquip est sint.",
                     "spans": []
                   }
                 ]
               }
             ],
             "primary": {
-              "title": "distant",
-              "subtitle": "carefully",
+              "title": "length",
+              "subtitle": "hospital",
               "image": {
                 "dimensions": {
                   "width": 900,
@@ -238,7 +266,7 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
               },
               "border_box": true,
               "svg_title": {
@@ -248,8 +276,9 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
-              }
+                "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+              },
+              "arrow_connector": true
             },
             "slice_type": "page_head_section"
           }

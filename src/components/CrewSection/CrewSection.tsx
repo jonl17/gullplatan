@@ -3,6 +3,7 @@ import { ICrewSectionSlice } from '@root/slices/CrewSectionSlice'
 import { useEffect, useState } from 'react'
 import CrewBox from '~/components/CrewBox'
 import { CrewType } from '~/types'
+import SvgTitle from '../SvgTitle'
 
 const CrewSection = ({ slice }: ICrewSectionSlice) => {
   const [theCrew, setTheCrew] = useState<CrewType[]>([])
@@ -25,6 +26,10 @@ const CrewSection = ({ slice }: ICrewSectionSlice) => {
 
   return (
     <section className="py-12 md:py-24 container">
+      <SvgTitle
+        className="w-[150px] md:w-[300px] mx-auto mb-24"
+        image={slice.primary.svg_title}
+      />
       <div className="grid lg:grid-cols-2 gap-24 2xl:gap-44 items-baseline">
         {theCrew.map((crew, key) => (
           <CrewBox

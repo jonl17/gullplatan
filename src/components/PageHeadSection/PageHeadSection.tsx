@@ -70,7 +70,32 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
             <TextArea items={slice.items} />
           ))}
       </div>
-      <Seperator />
+      {slice.primary.arrow_connector ? (
+        <svg
+          width="154"
+          height="169"
+          viewBox="0 0 154 169"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="mx-auto"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M92 124.5V0H102V124.5H92Z"
+            fill="#41B3A3"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M47 124.5V0H87V124.5H47Z"
+            fill="#41B3A3"
+          />
+          <path d="M78.9584 169L0 109L154 109L78.9584 169Z" fill="#41B3A3" />
+        </svg>
+      ) : (
+        <Seperator />
+      )}
     </section>
   )
 }

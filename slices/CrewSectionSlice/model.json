@@ -10,7 +10,16 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "CrewSectionSlice",
-      "primary": {},
+      "primary": {
+        "svg_title": {
+          "type": "Image",
+          "config": {
+            "label": "svg title",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
       "items": {
         "crew": {
           "type": "Link",
