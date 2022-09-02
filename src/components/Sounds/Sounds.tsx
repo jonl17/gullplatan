@@ -18,8 +18,15 @@ const renderPrismicParagraph = ({
   </Text>
 )
 
+const renderPrismicStrong = ({ key, children }: FieldRenderFunctionInput) => (
+  <span key={key} className="text-green-blue">
+    {children}
+  </span>
+)
+
 const fieldMapOverwrite: FieldRenderMap = {
   [Elements.paragraph]: renderPrismicParagraph,
+  [Elements.strong]: renderPrismicStrong,
 }
 
 type SingleSoundProps = {

@@ -17,7 +17,7 @@
             "label": "description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1"
+            "multi": "paragraph,heading1,strong"
           }
         }
       },
@@ -35,7 +35,7 @@
             "label": "description of sound",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "heading2,paragraph"
+            "multi": "paragraph,heading2,strong"
           }
         }
       },
