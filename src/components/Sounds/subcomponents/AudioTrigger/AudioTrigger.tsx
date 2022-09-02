@@ -8,7 +8,12 @@ type Props = {
 }
 
 const AudioTrigger = ({ audioFile }: Props) => {
-  const { globalAudioState, setGlobalAudioState, setCurrentAudioFile, currentAudioFile } = useAudioStore()
+  const {
+    globalAudioState,
+    setGlobalAudioState,
+    setCurrentAudioFile,
+    currentAudioFile,
+  } = useAudioStore()
 
   const [localAudioState, setLocalAudioState] = useState<AudioState>('paused')
 
@@ -47,9 +52,17 @@ const AudioTrigger = ({ audioFile }: Props) => {
           }
         }}
       >
-        {currentAudioFile && <audio autoPlay>
-          <source src={currentAudioFile} />
-        </audio>}
+        {currentAudioFile && (
+          <audio
+            onEnded={() => {
+              setGlobalAudioState('paused')
+              setLocalAudioState('paused')
+            }}
+            autoPlay
+          >
+            <source src={currentAudioFile} />
+          </audio>
+        )}
         <PauseButton className="h-12 md:h-16" />
       </motion.button>
     </>
