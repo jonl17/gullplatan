@@ -5,7 +5,8 @@ export default function SEO() {
   const [result, state] = useSinglePrismicDocument('global_settings')
 
   const image = result?.data.link_share_image.url
-  const description = result?.data.page_description
+  const description =
+    'Sendum tónlist út í geim! er þverfaglegt þátttökuverkefni fyrir börn. Það er innblásið af Gullplötunni ,,Sounds of Earth” sem var send út í geim árið 1977 af NASA (hlekkur á umfjöllun annars staðar á síðunni). Hópur hönnuða, vísindamanna og tónlistarfólks bjóða nú börnum um land allt í ferðalag um óravíddir tónlistar sem teygir sig út í geim og aftur heim.'
 
   return (
     <Head>
@@ -23,21 +24,15 @@ export default function SEO() {
         </>
       )}
 
-      {description && (
-        <>
-          <meta
-            property="description"
-            name="description"
-            content={description}
-          />
-          <meta
-            property="og:description"
-            name="og:description"
-            content={description}
-          />
-          <meta name="twitter:description" content={description} />
-        </>
-      )}
+      <>
+        <meta property="description" name="description" content={description} />
+        <meta
+          property="og:description"
+          name="og:description"
+          content={description}
+        />
+        <meta name="twitter:description" content={description} />
+      </>
     </Head>
   )
 }
