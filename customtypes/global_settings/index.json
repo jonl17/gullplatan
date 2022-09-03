@@ -60,6 +60,17 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "link_share_image": {
+        "type": "Image",
+        "config": {
+          "label": "link share image",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
       }
     },
     "contact information": {

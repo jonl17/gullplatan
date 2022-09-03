@@ -25,8 +25,8 @@
         }
       }
     ],
-    "page_title": "wrote",
-    "page_description": "difficulty",
+    "page_title": "machine",
+    "page_description": "shake",
     "logo": {
       "dimensions": {
         "width": 900,
@@ -34,7 +34,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+      "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db"
     },
     "front_left_image": {
       "dimensions": {
@@ -43,12 +43,21 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
     },
     "front_right_image": {
       "dimensions": {
         "width": 900,
         "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+    },
+    "link_share_image": {
+      "dimensions": {
+        "width": 1200,
+        "height": 630
       },
       "alt": null,
       "copyright": null,
@@ -60,10 +69,10 @@
     },
     "social_media": [
       {
-        "platform": "facebook",
+        "platform": "instagram",
         "link": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "http://google.com"
         }
       }
     ]

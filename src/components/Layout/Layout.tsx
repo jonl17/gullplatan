@@ -4,9 +4,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
-import Head from 'next/head'
-import Image from 'next/image'
-import grainImage from '../../../public/grain.png'
+import SEO from '~/components/SEO'
 
 type Props = {
   children: React.ReactNode
@@ -39,9 +37,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      <Head>
-        <link rel="icon" type="image/png" href="/favicon.png"></link>
-      </Head>
+      <SEO />
       <main className={cn('transition-all min-h-screen h-full relative')}>
         <div
           id="grain-bg"

@@ -4,11 +4,13 @@ import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import Layout from '~/components/Layout'
 import '~/styles/globals.css'
-import { linkResolver, repositoryName } from '../../prismicio'
+import { linkResolver, repositoryName, createClient } from '../../prismicio'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const client = createClient()
   return (
     <PrismicProvider
+      client={client}
       linkResolver={linkResolver}
       internalLinkComponent={({ href, ...props }) => (
         <Link href={href}>
