@@ -48,6 +48,9 @@ export default function BurgerMenu() {
             whileTap={{ scale: 0.9 }}
             className="md:pr-5 pt-5"
             onClick={() => setOpen(false)}
+            initial={{ scale: 0.8 }}
+            animate={{ scale: [0.8, 1.1, 1] }}
+            transition={{ duration: 0.4 }}
           >
             <svg
               width="30"
