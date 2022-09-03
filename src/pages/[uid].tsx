@@ -4,6 +4,8 @@ import { components } from '@root/slices'
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import Footer from '~/components/Footer'
+import SEO from '~/components/SEO'
+import { ISeo } from '~/types'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
@@ -28,23 +30,29 @@ export const getStaticProps: GetStaticProps = async ({
   const client = createClient({ previewData })
   const page = await client.getByUID('page', params.uid as string)
 
+  const seo: ISeo = {
+    title: page.data.page_title,
+    description: page.data.page_description,
+    image: page.data.page_image,
+  }
+
   return {
     props: {
       page,
+      seo,
     },
   }
 }
 
 type Props = {
   page: any
+  seo: ISeo
 }
 
-const UIDPage: NextPage<Props> = ({ page }) => {
+const UIDPage: NextPage<Props> = ({ page, seo }) => {
   return (
     <>
-      <Head>
-        <title>{page.data.title}</title>
-      </Head>
+      <SEO {...seo} />
       <SliceZone slices={page.data.slices} components={components} />
       <Footer />
     </>

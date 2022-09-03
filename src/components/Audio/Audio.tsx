@@ -6,12 +6,9 @@ type Props = {
 }
 
 const Audio = ({ audioFile, play }: Props) => {
-
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
   const shouldPlay = play && audioFile
-
-  console.log(audioFile, shouldPlay)
 
   useEffect(() => {
     if (audioRef.current) {
@@ -22,8 +19,7 @@ const Audio = ({ audioFile, play }: Props) => {
 
   return (
     <audio ref={audioRef}>
-      <source src={audioFile}>
-      </source>
+      <source src={audioFile}></source>
     </audio>
   )
 }

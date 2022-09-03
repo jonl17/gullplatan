@@ -3,16 +3,25 @@ import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import DesktopFrontpage from '~/components/DesktopFrontpage'
 import MobileFrontpage from '~/components/MobileFrontpage/MobileFrontpage'
+import SEO from '~/components/SEO'
 import { serviceGlobalSettings } from '~/services'
-import { ImageType, IMenu } from '~/types'
+import { ImageType, IMenu, ISeo } from '~/types'
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const { menu, heroImages, title } = await serviceGlobalSettings()
+  const client = createClient({ previewData })
+  const result = await client.getSingle('homepage')
+  const seo: ISeo = {
+    title: result.data.page_title,
+    description: result.data.page_description,
+    image: result.data.page_image,
+  }
   return {
     props: {
       menu,
       heroImages,
       title,
+      seo,
     },
   }
 }
@@ -21,14 +30,13 @@ type HomePageProps = {
   menu: any[]
   heroImages: Array<ImageType>
   title: string
+  seo: ISeo
 }
 
-const Home: NextPage<HomePageProps> = ({ menu, heroImages, title }) => {
+const Home: NextPage<HomePageProps> = ({ menu, heroImages, title, seo }) => {
   return (
     <>
-      <Head>
-        <title>{title}</title>
-      </Head>
+      <SEO {...seo} />
       <DesktopFrontpage heroImages={heroImages} menu={menu} />
       <MobileFrontpage menu={menu} />
     </>

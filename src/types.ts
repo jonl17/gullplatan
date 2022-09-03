@@ -46,3 +46,9 @@ export interface ISocialMedia {
     url: string
   }
 }
+
+export interface ISeo {
+  title: string
+  description: string
+  image: ImageType
+}

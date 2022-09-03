@@ -37,7 +37,6 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      <SEO />
       <main className={cn('transition-all min-h-screen h-full relative')}>
         <div
           id="grain-bg"

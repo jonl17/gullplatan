@@ -39,6 +39,33 @@
           }
         }
       }
+    },
+    "seo": {
+      "page_title": {
+        "type": "Text",
+        "config": {
+          "label": "page title",
+          "placeholder": ""
+        }
+      },
+      "page_description": {
+        "type": "Text",
+        "config": {
+          "label": "page description",
+          "placeholder": ""
+        }
+      },
+      "page_image": {
+        "type": "Image",
+        "config": {
+          "label": "page image",
+          "constraint": {
+            "width": 1200,
+            "height": 630
+          },
+          "thumbnails": []
+        }
+      }
     }
   }
 }
