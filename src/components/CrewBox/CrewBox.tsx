@@ -30,7 +30,7 @@ const CrewBox = ({
         {name}
       </Text>
       <BorderBox connector={connector}>
-        <div className="text-cream pt-5">
+        <div className="text-cream">
           <RichText data={about} />
         </div>
       </BorderBox>

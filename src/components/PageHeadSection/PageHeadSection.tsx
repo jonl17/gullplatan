@@ -18,7 +18,7 @@ type TextAreaProps = {
 
 const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
   const TextArea = ({ items }: TextAreaProps) => (
-    <div className="md:flex gap-10 text-cream pt-6 md:pt-12">
+    <div className="md:flex gap-10 text-cream">
       {items.map((item, key) => (
         <div key={key}>
           <RichText data={item.text} />

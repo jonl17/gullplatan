@@ -1,10 +1,12 @@
 import cn from 'classnames'
 import { useRouter } from 'next/router'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
 import Head from 'next/head'
+import Image from 'next/image'
+import grainImage from '../../../public/grain.png'
 
 type Props = {
   children: React.ReactNode
@@ -14,7 +16,7 @@ const Layout = ({ children }: Props) => {
   const { asPath, query } = useRouter()
   const { open } = useBurgerMenu()
 
-  const findBackgroundColor = () => {
+  const findBackgroundColor = useCallback(() => {
     if (asPath === '/') {
       return '#41B3A3'
     } else if (query.uid === 'leiðangur-23') {
@@ -22,12 +24,16 @@ const Layout = ({ children }: Props) => {
     } else if (query.uid === 'leiðangur-77') {
       return '#5E364A'
     } else return '#41B3A3'
-  }
+  }, [asPath, query])
 
   useEffect(() => {
     if (document) {
       document.body.style.background = findBackgroundColor()
-      document.body.className = 'grain'
+      const grainBgEl = document.getElementById('grain-bg')
+      if (grainBgEl) {
+        grainBgEl.style.backgroundImage = 'url(/grain.png)'
+        grainBgEl.style.backgroundSize = 'contain'
+      }
     }
   }, [findBackgroundColor])
 
@@ -36,10 +42,14 @@ const Layout = ({ children }: Props) => {
       <Head>
         <link rel="icon" type="image/png" href="/favicon.png"></link>
       </Head>
-      <main className={cn('grain transition-all min-h-screen h-full')}>
+      <main className={cn('transition-all min-h-screen h-full relative')}>
+        <div
+          id="grain-bg"
+          className="fixed top-0 left-0 opacity-50 h-screen w-screen"
+        />
         <Navbar seperator={asPath !== '/'} />
         {open && <BurgerMenu />}
-        {children}
+        <div className="relative">{children}</div>
       </main>
     </>
   )
