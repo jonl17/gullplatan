@@ -12,9 +12,9 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
   const client = createClient({ previewData })
   const result = await client.getSingle('homepage')
   const seo: ISeo = {
-    title: result.data.page_title,
-    description: result.data.page_description,
-    image: result.data.page_image,
+    title: result.data.page_title as string,
+    description: result.data.page_description as string,
+    image: result.data.page_image as ImageType,
   }
   return {
     props: {
