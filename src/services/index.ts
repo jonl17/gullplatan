@@ -18,12 +18,12 @@ export const serviceGlobalSettings = async () => {
     globalSettings.data.main_menu.map((item: any) => item.menu.id)
   )
   const heroImages: Array<ImageType> = [
-    globalSettings.data.front_left_image,
-    globalSettings.data.front_right_image,
+    globalSettings.data.front_left_image as ImageType,
+    globalSettings.data.front_right_image as ImageType,
   ]
   const menu = mainmenu.map(resolveMenuItem)
 
-  const title: string = globalSettings.data.page_title
+  const title: string = globalSettings.data.page_title as string
 
   return { menu, heroImages, title }
 }
@@ -37,8 +37,9 @@ export const serviceFooter = async () => {
 export const serviceContactInformation = async () => {
   const client = createClient()
   const result = await client.getSingle('global_settings')
+  const email = result.data.email as { url: string }
   return {
-    email: result.data.email.url as string,
+    email: email.url,
     socialMedia: result.data.social_media as ISocialMedia[],
   }
 }
