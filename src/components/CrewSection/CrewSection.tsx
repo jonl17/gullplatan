@@ -1,8 +1,10 @@
 import { createClient } from '@root/prismicio'
 import { ICrewSectionSlice } from '@root/slices/CrewSectionSlice'
+import { RichTextBlock } from 'prismic-reactjs'
 import { useEffect, useState } from 'react'
 import CrewBox from '~/components/CrewBox'
-import { CrewType } from '~/types'
+import { CrewDocument } from '~/prismic-types.generated'
+import { CrewType, ImageType } from '~/types'
 import SvgTitle from '../SvgTitle'
 
 const CrewSection = ({ slice }: ICrewSectionSlice) => {
@@ -11,13 +13,13 @@ const CrewSection = ({ slice }: ICrewSectionSlice) => {
   useEffect(() => {
     const client = createClient()
     const fetchData = async () => {
-      const result = await client.getAllByIDs(
+      const result = (await client.getAllByIDs(
         slice.items.map((item) => item.crew.id)
-      )
-      const crew: CrewType[] = result.map((item) => ({
+      )) as CrewDocument[]
+      const crew = result.map((item) => ({
         name: item.data.name,
-        about: item.data.about,
-        image: item.data.image,
+        about: item.data.about as RichTextBlock[],
+        image: item.data.image as ImageType,
       }))
       setTheCrew(crew)
     }

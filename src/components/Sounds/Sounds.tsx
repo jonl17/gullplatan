@@ -6,6 +6,7 @@ import BorderBox from '~/components/BorderBox'
 import RichText from '~/components/RichText'
 import Seperator from '~/components/Seperator'
 import Text from '~/components/Text'
+import { SoundDocument } from '~/prismic-types.generated'
 import { FieldRenderFunctionInput, FieldRenderMap } from '../RichText/types'
 import AudioTrigger from './subcomponents/AudioTrigger'
 
@@ -40,8 +41,9 @@ const SingleSound = ({ sound, description }: SingleSoundProps) => {
   useEffect(() => {
     const fetchData = async () => {
       const client = createClient()
-      const result = await client.getByID(sound.id)
-      setSoundUrl(result.data.file.url)
+      const result = (await client.getByID(sound.id)) as SoundDocument
+      const file = result.data.file as { url: string }
+      setSoundUrl(file.url)
     }
     fetchData()
   }, [sound])

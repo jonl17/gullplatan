@@ -19,7 +19,7 @@ export type ImageType = {
 }
 
 export type CrewType = {
-  name: string
+  name: string | null
   about: RichTextBlock[]
   image: ImageType
 }
