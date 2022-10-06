@@ -12,21 +12,8 @@ type Props = {
   seperator?: boolean
 }
 
-const Navbar = ({ seperator = true }: Props) => {
-  const controls = useAnimation()
-  const { asPath } = useRouter()
-  const [logo, setLogo] = useState<ImageType>()
+const Navbar = () => {
   const { setGlobalAudioState } = useAudioStore()
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const client = createClient()
-      await client
-        .getSingle('global_settings')
-        .then((result) => setLogo(result.data.logo))
-    }
-    fetchData()
-  }, [])
 
   return (
     <>
