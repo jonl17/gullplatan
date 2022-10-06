@@ -381,6 +381,90 @@
           "extension": "ts"
         },
         "screenshotPaths": {}
+      },
+      "text_and_boxes": {
+        "library": "slices",
+        "id": "text_and_boxes",
+        "name": "TextAndBoxesSlice",
+        "description": "TextAndBoxes",
+        "model": {
+          "id": "text_and_boxes",
+          "type": "SharedSlice",
+          "name": "TextAndBoxesSlice",
+          "description": "TextAndBoxes",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "TextAndBoxes",
+              "primary": {
+                "heading": {
+                  "type": "Text",
+                  "config": {
+                    "label": "heading",
+                    "placeholder": ""
+                  }
+                },
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "text",
+                    "placeholder": "intro text",
+                    "allowTargetBlank": false,
+                    "multi": "paragraph,strong"
+                  }
+                }
+              },
+              "items": {
+                "boxed_text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "boxed text",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "multi": "paragraph,heading2"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "boxed_text": [
+                  {
+                    "type": "paragraph",
+                    "text": "Nostrud ut ullamco cupidatat. Duis tempor anim adipisicing velit dolor. Adipisicing duis cillum elit magna laboris aliqua anim sunt esse culpa.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "heading": "family",
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Eu nulla sint consectetur aute laboris eiusmod veniam duis. Exercitation dolor tempor pariatur sit exercitation proident. Ut consectetur in nulla aute labore tempor nostrud adipisicing sint veniam voluptate ut.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "text_and_boxes"
+          }
+        },
+        "meta": {
+          "fileName": "TextAndBoxesSlice",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
       }
     }
   }

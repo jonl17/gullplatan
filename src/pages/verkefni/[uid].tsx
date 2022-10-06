@@ -1,15 +1,15 @@
 import { SliceZone } from '@prismicio/react'
 import { createClient } from '@root/prismicio'
-import { components } from '@root/slices'
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
-import { PageDocument } from '~/prismic-types.generated'
+import { ProjectDocument } from '~/prismic-types.generated'
 import { ImageType, ISeo } from '~/types'
+import { components } from '@root/slices'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
-  const pages = await client.getAllByType('page')
+  const pages = await client.getAllByType('project')
 
   return {
     paths: pages.map((page) => ({ params: { uid: page.uid as string } })),
@@ -28,38 +28,38 @@ export const getStaticProps: GetStaticProps = async ({
   }
 
   const client = createClient({ previewData })
-  const page = (await client.getByUID(
-    'page',
+  const project = (await client.getByUID(
+    'project',
     params.uid as string
-  )) as PageDocument
+  )) as ProjectDocument
 
   const seo: ISeo = {
-    title: page.data.page_title as string,
-    description: page.data.page_description as string,
-    image: page.data.page_image as ImageType,
+    title: `Verkefni: ${project.data.page_title as string}`,
+    description: project.data.page_description as string,
+    image: project.data.page_image as ImageType,
   }
 
   return {
     props: {
-      page,
+      project,
       seo,
     },
   }
 }
 
 type Props = {
-  page: PageDocument
+  project: ProjectDocument
   seo: ISeo
 }
 
-const UIDPage: NextPage<Props> = ({ page, seo }) => {
+const ProjectPage: NextPage<Props> = ({ project, seo }) => {
   return (
     <>
       <SEO {...seo} />
-      <SliceZone slices={page.data.slices} components={components} />
+      <SliceZone slices={project.data.slices} components={components} />
       <Footer />
     </>
   )
 }
 
-export default UIDPage
+export default ProjectPage

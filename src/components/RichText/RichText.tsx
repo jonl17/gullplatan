@@ -69,6 +69,10 @@ const renderPrismicLink = ({
   </Link>
 )
 
+const renderStrong = ({ key, children }: FieldRenderFunctionInput) => (
+  <span className="font-extrabold">{children}</span>
+)
+
 const defaultFieldRenderMap: FieldRenderMap = {
   [Elements.heading1]: renderPrismicHeading1,
   [Elements.heading2]: renderPrismicHeading2,
@@ -78,6 +82,7 @@ const defaultFieldRenderMap: FieldRenderMap = {
   [Elements.hyperlink]: renderPrismicLink,
   [Elements.span]: () => null,
   [Elements.embed]: () => null,
+  [Elements.strong]: renderStrong,
 }
 
 /**

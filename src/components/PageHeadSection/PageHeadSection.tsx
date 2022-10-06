@@ -37,13 +37,12 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             {slice.primary.svg_title && slice.primary.svg_title.url ? (
-              <SvgTitle image={slice.primary.svg_title} />
+              <SvgTitle className="mb-5" image={slice.primary.svg_title} />
             ) : (
               <Text variant="pageHeading" as="h1">
                 {slice.primary.title}
               </Text>
             )}
-            {/* <RippleMask color='fill-green-blue' text={slice.primary.title} /> */}
           </motion.span>
           <Text>{slice.primary.subtitle}</Text>
           {slice.primary.image.url && (

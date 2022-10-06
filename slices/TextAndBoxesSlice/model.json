@@ -1,0 +1,45 @@
+{
+  "id": "text_and_boxes",
+  "type": "SharedSlice",
+  "name": "TextAndBoxesSlice",
+  "description": "TextAndBoxes",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "TextAndBoxes",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "heading",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "text",
+            "placeholder": "intro text",
+            "allowTargetBlank": false,
+            "multi": "paragraph,strong"
+          }
+        }
+      },
+      "items": {
+        "boxed_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "boxed text",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "paragraph,heading2"
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -19,6 +19,11 @@
     "global_settings": {
       "main_menu": {},
       "social_media": {}
+    },
+    "project": {
+      "title": {
+        "content": "Hljóðbútar"
+      }
     }
   },
   "slices": {
@@ -78,6 +83,46 @@
       "default": {
         "primary": {
           "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TextAndBoxes": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "boxed_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "TextAndBoxesSlice": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "boxed_text": {
             "config": {
               "patternType": "PARAGRAPH",
               "blocks": 1
