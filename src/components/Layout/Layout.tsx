@@ -4,7 +4,6 @@ import React, { useCallback, useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
-import SEO from '~/components/SEO'
 
 type Props = {
   children: React.ReactNode
@@ -42,7 +41,7 @@ const Layout = ({ children }: Props) => {
           id="grain-bg"
           className="fixed top-0 left-0 opacity-50 h-screen w-screen"
         />
-        <Navbar seperator={asPath !== '/'} />
+        <Navbar />
         {open && <BurgerMenu />}
         <div className="relative">{children}</div>
       </main>
