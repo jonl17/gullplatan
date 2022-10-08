@@ -1,27 +1,12 @@
 import { SliceZone } from '@prismicio/react'
 import { createClient } from '@root/prismicio'
-import {
-  GetServerSideProps,
-  GetStaticPaths,
-  GetStaticProps,
-  NextPage,
-} from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import { ProjectDocument } from '~/prismic-types.generated'
 import { ImageType, ISeo } from '~/types'
 import { components } from '@root/slices'
 import { supabase } from '~/utils/supabaseClient'
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const client = createClient()
-//   const pages = await client.getAllByType('project')
-
-//   return {
-//     paths: pages.map((page) => ({ params: { uid: page.uid as string } })),
-//     fallback: false,
-//   }
-// }
 
 export const getServerSideProps: GetServerSideProps = async ({
   params,

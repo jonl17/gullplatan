@@ -9,7 +9,6 @@ import { components } from '@root/slices'
 import { supabase } from '~/utils/supabaseClient'
 
 export const getServerSideProps: GetServerSideProps = async ({
-  params,
   previewData,
 }) => {
   const { data } = await supabase.auth.getSession()
