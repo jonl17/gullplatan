@@ -6,7 +6,6 @@ import SvgTitle from '~/components/SvgTitle'
 import Text from '~/components/Text'
 import BorderBox from '~/components/BorderBox'
 import cn from 'classnames'
-import { AuthError } from '@supabase/supabase-js'
 
 const LoginPage: NextPage = () => {
   const [email, setEmail] = useState<string>()

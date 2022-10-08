@@ -1,31 +1,40 @@
 import { SliceZone } from '@prismicio/react'
 import { createClient } from '@root/prismicio'
-import { GetServerSideProps, NextPage } from 'next'
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from 'next'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import { ProjectDocument } from '~/prismic-types.generated'
 import { ImageType, ISeo } from '~/types'
 import { components } from '@root/slices'
 import { supabase } from '~/utils/supabaseClient'
+import { useEffect, useState } from 'react'
+import { Session } from '@supabase/supabase-js'
+import Login from '~/components/Login'
+import Text from '~/components/Text'
+import { useSession } from '~/store/session'
 
-export const getServerSideProps: GetServerSideProps = async ({
+export const getStaticPaths: GetStaticPaths = async () => {
+  const client = createClient()
+  const pages = await client.getAllByType('project')
+
+  return {
+    paths: pages.map((page) => ({ params: { uid: page.uid as string } })),
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({
   params,
   previewData,
 }) => {
   if (!params) {
     return {
       notFound: true,
-    }
-  }
-
-  const { data } = await supabase.auth.getSession()
-
-  if (!data.session?.user) {
-    return {
-      redirect: {
-        destination: '/innskraning',
-        permanent: false,
-      },
     }
   }
 
@@ -55,11 +64,20 @@ type Props = {
 }
 
 const ProjectPage: NextPage<Props> = ({ project, seo }) => {
+  // const { loggedin } = useSession()
+
+  // console.log(loggedin)
+
+  const loggedin = true
+
   return (
     <>
       <SEO {...seo} />
-      <SliceZone slices={project.data.slices} components={components} />
-      <Footer />
+      {loggedin ? (
+        <SliceZone slices={project.data.slices} components={components} />
+      ) : (
+        <Login />
+      )}
     </>
   )
 }
