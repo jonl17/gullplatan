@@ -3,6 +3,7 @@ import { PrismicProvider } from '@prismicio/react'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import Layout from '~/components/Layout'
+import SEO from '~/components/SEO'
 import '~/styles/globals.css'
 import { linkResolver, repositoryName, createClient } from '../../prismicio'
 
