@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   const { data } = await supabase.auth.getSession()
 
-  if (!data.session?.user) {
+  if (!data.session) {
     return {
       redirect: {
         destination: '/innskraning',
