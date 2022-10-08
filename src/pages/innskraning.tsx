@@ -31,7 +31,15 @@ const LoginPage: NextPage = () => {
     if (email) {
       try {
         setLoading(true)
-        const { error } = await supabase.auth.signInWithOtp({ email })
+        const { error } = await supabase.auth.signInWithOtp({
+          email,
+          options: {
+            emailRedirectTo:
+              process.env.NODE_ENV === 'production'
+                ? 'https://gullplatan.is/verkefni'
+                : 'localhost:3000/verkefni',
+          },
+        })
         if (error) throw error
         alert('Kíktu í pósthólfið til að skrá þig inn!')
       } catch (error) {
