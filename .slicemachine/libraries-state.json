@@ -365,8 +365,8 @@
           }
         },
         "meta": {
-          "fileName": "index",
-          "extension": "js"
+          "fileName": "ProjectListSlice",
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       },

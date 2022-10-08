@@ -1,29 +1,46 @@
 import { SliceZone } from '@prismicio/react'
 import { createClient } from '@root/prismicio'
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from 'next'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import { ProjectDocument } from '~/prismic-types.generated'
 import { ImageType, ISeo } from '~/types'
 import { components } from '@root/slices'
+import { supabase } from '~/utils/supabaseClient'
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const client = createClient()
-  const pages = await client.getAllByType('project')
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const client = createClient()
+//   const pages = await client.getAllByType('project')
 
-  return {
-    paths: pages.map((page) => ({ params: { uid: page.uid as string } })),
-    fallback: false,
-  }
-}
+//   return {
+//     paths: pages.map((page) => ({ params: { uid: page.uid as string } })),
+//     fallback: false,
+//   }
+// }
 
-export const getStaticProps: GetStaticProps = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   params,
   previewData,
 }) => {
   if (!params) {
     return {
       notFound: true,
+    }
+  }
+
+  const { data } = await supabase.auth.getSession()
+
+  if (!data.session?.user) {
+    return {
+      redirect: {
+        destination: '/innskraning',
+        permanent: false,
+      },
     }
   }
 
