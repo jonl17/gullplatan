@@ -28,10 +28,9 @@ export const getStaticProps: GetStaticProps = async ({
   }
 
   const client = createClient({ previewData })
-  const page = (await client.getByUID(
-    'page',
-    params.uid as string
-  )) as PageDocument
+  const page = (await client.getByUID('page', params.uid as string, {
+    fetchLinks: ['project.title', 'project.subtitle'],
+  })) as PageDocument
 
   const seo: ISeo = {
     title: page.data.page_title as string,

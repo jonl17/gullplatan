@@ -557,7 +557,7 @@ interface PageDocumentData {
  * Slice for *page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = PageHeadSectionSlice | SoundsSlice | CrewSectionSliceSlice | ImagesSlice;
+type PageDocumentDataSlicesSlice = PageHeadSectionSlice | SoundsSlice | CrewSectionSliceSlice | ImagesSlice | ProjectListSliceSlice;
 /**
  * page document from Prismic
  *
@@ -906,6 +906,61 @@ type PageHeadSectionSliceVariation = PageHeadSectionSliceDefault;
  */
 export type PageHeadSectionSlice = prismicT.SharedSlice<"page_head_section", PageHeadSectionSliceVariation>;
 /**
+ * Primary content in ProjectListSlice → Primary
+ *
+ */
+interface ProjectListSliceSliceDefaultPrimary {
+    /**
+     * svg title field in *ProjectListSlice → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_list_slice.primary.svg_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    svg_title: prismicT.ImageField<never>;
+}
+/**
+ * Item in ProjectListSlice → Items
+ *
+ */
+export interface ProjectListSliceSliceDefaultItem {
+    /**
+     * project field in *ProjectListSlice → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_list_slice.items[].project
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    project: prismicT.RelationField<"project">;
+}
+/**
+ * Default variation for ProjectListSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ProjectListSlice`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectListSliceSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProjectListSliceSliceDefaultPrimary>, Simplify<ProjectListSliceSliceDefaultItem>>;
+/**
+ * Slice variation for *ProjectListSlice*
+ *
+ */
+type ProjectListSliceSliceVariation = ProjectListSliceSliceDefault;
+/**
+ * ProjectListSlice Shared Slice
+ *
+ * - **API ID**: `project_list_slice`
+ * - **Description**: `ProjectListSlice`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectListSliceSlice = prismicT.SharedSlice<"project_list_slice", ProjectListSliceSliceVariation>;
+/**
  * Primary content in Sounds → Primary
  *
  */
@@ -1040,6 +1095,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CrewDocumentData, CrewDocument, FooterDocumentData, FooterDocumentDataLinksItem, FooterDocument, GlobalSettingsDocumentData, GlobalSettingsDocumentDataMainMenuItem, GlobalSettingsDocumentDataSocialMediaItem, GlobalSettingsDocument, HomepageDocumentData, HomepageDocument, MenuDocumentData, MenuDocumentDataSubmenuItem, MenuDocumentDataSlicesSlice, MenuDocument, NewMenuDocumentData, NewMenuDocumentDataSubmenuItem, NewMenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, SoundDocumentData, SoundDocument, AllDocumentTypes, CrewSectionSliceSliceDefaultPrimary, CrewSectionSliceSliceDefaultItem, CrewSectionSliceSliceDefault, CrewSectionSliceSliceVariation, CrewSectionSliceSlice, ImagesSliceDefaultPrimary, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, PageHeadSectionSliceDefaultPrimary, PageHeadSectionSliceDefaultItem, PageHeadSectionSliceDefault, PageHeadSectionSliceVariation, PageHeadSectionSlice, SoundsSliceDefaultPrimary, SoundsSliceDefaultItem, SoundsSliceDefault, SoundsSliceVariation, SoundsSlice, TextAndBoxesSliceDefaultPrimary, TextAndBoxesSliceDefaultItem, TextAndBoxesSliceDefault, TextAndBoxesSliceVariation, TextAndBoxesSlice };
+        export type { CrewDocumentData, CrewDocument, FooterDocumentData, FooterDocumentDataLinksItem, FooterDocument, GlobalSettingsDocumentData, GlobalSettingsDocumentDataMainMenuItem, GlobalSettingsDocumentDataSocialMediaItem, GlobalSettingsDocument, HomepageDocumentData, HomepageDocument, MenuDocumentData, MenuDocumentDataSubmenuItem, MenuDocumentDataSlicesSlice, MenuDocument, NewMenuDocumentData, NewMenuDocumentDataSubmenuItem, NewMenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, SoundDocumentData, SoundDocument, AllDocumentTypes, CrewSectionSliceSliceDefaultPrimary, CrewSectionSliceSliceDefaultItem, CrewSectionSliceSliceDefault, CrewSectionSliceSliceVariation, CrewSectionSliceSlice, ImagesSliceDefaultPrimary, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, PageHeadSectionSliceDefaultPrimary, PageHeadSectionSliceDefaultItem, PageHeadSectionSliceDefault, PageHeadSectionSliceVariation, PageHeadSectionSlice, ProjectListSliceSliceDefaultPrimary, ProjectListSliceSliceDefaultItem, ProjectListSliceSliceDefault, ProjectListSliceSliceVariation, ProjectListSliceSlice, SoundsSliceDefaultPrimary, SoundsSliceDefaultItem, SoundsSliceDefault, SoundsSliceVariation, SoundsSlice, TextAndBoxesSliceDefaultPrimary, TextAndBoxesSliceDefaultItem, TextAndBoxesSliceDefault, TextAndBoxesSliceVariation, TextAndBoxesSlice };
     }
 }
