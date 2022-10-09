@@ -3,9 +3,9 @@ import { PrismicProvider } from '@prismicio/react'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
 import Layout from '~/components/Layout'
-import SEO from '~/components/SEO'
 import '~/styles/globals.css'
 import { linkResolver, repositoryName, createClient } from '../../prismicio'
+import { AuthProvider } from '../context/auth'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const client = createClient()
@@ -20,9 +20,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <AuthProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </AuthProvider>
       </PrismicPreview>
     </PrismicProvider>
   )

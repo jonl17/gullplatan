@@ -3,12 +3,13 @@ import { motion } from 'framer-motion'
 import Text from '~/components/Text'
 import BorderBox from '~/components/BorderBox'
 import cn from 'classnames'
-import { useSession } from '~/store/session'
+import { useAuth } from '~/context/auth'
 
 const LoginPage = () => {
   const [password, setPassword] = useState<string>()
   const [error, setError] = useState<string>()
-  const { login } = useSession()
+
+  const { login } = useAuth()
 
   const validatePassword = (password: string) => {
     return password === process.env.NEXT_PUBLIC_PROJECT_PAGE_PW
