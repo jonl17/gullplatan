@@ -54,10 +54,10 @@ const LoginPage = () => {
             </Text>
             <input
               className={cn(
-                'mb-5 bg-transparent border-b-[3px] border-cream w-full text-20/24 md:text-40/48 focus-visible:outline-purple focus-visible:outline focus-visible:rounded-md px-4 py-2 focus-visible:border-transparent',
+                'mb-5 bg-transparent border-b-[3px] border-cream w-full text-20/24 md:text-40/48  focus-visible:outline focus-visible:rounded-md px-4 py-2 focus-visible:border-transparent',
                 {
-                  'text-green': password,
-                  'text-cream': !password,
+                  'text-green focus-visible:outline-green': password,
+                  'text-cream focus-visible:outline-purple': !password,
                 }
               )}
               type="password"

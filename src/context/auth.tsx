@@ -15,7 +15,7 @@ type Props = {
 }
 
 const browser = typeof window !== undefined
-const key = 'gullplatan'
+const key = 'gullplatan-auth'
 
 const AuthProvider = ({ children }: Props) => {
   const [auth, setAuth] = useState<boolean>()
