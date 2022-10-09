@@ -7,6 +7,8 @@ import BorderBox from '~/components/BorderBox'
 import RichText from '~/components/RichText'
 import Seperator from '~/components/Seperator'
 import Text from '~/components/Text'
+import { PageHeadSectionSlice } from '~/prismic-types.generated'
+import { ImageType } from '~/types'
 import RippleMask from '../RippleMask'
 import SvgTitle from '../SvgTitle'
 
@@ -16,7 +18,7 @@ type TextAreaProps = {
   }[]
 }
 
-const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
+const PageHeadSection = ({ slice }: { slice: PageHeadSectionSlice }) => {
   const TextArea = ({ items }: TextAreaProps) => (
     <div className="md:flex gap-10 text-cream">
       {items.map((item, key) => (
@@ -26,6 +28,8 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
       ))}
     </div>
   )
+
+  console.log(slice.variation)
 
   return (
     <section className="pt-24 pb-12 text-green-blue relative">
@@ -37,7 +41,10 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
         >
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             {slice.primary.svg_title && slice.primary.svg_title.url ? (
-              <SvgTitle className="mb-5" image={slice.primary.svg_title} />
+              <SvgTitle
+                className="mb-5"
+                image={slice.primary.svg_title as ImageType}
+              />
             ) : (
               <Text variant="pageHeading" as="h1">
                 {slice.primary.title}
@@ -63,10 +70,10 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
         {slice.items &&
           (slice.primary.border_box ? (
             <BorderBox>
-              <TextArea items={slice.items} />
+              <TextArea items={slice.items as { text: RichTextBlock[] }[]} />
             </BorderBox>
           ) : (
-            <TextArea items={slice.items} />
+            <TextArea items={slice.items as { text: RichTextBlock[] }[]} />
           ))}
       </div>
       {slice.primary.arrow_connector ? (
@@ -93,7 +100,7 @@ const PageHeadSection = ({ slice }: IPageHeadSectionSlice) => {
           <path d="M78.9584 169L0 109L154 109L78.9584 169Z" fill="#41B3A3" />
         </svg>
       ) : (
-        <Seperator />
+        (slice.variation as string) === 'default' && <Seperator />
       )}
     </section>
   )

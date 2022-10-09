@@ -70,7 +70,7 @@ const renderPrismicLink = ({
 )
 
 const renderStrong = ({ key, children }: FieldRenderFunctionInput) => (
-  <span key={key} className="font-extrabold">
+  <span key={key} className="font-buenos-black">
     {children}
   </span>
 )
