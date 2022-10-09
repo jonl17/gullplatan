@@ -8,7 +8,6 @@ import Seperator from '~/components/Seperator'
 import Text from '~/components/Text'
 import { PageHeadSectionSlice } from '~/prismic-types.generated'
 import { ImageType } from '~/types'
-import RippleMask from '../RippleMask'
 import SvgTitle from '../SvgTitle'
 
 type TextAreaProps = {
