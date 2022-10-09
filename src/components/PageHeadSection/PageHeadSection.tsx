@@ -1,4 +1,3 @@
-import { IPageHeadSectionSlice } from '@root/slices/PageHeadSectionSlice'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
