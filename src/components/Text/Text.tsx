@@ -22,7 +22,7 @@ const sizes: Record<keyof typeof variants, string> = /*tw*/ {
   heading1: 'text-20/24 md:text-60/72',
   heading2: 'text-14/16.8 md:text-40/48',
   heading3: 'text-20/24',
-  paragraph1: 'text-20/24 md:text-40/48',
+  paragraph1: 'text-20/24 md:text-30/141%',
   paragraph2: 'text-14/16.8 md:text-20/24',
   paragraph3: 'text-14/16.8',
   logo: 'text-20/24 md:text-30/40',
