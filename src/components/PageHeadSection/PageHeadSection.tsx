@@ -30,7 +30,12 @@ const PageHeadSection = ({ slice }: { slice: PageHeadSectionSlice }) => {
   console.log(slice.variation)
 
   return (
-    <section className="pt-24 pb-12 text-green-blue relative">
+    <section
+      className={cn('pt-24 pb-12 text-green-blue relative', {
+        'pb-12': slice.variation === 'default',
+        'pb-0': slice.variation !== 'default',
+      })}
+    >
       <div className="container max-w-6xl mx-auto">
         <div
           className={cn('max-w-xl mx-auto', {
