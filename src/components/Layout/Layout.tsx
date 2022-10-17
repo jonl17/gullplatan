@@ -18,7 +18,7 @@ const Layout = ({ children }: Props) => {
       return '#41B3A3'
     } else if (query.uid === 'leiðangur-23') {
       return '#A13A71'
-    } else if (query.uid === 'leiðangur-77' || asPath.includes('/verkefni')) {
+    } else if (query.uid === 'leiðangur-77' || asPath.includes('/verkefni') || asPath.includes('/krakkaruv')) {
       return '#5E364A'
     } else return '#41B3A3'
   }, [asPath, query])
