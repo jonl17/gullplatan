@@ -509,6 +509,17 @@ interface PageDocumentData {
      */
     title: prismicT.KeyTextField;
     /**
+     * background field in *page*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.background
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    background: prismicT.ColorField;
+    /**
      * Slice Zone field in *page*
      *
      * - **Field Type**: Slice Zone
@@ -592,6 +603,17 @@ interface ProjectDocumentData {
      *
      */
     subtitle: prismicT.KeyTextField;
+    /**
+     * background field in *project*
+     *
+     * - **Field Type**: Color
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.background
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/color
+     *
+     */
+    background: prismicT.ColorField;
     /**
      * Slice Zone field in *project*
      *

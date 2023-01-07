@@ -19,6 +19,13 @@
           "placeholder": ""
         }
       },
+      "background": {
+        "type": "Color",
+        "config": {
+          "label": "background",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({
     props: {
       project,
       seo,
+      background: project.data.background,
     },
   }
 }

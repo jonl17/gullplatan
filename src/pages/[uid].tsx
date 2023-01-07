@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async ({
     props: {
       page,
       seo,
+      background: page.data.background,
     },
   }
 }

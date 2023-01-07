@@ -7,36 +7,31 @@ import Navbar from '../Navbar'
 
 type Props = {
   children: React.ReactNode
+  pageProps: {
+    background?: string
+  }
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, pageProps: { background = '#41B3A3' } }: Props) => {
   const { asPath, query } = useRouter()
   const { open } = useBurgerMenu()
 
-  const findBackgroundColor = useCallback(() => {
-    if (asPath === '/') {
-      return '#41B3A3'
-    } else if (query.uid === 'leiðangur-23') {
-      return '#A13A71'
-    } else if (query.uid === 'leiðangur-77' || asPath.includes('/verkefni')) {
-      return '#5E364A'
-    } else return '#41B3A3'
-  }, [asPath, query])
-
   useEffect(() => {
     if (document) {
-      document.body.style.background = findBackgroundColor()
       const grainBgEl = document.getElementById('grain-bg')
       if (grainBgEl) {
         grainBgEl.style.backgroundImage = 'url(/grain.png)'
         grainBgEl.style.backgroundSize = 'contain'
       }
     }
-  }, [findBackgroundColor])
+  }, [])
 
   return (
     <>
-      <main className={cn('transition-all min-h-screen h-full relative')}>
+      <main
+        style={{ background }}
+        className="transition-all min-h-screen h-full relative"
+      >
         <div
           id="grain-bg"
           className="fixed top-0 left-0 opacity-50 h-screen w-screen"
