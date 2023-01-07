@@ -20,6 +20,8 @@ export function linkResolver(doc) {
       return '/'
     case 'page':
       return `/${doc.uid}`
+    case 'project':
+      return `/verkefni/${doc.uid}`
     default:
       return null
   }

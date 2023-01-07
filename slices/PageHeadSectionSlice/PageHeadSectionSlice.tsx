@@ -1,27 +1,8 @@
 import React from 'react'
 import PageHeadSection from '~/components/PageHeadSection'
-import { ImageType } from '~/types'
+import { PageHeadSectionSlice } from '~/prismic-types.generated'
 
-export interface IPageHeadSectionSlice {
-  slice: {
-    primary: {
-      title: string
-      svg_title?: ImageType
-      subtitle: string
-      image: {
-        url: string
-        alt: string
-      }
-      border_box: boolean
-      arrow_connector: boolean
-    }
-    items?: {
-      text: any
-    }[]
-  }
-}
-
-const PageHeadSectionSlice = ({ slice }: IPageHeadSectionSlice) => {
+const PageHeadSectionSlice = ({ slice }: { slice: PageHeadSectionSlice }) => {
   return <PageHeadSection slice={slice} />
 }
 

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Layout from '~/components/Layout'
 import '~/styles/globals.css'
 import { linkResolver, repositoryName, createClient } from '../../prismicio'
+import { AuthProvider } from '../context/auth'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const client = createClient()
@@ -19,9 +20,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       )}
     >
       <PrismicPreview repositoryName={repositoryName}>
-        <Layout pageProps={pageProps}>
-          <Component {...pageProps} />
-        </Layout>
+        <AuthProvider>
+          <Layout pageProps={pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </AuthProvider>
       </PrismicPreview>
     </PrismicProvider>
   )

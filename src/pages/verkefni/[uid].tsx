@@ -6,6 +6,9 @@ import SEO from '~/components/SEO'
 import { ProjectDocument } from '~/prismic-types.generated'
 import { ImageType, ISeo } from '~/types'
 import { components } from '@root/slices'
+import Login from '~/components/Login'
+import { useAuth } from '~/context/auth'
+import Loading from '~/components/Loading'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
@@ -34,7 +37,9 @@ export const getStaticProps: GetStaticProps = async ({
   )) as ProjectDocument
 
   const seo: ISeo = {
-    title: `Verkefni: ${project.data.page_title as string}`,
+    title: `Verkefni: ${
+      (project.data.page_title as string) ?? project.data.title
+    }`,
     description: project.data.page_description as string,
     image: project.data.page_image as ImageType,
   }
@@ -54,11 +59,20 @@ type Props = {
 }
 
 const ProjectPage: NextPage<Props> = ({ project, seo }) => {
+  const { auth } = useAuth()
+
   return (
     <>
       <SEO {...seo} />
-      <SliceZone slices={project.data.slices} components={components} />
-      <Footer />
+
+      {auth === undefined && <Loading />}
+      {auth === false && <Login />}
+      {auth === true && (
+        <>
+          <SliceZone slices={project.data.slices} components={components} />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

@@ -30,10 +30,10 @@ export default function TextAndBoxes({ heading, text, boxedTexts }: Props) {
   return (
     <section className="py-12 md:py-24 relative">
       <div className="container max-w-6xl mx-auto text-cream">
-        <Text as="h1" variant="heading2">
+        <Text className="text-green-blue" as="h1" variant="heading2">
           {heading}
         </Text>
-        <div className="md:w-1/2 mb-5 md:mb-10">
+        <div className="md:w-2/3 mb-5 md:mb-10">
           <RichText data={text} />
         </div>
         <div className="grid gap-10">

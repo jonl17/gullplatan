@@ -1,6 +1,4 @@
-import cn from 'classnames'
-import { useRouter } from 'next/router'
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
@@ -13,7 +11,6 @@ type Props = {
 }
 
 const Layout = ({ children, pageProps: { background = '#41B3A3' } }: Props) => {
-  const { asPath, query } = useRouter()
   const { open } = useBurgerMenu()
 
   useEffect(() => {

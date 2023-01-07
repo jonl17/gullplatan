@@ -130,6 +130,12 @@
           }
         }
       }
+    },
+    "ProjectListSlice": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

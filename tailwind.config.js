@@ -12,6 +12,7 @@ module.exports = {
       '120/151.2': ['120px', '151.2px'],
       '30/40': ['30px', '40px'],
       '8vw/1': ['8vw', '1'],
+      '30/141%': ['30px', '141%'],
     },
     fontFamily: {
       'buenos-black': ['buenos-aires-black', 'sans-serif'],
