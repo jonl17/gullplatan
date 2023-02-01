@@ -1,36 +1,59 @@
 {
-  "id": "mock-doc-id",
-  "url": null,
-  "type": "homepage",
-  "href": null,
-  "tags": [],
-  "first_publication_date": "1970-01-01T00:00:01+0000",
-  "last_publication_date": "1970-01-01T00:00:01+0000",
-  "slugs": [],
-  "linked_documents": [],
-  "lang": "en-us",
-  "alternate_languages": [],
-  "data": {
-    "name": "tall",
-    "image": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+  "name": {
+    "__TYPE__": "FieldContent",
+    "value": "tool",
+    "type": "Text"
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+      "width": 3958,
+      "height": 3958
     },
-    "page_title": "measure",
-    "page_description": "queen",
-    "page_image": {
-      "dimensions": {
-        "width": 1200,
-        "height": 630
+    "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb",
+    "width": 3958,
+    "height": 3958,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
       },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
-    }
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "page_title": {
+    "__TYPE__": "FieldContent",
+    "value": "putting",
+    "type": "Text"
+  },
+  "page_description": {
+    "__TYPE__": "FieldContent",
+    "value": "plant",
+    "type": "Text"
+  },
+  "page_image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+      "width": 3277,
+      "height": 4092
+    },
+    "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?rect=0%2C1186%2C3277%2C1720&w=1200&h=630",
+    "width": 1200,
+    "height": 630,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 1186
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
   }
 }

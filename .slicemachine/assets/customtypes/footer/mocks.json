@@ -1,23 +1,29 @@
 {
-  "id": "mock-doc-id",
-  "url": null,
-  "type": "footer",
-  "href": null,
-  "tags": [],
-  "first_publication_date": "1970-01-01T00:00:01+0000",
-  "last_publication_date": "1970-01-01T00:00:01+0000",
-  "slugs": [],
-  "linked_documents": [],
-  "lang": "en-us",
-  "alternate_languages": [],
-  "data": {
-    "links": [
+  "links": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        },
-        "label": "composed"
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
+            }
+          ],
+          [
+            "label",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "contain",
+              "type": "Text"
+            }
+          ]
+        ]
       }
     ]
   }

@@ -1,42 +1,76 @@
 {
-  "id": "mock-doc-id",
-  "url": null,
-  "type": "new_menu",
-  "href": null,
-  "tags": [],
-  "first_publication_date": "1970-01-01T00:00:01+0000",
-  "last_publication_date": "1970-01-01T00:00:01+0000",
-  "slugs": [],
-  "linked_documents": [],
-  "lang": "en-us",
-  "alternate_languages": [],
-  "data": {
-    "label": "fog",
-    "svg_title": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+  "label": {
+    "__TYPE__": "FieldContent",
+    "value": "rising",
+    "type": "Text"
+  },
+  "svg_title": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+      "width": 5616,
+      "height": 3744
     },
-    "image": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
+    "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+    "width": 5616,
+    "height": 3744,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
       },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869"
+      "background": "transparent"
     },
-    "submenu": [
+    "thumbnails": {}
+  },
+  "image": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+      "width": 4000,
+      "height": 4000
+    },
+    "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
+    "width": 4000,
+    "height": 4000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "submenu": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "label": "blood",
-        "link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "label",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "that",
+              "type": "Text"
+            }
+          ],
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            }
+          ]
+        ]
       }
     ]
   }
