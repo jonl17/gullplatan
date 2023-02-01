@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
     props: {
       page,
       seo,
+      background: page.data.background,
     },
   }
 }
