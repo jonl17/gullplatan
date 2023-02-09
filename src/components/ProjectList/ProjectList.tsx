@@ -22,28 +22,30 @@ export default function ProjectList({ svgTitle, projects }: Props) {
           </motion.span>
         </div>
         <div className="grid gap-10">
-          {projects.map((project, key) => (
-            <Link
-              key={key}
-              href={linkResolver({
-                type: project.type,
-                id: project.id,
-                lang: project.lang,
-                link_type: 'Document',
-                uid: project.uid,
-                tags: [],
-              })}
-            >
-              <a className="hover:text-green-blue">
-                <BorderBox connector={key !== projects.length - 1}>
-                  <div className="py-5">
-                    <Text variant="heading2">{project.data.title}</Text>
-                    <Text>{project.data.subtitle}</Text>
-                  </div>
-                </BorderBox>
-              </a>
-            </Link>
-          ))}
+          {projects
+            .filter((project) => project)
+            .map((project, key) => (
+              <Link
+                key={key}
+                href={linkResolver({
+                  type: project.type,
+                  id: project.id,
+                  lang: project.lang,
+                  link_type: 'Document',
+                  uid: project.uid,
+                  tags: [],
+                })}
+              >
+                <a className="hover:text-green-blue">
+                  <BorderBox connector={key !== projects.length - 1}>
+                    <div className="py-5">
+                      <Text variant="heading2">{project.data.title}</Text>
+                      <Text>{project.data.subtitle}</Text>
+                    </div>
+                  </BorderBox>
+                </a>
+              </Link>
+            ))}
         </div>
       </div>
     </section>

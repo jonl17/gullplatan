@@ -1,22 +1,37 @@
-import { motion } from 'framer-motion'
+import { MotionValue, motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import { useRef } from 'react'
 import { ImageType, IMenu } from '~/types'
-import ContactInfo from '../ContactInfo/ContactInfo'
-import MenuButtonDropdown from '../MenuButtonDropdown/MenuButtonDropdown'
+import Text from '../Text'
+// import ContactInfo from '../ContactInfo/ContactInfo'
+// import MenuButtonDropdown from '../MenuButtonDropdown/MenuButtonDropdown'
 
 type Props = {
   heroImages: Array<ImageType>
   menu: IMenu[]
 }
 
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance])
+}
+
 const DesktopFrontpage = ({ heroImages, menu }: Props) => {
+  const ref = useRef<null | HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  })
+  const leftY = useParallax(scrollYProgress, 100)
+  const rightY = useParallax(scrollYProgress, 200)
+
   return (
-    <div className="relative top-24 w-full hidden lg:block">
+    <div ref={ref} className="relative top-0 w-full hidden lg:block h-[3000px]">
       <motion.div
+        ref={ref}
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[25vw] fixed left-10 top-32"
+        className="w-[50vw] absolute left-10 top-32"
+        style={{ y: leftY }}
       >
         <Image
           objectFit="contain"
@@ -31,7 +46,8 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
         initial={{ opacity: 0, x: 10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[25vw] fixed right-10 top-32"
+        className="w-[65vw] absolute right-10 top-40"
+        style={{ y: rightY }}
       >
         <Image
           objectFit="contain"
@@ -42,12 +58,21 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
           alt={heroImages[1].alt ?? 'frontpage image'}
         />
       </motion.div>
-      <div className="text-center grid gap-2 place-content-center h-full mb-16 md:mb-36">
+      <div className="absolute top-0 left-0 h-screen w-full grid place-content-center">
+        <Text
+          className="text-8vw/1 text-cream z-10"
+          as="h1"
+          variant="pageHeading"
+        >
+          Gullplatan
+        </Text>
+      </div>
+      {/* <div className="text-center grid gap-2 justify-center h-full mb-16 md:mb-36">
         {menu.map((item, key) => (
           <MenuButtonDropdown {...item} key={key} />
         ))}
-      </div>
-      <ContactInfo />
+      </div> */}
+      {/* <ContactInfo /> */}
     </div>
   )
 }

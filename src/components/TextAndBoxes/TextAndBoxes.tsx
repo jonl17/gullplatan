@@ -1,9 +1,12 @@
-import RichText from '~/components/RichText'
-import Text from '~/components/Text'
 import { Elements, RichTextBlock } from 'prismic-reactjs'
-import BorderBox from '../BorderBox'
-import { FieldRenderFunctionInput, FieldRenderMap } from '../RichText/types'
-import Seperator from '../Seperator'
+import BorderBox from '~/components/BorderBox'
+import RichText from '~/components/RichText'
+import {
+  FieldRenderFunctionInput,
+  FieldRenderMap,
+} from '~/components/RichText/types'
+import Seperator from '~/components/Seperator'
+import Text from '~/components/Text'
 
 type Props = {
   heading: string
