@@ -34,7 +34,7 @@ const Layout = ({ children, pageProps: { background = '#5E364A' } }: Props) => {
           id="grain-bg"
           className="fixed top-0 left-0 opacity-50 h-screen w-screen"
         />
-        <Navbar />
+        {/* <Navbar /> */}
         {open && <BurgerMenu />}
         <div className="relative">{children}</div>
       </main>

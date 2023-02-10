@@ -10,15 +10,17 @@ type Props = {
 export default function SvgTitle({ image, className }: Props) {
   return (
     <div className={cn(className)}>
-      <Image
-        objectFit="contain"
-        className="w-full"
-        src={image.url}
-        alt={image.alt}
-        height={image.dimensions.height}
-        width={image.dimensions.width}
-        layout="responsive"
-      />
+      <span>
+        <Image
+          objectFit="contain"
+          className="w-full animate-print"
+          src={image.url}
+          alt={image.alt}
+          height={image.dimensions.height}
+          width={image.dimensions.width}
+          layout="responsive"
+        />
+      </span>
     </div>
   )
 }

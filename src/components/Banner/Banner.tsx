@@ -12,7 +12,6 @@ type Props = {
 }
 
 export default function Banner({ svgTitle, video }: Props) {
-  console.log({ video })
   return (
     <section className="min-h-screen relative bg-green-blue grid place-content-center">
       <span className="grain bg-contain min-h-screen fixed top-0 left-0 w-full opacity-75" />
@@ -26,7 +25,7 @@ export default function Banner({ svgTitle, video }: Props) {
         </Text>
         <div className="relative  py-10 w-full">
           <video
-            className="md:rounded-[29px] h-auto md:h-[35vh] xl:h-[45vh] mx-auto w-full md:w-auto aspect-video"
+            className="md:rounded-[29px] h-auto md:h-[35vh] xl:h-[42vh] mx-auto w-full md:w-auto aspect-video"
             autoPlay
             muted
             loop

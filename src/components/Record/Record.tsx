@@ -25,7 +25,7 @@ export default function Record() {
     <Link passHref href="/">
       <motion.a
         onClick={() => setGlobalAudioState('paused')}
-        className="sticky left-5"
+        className="sticky left-5 top-5"
       >
         <div>
           <svg

@@ -124,6 +124,14 @@ module.exports = {
           transform: 'rotate(360deg)',
         },
       },
+      print: {
+        '0%': {
+          'clip-path': 'inset(0 100% 0 0)',
+        },
+        '100%': {
+          'clip-path': 'inset(0 0% 0 0)',
+        },
+      },
     },
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
@@ -135,6 +143,7 @@ module.exports = {
         'border-appear-bottom-left 0.5s 0.4s forwards',
       'connector-grow': 'connector-grow 0.2s 0.9s forwards',
       'album-spin': 'album-spin 5s linear forwards infinite',
+      print: 'print 3s linear forwards',
     },
     extend: {
       container: {

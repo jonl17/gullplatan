@@ -8,6 +8,7 @@ import DesktopFrontpage from '~/components/DesktopFrontpage'
 import Footer from '~/components/Footer'
 import MobileFrontpage from '~/components/MobileFrontpage/MobileFrontpage'
 import SEO from '~/components/SEO'
+import StickyNavbar from '~/components/StickyNavbar/StickyNavbar'
 import { HomepageDocument } from '~/prismic-types.generated'
 import { serviceGlobalSettings } from '~/services'
 import { ImageType, IMenu, ISeo } from '~/types'
@@ -54,7 +55,8 @@ const Home: NextPage<HomePageProps> = ({
         video={homepage.data.video as { url: string }}
         svgTitle={homepage.data.image as ImageType}
       />
-      <div>
+      <div className="relative pt-16">
+        <StickyNavbar />
         <SliceZone slices={homepage.data.slices} components={components} />
       </div>
       <Footer />
