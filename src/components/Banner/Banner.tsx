@@ -26,7 +26,7 @@ export default function Banner({ svgTitle, video }: Props) {
         </Text>
         <div className="relative  py-10 w-full">
           <video
-            className="md:rounded-[29px] h-auto md:h-[45vh] mx-auto w-full md:w-auto aspect-video"
+            className="md:rounded-[29px] h-auto md:h-[35vh] xl:h-[45vh] mx-auto w-full md:w-auto aspect-video"
             autoPlay
             muted
             loop
@@ -38,7 +38,7 @@ export default function Banner({ svgTitle, video }: Props) {
           <Text variant="heading2" className="text-green mb-5">
             Hefja leiðangur
           </Text>
-          <Arrow className="text-green" />
+          <Arrow className="text-green w-32" />
         </button>
       </div>
       <Seperator className="-bottom-[14px] md:-bottom-[39px]" double />
