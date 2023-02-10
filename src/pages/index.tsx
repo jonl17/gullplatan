@@ -3,6 +3,7 @@ import { createClient, linkResolver } from '@root/prismicio'
 import { components } from '@root/slices'
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import Alien from '~/components/Alien'
 import Banner from '~/components/Banner'
 import DesktopFrontpage from '~/components/DesktopFrontpage'
 import Footer from '~/components/Footer'
@@ -60,6 +61,7 @@ const Home: NextPage<HomePageProps> = ({
         <SliceZone slices={homepage.data.slices} components={components} />
       </div>
       <Footer />
+      <Alien />
     </>
   )
 }
