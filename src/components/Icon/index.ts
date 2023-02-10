@@ -1,5 +1,5 @@
-import React from 'react'
-import PlayButton from './icons/Play'
+import Arrow from './icons/Arrow'
 import PauseButton from './icons/Pause'
+import PlayButton from './icons/Play'
 
-export { PlayButton, PauseButton }
+export { PlayButton, PauseButton, Arrow }

@@ -26,7 +26,10 @@
           "type": "Link",
           "config": {
             "label": "sound",
-            "select": "document"
+            "select": "document",
+            "customtypes": [
+              "sound"
+            ]
           }
         },
         "description_of_sound": {

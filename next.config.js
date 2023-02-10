@@ -2,9 +2,20 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['images.prismic.io'],
-    loader: 'imgix',
-    path: '',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'gullplatan.cdn.prismic.io',
+        port: '',
+        pathname: '/gullplatan/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.prismic.io',
+        port: '',
+        pathname: '/gullplatan/**',
+      },
+    ],
   },
 }
 

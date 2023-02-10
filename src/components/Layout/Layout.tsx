@@ -10,7 +10,7 @@ type Props = {
   }
 }
 
-const Layout = ({ children, pageProps: { background = '#41B3A3' } }: Props) => {
+const Layout = ({ children, pageProps: { background = '#5E364A' } }: Props) => {
   const { open } = useBurgerMenu()
 
   useEffect(() => {

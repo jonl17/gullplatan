@@ -30,9 +30,9 @@ const Navbar = () => {
               className="grid grid-cols-[auto,1fr] gap-10 justify-start place-items-center"
             >
               <span className="w-14 h-14" />
-              <Text variant="logo" as="h1">
+              {/* <Text variant="logo" as="h1">
                 gullplatan
-              </Text>
+              </Text> */}
             </motion.a>
           </Link>
         </div>

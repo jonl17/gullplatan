@@ -30,7 +30,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[50vw] absolute left-10 top-32"
+        className="w-[35vw] absolute left-10 top-40"
         style={{ y: leftY }}
       >
         <Image
@@ -46,7 +46,7 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
         initial={{ opacity: 0, x: 10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8 }}
-        className="w-[65vw] absolute right-10 top-40"
+        className="w-[50vw] absolute right-10 top-40"
         style={{ y: rightY }}
       >
         <Image
@@ -60,13 +60,14 @@ const DesktopFrontpage = ({ heroImages, menu }: Props) => {
       </motion.div>
       <div className="absolute top-0 left-0 h-screen w-full grid place-content-center">
         <Text
-          className="text-8vw/1 text-cream z-10"
+          className="text-41/49.2 text-cream z-10"
           as="h1"
-          variant="pageHeading"
+          variant="heading1"
         >
           Gullplatan
         </Text>
       </div>
+      <Image src="/alien.png" alt="alient" height={150} width={150} />
       {/* <div className="text-center grid gap-2 justify-center h-full mb-16 md:mb-36">
         {menu.map((item, key) => (
           <MenuButtonDropdown {...item} key={key} />
