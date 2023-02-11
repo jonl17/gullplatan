@@ -18,9 +18,7 @@ type Props = {
 }
 
 const Layout = ({ children, pageProps: { menu } }: Props) => {
-  const { open, setOpen } = useBurgerMenu()
-
-  console.log(menu)
+  const { open } = useBurgerMenu()
 
   useEffect(() => {
     if (document) {

@@ -4,6 +4,7 @@ import { documentToLinkField } from '@prismicio/helpers'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useBurgerMenu } from '~/store/burger-menu'
+import ContactInfo from '../ContactInfo/ContactInfo'
 
 export default function Menu({ items }: MenuDocument['data']) {
   const { setOpen } = useBurgerMenu()
@@ -15,7 +16,7 @@ export default function Menu({ items }: MenuDocument['data']) {
       animate={{ x: '0' }}
       exit={{ x: '100%' }}
       transition={{ bounce: 0 }}
-      className="fixed right-0 top-0 h-screen w-full md:w-[500px] bg-purple z-50"
+      className="fixed right-0 top-0 h-screen w-full md:w-[500px] bg-purple z-50 grid gap-10"
     >
       <motion.button
         whileTap={{ scale: 0.9 }}
@@ -36,7 +37,7 @@ export default function Menu({ items }: MenuDocument['data']) {
           <path d="M3 23L28 3" className="stroke-current" strokeWidth="2" />
         </svg>
       </motion.button>
-      <div className="max-w-md mx-auto">
+      <div className="px-5 md:px-0 w-full md:max-w-md mx-auto">
         <section>
           <motion.span
             className="h-full block"
@@ -63,14 +64,21 @@ export default function Menu({ items }: MenuDocument['data']) {
             }
             key={idx}
           >
-            <a onClick={() => setOpen(false)} className="h-100 w-100 block">
-              <p className="text-60/72 text-cream font-buenos-light">
+            <a
+              onClick={() => setOpen(false)}
+              className="h-100 w-100 block mb-5"
+            >
+              <p className="text-40/48 md:text-60/72 text-cream font-buenos-black">
                 {item.postfix}
               </p>
             </a>
           </Link>
         ))}
       </div>
+
+      <section className="relative">
+        <ContactInfo />
+      </section>
     </motion.aside>
   )
 }
