@@ -31,9 +31,10 @@ export const getStaticProps: GetStaticProps = async ({
   }
 
   const client = createClient({ previewData })
-  const page = (await client.getByUID('page', params.uid as string, {
-    fetchLinks: ['project.title', 'project.subtitle'],
-  })) as PageDocument
+  const page = (await client.getByUID(
+    'page',
+    params.uid as string
+  )) as PageDocument
 
   const seo: ISeo = {
     title: page.data.page_title as string,
@@ -41,11 +42,14 @@ export const getStaticProps: GetStaticProps = async ({
     image: page.data.page_image as ImageType,
   }
 
+  const menu = await client.getSingle('menu')
+
   return {
     props: {
       page,
       seo,
       background: page.data.background,
+      menu,
     },
   }
 }
@@ -59,7 +63,12 @@ const UIDPage: NextPage<Props> = ({ page, seo }) => {
   return (
     <>
       <SEO {...seo} />
-      <SliceZone slices={page.data.slices} components={components} />
+      <div
+        className="grain"
+        style={{ backgroundColor: page.data.background as string }}
+      >
+        <SliceZone slices={page.data.slices} components={components} />
+      </div>
       <Footer />
     </>
   )

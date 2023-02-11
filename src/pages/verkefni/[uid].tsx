@@ -44,11 +44,14 @@ export const getStaticProps: GetStaticProps = async ({
     image: project.data.page_image as ImageType,
   }
 
+  const menu = await client.getSingle('menu')
+
   return {
     props: {
       project,
       seo,
       background: project.data.background,
+      menu,
     },
   }
 }
@@ -69,7 +72,12 @@ const ProjectPage: NextPage<Props> = ({ project, seo }) => {
       {auth === false && <Login />}
       {auth === true && (
         <>
-          <SliceZone slices={project.data.slices} components={components} />
+          <div
+            className="grain"
+            style={{ backgroundColor: project.data.background as string }}
+          >
+            <SliceZone slices={project.data.slices} components={components} />
+          </div>
           <Footer />
         </>
       )}

@@ -58,9 +58,11 @@ export default function Menu({ items }: MenuDocument['data']) {
           <Link
             passHref
             href={
-              documentToLinkField(item.link as any).id
-                ? documentToLinkField(item.link as any).uid ?? '/'
-                : `#${item.link_id}`
+              item.link.id
+                ? item.link.uid
+                  ? `/${item.link.uid}`
+                  : '/'
+                : `/#${item.link_id}`
             }
             key={idx}
           >
@@ -68,7 +70,7 @@ export default function Menu({ items }: MenuDocument['data']) {
               onClick={() => setOpen(false)}
               className="h-100 w-100 block mb-5"
             >
-              <p className="text-40/48 md:text-60/72 text-cream font-buenos-black">
+              <p className="hover:text-green text-40/48 md:text-60/72 text-cream font-buenos-black">
                 {item.postfix}
               </p>
             </a>
