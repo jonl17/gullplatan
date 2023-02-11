@@ -47,19 +47,17 @@ const AllProjectsPage: NextPage<Props> = ({ page, seo }) => {
   return (
     <>
       <SEO {...seo} />
-      {auth === undefined && <Loading />}
-      {auth === false && <Login />}
-      {auth === true && (
-        <>
-          <div
-            style={{ backgroundColor: page.data.background as string }}
-            className="grain"
-          >
-            <SliceZone slices={page.data.slices} components={components} />
-          </div>
-          <Footer />
-        </>
-      )}
+      <div
+        style={{ backgroundColor: page.data.background as string }}
+        className="grain"
+      >
+        {auth === undefined && <Loading />}
+        {auth === false && <Login />}
+        {auth === true && (
+          <SliceZone slices={page.data.slices} components={components} />
+        )}
+      </div>
+      <Footer />
     </>
   )
 }
