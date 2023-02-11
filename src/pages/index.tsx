@@ -54,12 +54,12 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
       <Banner
         video={[
           {
-            url: asLink(homepage.data.video) as string,
-            type: 'video/webm',
-          },
-          {
             url: asLink(homepage.data.video_backup) as string,
             type: "video/mp4; codecs=hvc1'",
+          },
+          {
+            url: asLink(homepage.data.video) as string,
+            type: 'video/webm',
           },
         ]}
         svgTitle={homepage.data.image as ImageType}
@@ -70,13 +70,14 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
 
         <StickyNavbar />
 
-        <div className="relative">
+        <div id="Leiðangur 1977" className="relative">
           <SliceZone slices={homepage.data.slices} components={components} />
         </div>
 
         {/* a simple hack to display chosen page slices on the homepage */}
         {pages.map((page, key) => (
           <div
+            id="Leiðangur 2023"
             style={{ backgroundColor: page.data.background as string }}
             className="grain"
             key={key}
