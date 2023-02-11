@@ -6,8 +6,12 @@ import Layout from '~/components/Layout'
 import '~/styles/globals.css'
 import { createClient, linkResolver, repositoryName } from '../../prismicio'
 import { AuthProvider } from '../context/auth'
+import { MenuDocument } from '~/prismic-types.generated'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({
+  Component,
+  pageProps,
+}: AppProps & { pageProps: { menu: MenuDocument } }) {
   const client = createClient()
   return (
     <PrismicProvider
