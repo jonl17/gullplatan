@@ -1,25 +1,33 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export default function Alien() {
+type Props = {
+  children: React.ReactElement
+}
+
+const OFFSET = 150
+
+export default function Alien({ children }: Props) {
   const [mouse, setMouse] = useState({ x: 500, y: 500 })
+
   const [opacity, setOpacity] = useState(0)
 
   useEffect(() => {
     const callback = (e: MouseEvent) => {
-      const ex = e.x - 100
-      const ey = e.y - 100
+      const ex = e.x - OFFSET
+      const ey = e.y - OFFSET
 
       const handleX = () => {
         if (ex < 50) return 50
-        else if (ex > window.innerWidth - 150) return window.innerWidth - 200
+        else if (ex > window.innerWidth - OFFSET) return window.innerWidth - 200
         else return ex
       }
 
       const handleY = () => {
         if (ey < 50) return 50
-        else if (ey > window.innerHeight - 150) return window.innerHeight - 200
+        else if (ey > window.innerHeight - OFFSET)
+          return window.innerHeight - 200
         else return ey
       }
 
@@ -38,18 +46,10 @@ export default function Alien() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ x: mouse.x, y: mouse.y, opacity }}
-      transition={{ duration: 0.6, damping: 900 }}
-      className="z-50 hidden md:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
+      transition={{ duration: 0.8 }}
+      className="z-50 hidden lg:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
     >
-      <motion.span className="translate-x-44">
-        <Image
-          className="rotate-12"
-          alt="Geimverann"
-          src="/alien.png"
-          height={100}
-          width={100}
-        />
-      </motion.span>
+      {children}
     </motion.div>
   )
 }

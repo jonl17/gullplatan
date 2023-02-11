@@ -17,8 +17,6 @@ const Navbar = () => {
 
   return (
     <>
-      <StickyNavbar />
-
       <motion.nav className="text-cream absolute top-0 z-50 left-0 h-36">
         <div className="flex h-full justify-between relative w-full">
           <Link href="/" passHref>

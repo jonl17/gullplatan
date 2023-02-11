@@ -132,6 +132,14 @@ module.exports = {
           'clip-path': 'inset(0 0% 0 0)',
         },
       },
+      float: {
+        '0%': {
+          transform: 'rotate(-15deg)',
+        },
+        '100%': {
+          transform: 'rotate(10deg)',
+        },
+      },
     },
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
@@ -144,6 +152,7 @@ module.exports = {
       'connector-grow': 'connector-grow 0.2s 0.9s forwards',
       'album-spin': 'album-spin 5s linear forwards infinite',
       print: 'print 3s linear forwards',
+      float: 'float 4s infinite alternate',
     },
     extend: {
       container: {

@@ -8,6 +8,7 @@ import { MenuDocument } from '~/prismic-types.generated'
 import Alien from '../Alien/Alien'
 import { AnimatePresence } from 'framer-motion'
 import Burger from '../Burger/Burger'
+import Image from 'next/image'
 
 type Props = {
   children: React.ReactNode
@@ -37,7 +38,15 @@ const Layout = ({ children, pageProps: { menu } }: Props) => {
         <AnimatePresence>{open && <Menu {...menu.data} />}</AnimatePresence>
       </main>
       <Burger />
-      <Alien />
+      <Alien>
+        <Image
+          className="animate-float"
+          alt="Geimverann"
+          src="/alien.png"
+          height={100}
+          width={100}
+        />
+      </Alien>
     </>
   )
 }
