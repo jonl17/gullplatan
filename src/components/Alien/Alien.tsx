@@ -39,9 +39,17 @@ export default function Alien() {
       initial={{ opacity: 0 }}
       animate={{ x: mouse.x, y: mouse.y, opacity }}
       transition={{ duration: 0.6, damping: 900 }}
-      className="inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
+      className="hidden md:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
     >
-      <Image alt="Geimverann" src="/alien.png" height={100} width={100} />
+      <motion.span className="translate-x-44">
+        <Image
+          className="rotate-12"
+          alt="Geimverann"
+          src="/alien.png"
+          height={100}
+          width={100}
+        />
+      </motion.span>
     </motion.div>
   )
 }

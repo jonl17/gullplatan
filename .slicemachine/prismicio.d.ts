@@ -292,6 +292,17 @@ interface HomepageDocumentData {
      */
     video: prismicT.LinkToMediaField;
     /**
+     * video backup field in *homepage*
+     *
+     * - **Field Type**: Link to Media
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.video_backup
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    video_backup: prismicT.LinkToMediaField;
+    /**
      * Slice Zone field in *homepage*
      *
      * - **Field Type**: Slice Zone

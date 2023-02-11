@@ -26,14 +26,14 @@ const Layout = ({ children, pageProps: { background = '#5E364A' } }: Props) => {
   return (
     <>
       <main className="transition-all min-h-screen h-full relative">
-        <span
+        {/* <span
           style={{ background }}
           className="fixed top-0 left-0 opacity-100 h-screen w-screen"
         />
         <div
           id="grain-bg"
           className="fixed top-0 left-0 opacity-50 h-screen w-screen"
-        />
+        /> */}
         {/* <Navbar /> */}
         {open && <BurgerMenu />}
         <div className="relative">{children}</div>

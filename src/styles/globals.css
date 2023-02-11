@@ -42,3 +42,7 @@
     mask: url('#mask');
   }
 }
+
+body {
+  overscroll-behavior-y: none;
+}

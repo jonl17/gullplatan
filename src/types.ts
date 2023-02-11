@@ -52,3 +52,8 @@ export interface ISeo {
   description: string
   image: ImageType
 }
+
+export type Video = {
+  url: string
+  type: string
+}

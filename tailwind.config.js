@@ -162,6 +162,7 @@ module.exports = {
           'background-size': '20%',
           'background-position': 'center',
           'background-repeat': 'repeat',
+          'background-attachment': 'fixed',
         },
         '.hide-vertically': {
           'clip-path': 'inset(0 0 100% 0)',

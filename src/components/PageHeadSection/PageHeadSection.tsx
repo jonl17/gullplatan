@@ -28,8 +28,6 @@ const PageHeadSection = ({ slice }: { slice: PageHeadSectionSlice }) => {
     </div>
   )
 
-  console.log(slice.variation)
-
   return (
     <section
       className={cn('pt-24 pb-12 text-green-blue relative', {
