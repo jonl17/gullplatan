@@ -54,7 +54,7 @@ export default function Menu({ items }: MenuDocument['data']) {
             />
           </motion.span>
         </section>
-        {items.map((item, idx) => (
+        {items.map((item: any, idx) => (
           <Link
             passHref
             href={
