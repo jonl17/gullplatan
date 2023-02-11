@@ -20,7 +20,7 @@ export default function Menu({ items }: MenuDocument['data']) {
     >
       <motion.button
         whileTap={{ scale: 0.9 }}
-        className="md:pr-5 pt-5 absolute top-10 right-10 text-green"
+        className="md:pr-5 pt-5 absolute top-5 right-10 text-green"
         onClick={() => setOpen(false)}
         initial={{ scale: 0.8 }}
         animate={{ scale: [0.8, 1.1, 1] }}

@@ -25,8 +25,9 @@ export default function Images({ description, images }: IImages) {
         </div>
 
         <div className="mt-10 md:mt-20">
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             <motion.div
+              key={currentImage.url}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
