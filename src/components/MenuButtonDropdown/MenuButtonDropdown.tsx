@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { IMenu } from '~/types'
 import SubmenuItem from '../SubmenuItem'
 import SvgTitle from '../SvgTitle'
+import Text from '../Text/Text'
 
 const MenuButtonDropdown = ({ label, submenu, svgImage }: IMenu) => {
   const [open, setOpen] = useState(false)
@@ -15,35 +16,22 @@ const MenuButtonDropdown = ({ label, submenu, svgImage }: IMenu) => {
         'text-green': open,
       })}
     >
-      {svgImage.url ? (
-        <SvgTitle className="w-[300px] md:w-[550px]" image={svgImage} />
-      ) : (
-        <motion.h1
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-            },
-          }}
-          initial="hidden"
-          animate="show"
-          className="font-buenos-black font-black lowercase text-41/49.2 md:text-8vw/1 mb-5"
+      <>
+        <Text className="text-60/72">{label}</Text>
+
+        <ul
+          className={cn('grid gap-3 transition-all', {
+            'hide-vertically text-cream': !open,
+            'clip-path-0 text-green': open,
+          })}
         >
-          {label}
-        </motion.h1>
-      )}
-      <ul
-        className={cn('grid gap-3 transition-all', {
-          'hide-vertically text-cream': !open,
-          'clip-path-0 text-green': open,
-        })}
-      >
-        {submenu.map((item, key) => (
-          <li key={key}>
-            <SubmenuItem {...item} />
-          </li>
-        ))}
-      </ul>
+          {submenu.map((item, key) => (
+            <li key={key}>
+              <SubmenuItem {...item} />
+            </li>
+          ))}
+        </ul>
+      </>
     </button>
   )
 }

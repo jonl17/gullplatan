@@ -1,6 +1,7 @@
 import { ImageType, Video } from '~/types'
 import { Arrow } from '../Icon'
 import Text from '../Text'
+import Link from 'next/link'
 
 type Props = {
   svgTitle: ImageType
@@ -24,12 +25,12 @@ export default function Banner({ svgTitle, video }: Props) {
             ))}
           </video>
         </div>
-        <button className="mx-auto max-w-lg text-center block">
+        <div className="mx-auto max-w-lg text-center block">
           <Text variant="heading2" className="text-green mb-5">
             Hefja leiðangur
           </Text>
           <Arrow className="text-green w-32" />
-        </button>
+        </div>
       </div>
     </section>
   )

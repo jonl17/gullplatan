@@ -2,16 +2,25 @@ import React, { useEffect } from 'react'
 import { useBurgerMenu } from '~/store/burger-menu'
 import BurgerMenu from '../BurgerMenu'
 import Navbar from '../Navbar'
+import Menu from '../Menu/Menu'
+import { IMenu } from '~/types'
+import { MenuDocument } from '~/prismic-types.generated'
+import Alien from '../Alien/Alien'
+import { AnimatePresence } from 'framer-motion'
+import Burger from '../Burger/Burger'
 
 type Props = {
   children: React.ReactNode
   pageProps: {
+    menu: MenuDocument
     background?: string
   }
 }
 
-const Layout = ({ children, pageProps: { background = '#5E364A' } }: Props) => {
-  const { open } = useBurgerMenu()
+const Layout = ({ children, pageProps: { menu } }: Props) => {
+  const { open, setOpen } = useBurgerMenu()
+
+  console.log(menu)
 
   useEffect(() => {
     if (document) {
@@ -26,18 +35,11 @@ const Layout = ({ children, pageProps: { background = '#5E364A' } }: Props) => {
   return (
     <>
       <main className="transition-all min-h-screen h-full relative">
-        {/* <span
-          style={{ background }}
-          className="fixed top-0 left-0 opacity-100 h-screen w-screen"
-        />
-        <div
-          id="grain-bg"
-          className="fixed top-0 left-0 opacity-50 h-screen w-screen"
-        /> */}
-        {/* <Navbar /> */}
-        {open && <BurgerMenu />}
         <div className="relative">{children}</div>
+        <AnimatePresence>{open && <Menu {...menu.data} />}</AnimatePresence>
       </main>
+      <Burger />
+      <Alien />
     </>
   )
 }

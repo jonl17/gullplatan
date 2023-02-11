@@ -5,42 +5,42 @@
   "status": true,
   "json": {
     "Main": {
-      "label": {
-        "type": "Text",
-        "config": {
-          "label": "label",
-          "placeholder": ""
-        }
-      },
-      "submenu": {
+      "items": {
         "type": "Group",
         "config": {
-          "label": "submenu",
+          "label": "items",
           "fields": {
-            "label": {
-              "type": "Text",
+            "svg": {
+              "type": "Image",
               "config": {
-                "label": "label",
-                "placeholder": ""
+                "label": "svg",
+                "constraint": {},
+                "thumbnails": []
               }
             },
-            "page": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "page",
+                "label": "link",
                 "placeholder": "",
                 "select": null
               }
+            },
+            "link_id": {
+              "type": "Text",
+              "config": {
+                "label": "link id",
+                "placeholder": ""
+              }
+            },
+            "postfix": {
+              "type": "Text",
+              "config": {
+                "label": "postfix",
+                "placeholder": ""
+              }
             }
           }
-        }
-      },
-      "mobile_image": {
-        "type": "Image",
-        "config": {
-          "label": "mobile image",
-          "constraint": {},
-          "thumbnails": []
         }
       },
       "slices": {

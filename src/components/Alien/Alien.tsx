@@ -39,7 +39,7 @@ export default function Alien() {
       initial={{ opacity: 0 }}
       animate={{ x: mouse.x, y: mouse.y, opacity }}
       transition={{ duration: 0.6, damping: 900 }}
-      className="hidden md:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
+      className="z-50 hidden md:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
     >
       <motion.span className="translate-x-44">
         <Image

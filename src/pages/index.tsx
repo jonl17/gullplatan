@@ -5,16 +5,22 @@ import { components } from '@root/slices'
 import type { GetStaticProps, NextPage } from 'next'
 import Alien from '~/components/Alien'
 import Banner from '~/components/Banner'
+import BurgerMenu from '~/components/BurgerMenu/BurgerMenu'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import Seperator from '~/components/Seperator/Seperator'
 import StickyNavbar from '~/components/StickyNavbar/StickyNavbar'
-import { HomepageDocument, PageDocument } from '~/prismic-types.generated'
+import {
+  HomepageDocument,
+  MenuDocument,
+  PageDocument,
+} from '~/prismic-types.generated'
 import { serviceGlobalSettings } from '~/services'
-import { ISeo, ImageType } from '~/types'
+import { useBurgerMenu } from '~/store/burger-menu'
+import { IMenu, ISeo, ImageType } from '~/types'
 
 export const getStaticProps: GetStaticProps = async ({ previewData }) => {
-  const { menu, heroImages, title } = await serviceGlobalSettings()
+  const { heroImages, title } = await serviceGlobalSettings()
   const client = createClient({ previewData })
   const homepage = await client.getSingle('homepage')
   const seo: ISeo = {
@@ -25,6 +31,8 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
 
   const page1 = await client.getByUID('page', 'leiðangur-77')
   const page2 = await client.getByUID('page', 'leiðangur-23')
+
+  const menu = await client.getSingle('menu')
 
   return {
     props: {
@@ -39,7 +47,6 @@ export const getStaticProps: GetStaticProps = async ({ previewData }) => {
 }
 
 type HomePageProps = {
-  menu: any[]
   heroImages: Array<ImageType>
   title: string
   seo: ISeo
@@ -65,19 +72,19 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
         svgTitle={homepage.data.image as ImageType}
       />
 
-      <div className="relative bg-deep-purple grain pt-6">
-        <Seperator className="top-0" />
+      <div className="relative bg-deep-purple grain pt-16">
+        <Seperator double className="top-0 text-green h-6 md:h-12" />
 
         <StickyNavbar />
 
-        <div id="Leiðangur 1977" className="relative">
+        <div className="relative">
           <SliceZone slices={homepage.data.slices} components={components} />
         </div>
 
         {/* a simple hack to display chosen page slices on the homepage */}
         {pages.map((page, key) => (
           <div
-            id="Leiðangur 2023"
+            id={page.uid}
             style={{ backgroundColor: page.data.background as string }}
             className="grain"
             key={key}
@@ -87,7 +94,6 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
         ))}
       </div>
       <Footer />
-      <Alien />
     </>
   )
 }

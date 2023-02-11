@@ -6,7 +6,7 @@ export default function Burger() {
   return (
     <motion.button
       onClick={() => setOpen(true)}
-      className="pr-0 md:pr-5 sticky top-5 right-5"
+      className="pr-0 md:pr-5 fixed top-10 right-10 z-40"
       whileTap={{ scale: 0.9 }}
     >
       <svg
@@ -15,10 +15,11 @@ export default function Burger() {
         viewBox="0 0 26 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="text-green"
       >
-        <path d="M0 3H26" stroke="#41B3A3" strokeWidth="6" />
-        <path d="M0 21H26" stroke="#41B3A3" strokeWidth="6" />
-        <path d="M0 12H26" stroke="#41B3A3" strokeWidth="2" />
+        <path d="M0 3H26" className="stroke-current" strokeWidth="6" />
+        <path d="M0 21H26" className="stroke-current" strokeWidth="6" />
+        <path d="M0 12H26" className="stroke-current" strokeWidth="2" />
       </svg>
     </motion.button>
   )

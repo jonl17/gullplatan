@@ -365,38 +365,16 @@ export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDoc
 /** Content for menu documents */
 interface MenuDocumentData {
     /**
-     * label field in *menu*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: menu.label
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    label: prismicT.KeyTextField;
-    /**
-     * submenu field in *menu*
+     * items field in *menu*
      *
      * - **Field Type**: Group
      * - **Placeholder**: *None*
-     * - **API ID Path**: menu.submenu[]
+     * - **API ID Path**: menu.items[]
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/group
      *
      */
-    submenu: prismicT.GroupField<Simplify<MenuDocumentDataSubmenuItem>>;
-    /**
-     * mobile image field in *menu*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: menu.mobile_image
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    mobile_image: prismicT.ImageField<never>;
+    items: prismicT.GroupField<Simplify<MenuDocumentDataItemsItem>>;
     /**
      * Slice Zone field in *menu*
      *
@@ -410,30 +388,50 @@ interface MenuDocumentData {
     slices: prismicT.SliceZone<MenuDocumentDataSlicesSlice>;
 }
 /**
- * Item in menu → submenu
+ * Item in menu → items
  *
  */
-export interface MenuDocumentDataSubmenuItem {
+export interface MenuDocumentDataItemsItem {
     /**
-     * label field in *menu → submenu*
+     * svg field in *menu → items*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: menu.submenu[].label
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **API ID Path**: menu.items[].svg
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    label: prismicT.KeyTextField;
+    svg: prismicT.ImageField<never>;
     /**
-     * page field in *menu → submenu*
+     * link field in *menu → items*
      *
      * - **Field Type**: Link
      * - **Placeholder**: *None*
-     * - **API ID Path**: menu.submenu[].page
+     * - **API ID Path**: menu.items[].link
      * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    page: prismicT.LinkField;
+    link: prismicT.LinkField;
+    /**
+     * link id field in *menu → items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: menu.items[].link_id
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    link_id: prismicT.KeyTextField;
+    /**
+     * postfix field in *menu → items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: menu.items[].postfix
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    postfix: prismicT.KeyTextField;
 }
 /**
  * Slice for *menu → Slice Zone*
@@ -1303,6 +1301,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CrewDocumentData, CrewDocument, FooterDocumentData, FooterDocumentDataLinksItem, FooterDocument, GlobalSettingsDocumentData, GlobalSettingsDocumentDataMainMenuItem, GlobalSettingsDocumentDataSocialMediaItem, GlobalSettingsDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MenuDocumentData, MenuDocumentDataSubmenuItem, MenuDocumentDataSlicesSlice, MenuDocument, NewMenuDocumentData, NewMenuDocumentDataSubmenuItem, NewMenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, SoundDocumentData, SoundDocument, AllDocumentTypes, CrewSectionSliceSliceDefaultPrimary, CrewSectionSliceSliceDefaultItem, CrewSectionSliceSliceDefault, CrewSectionSliceSliceVariation, CrewSectionSliceSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, ImagesSliceDefaultPrimary, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, PageHeadSectionSliceDefaultPrimary, PageHeadSectionSliceDefaultItem, PageHeadSectionSliceDefault, PageHeadSectionSliceProjectPageHeadPrimary, PageHeadSectionSliceProjectPageHeadItem, PageHeadSectionSliceProjectPageHead, PageHeadSectionSliceVariation, PageHeadSectionSlice, ProjectListSliceSliceDefaultPrimary, ProjectListSliceSliceDefaultItem, ProjectListSliceSliceDefault, ProjectListSliceSliceVariation, ProjectListSliceSlice, SoundsSliceDefaultPrimary, SoundsSliceDefaultItem, SoundsSliceDefault, SoundsSliceVariation, SoundsSlice, TextAndBoxesSliceDefaultPrimary, TextAndBoxesSliceDefaultItem, TextAndBoxesSliceDefault, TextAndBoxesSliceVariation, TextAndBoxesSlice };
+        export type { CrewDocumentData, CrewDocument, FooterDocumentData, FooterDocumentDataLinksItem, FooterDocument, GlobalSettingsDocumentData, GlobalSettingsDocumentDataMainMenuItem, GlobalSettingsDocumentDataSocialMediaItem, GlobalSettingsDocument, HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, MenuDocumentData, MenuDocumentDataItemsItem, MenuDocumentDataSlicesSlice, MenuDocument, NewMenuDocumentData, NewMenuDocumentDataSubmenuItem, NewMenuDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, SoundDocumentData, SoundDocument, AllDocumentTypes, CrewSectionSliceSliceDefaultPrimary, CrewSectionSliceSliceDefaultItem, CrewSectionSliceSliceDefault, CrewSectionSliceSliceVariation, CrewSectionSliceSlice, ImageGallerySliceDefaultPrimary, ImageGallerySliceDefaultItem, ImageGallerySliceDefault, ImageGallerySliceVariation, ImageGallerySlice, ImagesSliceDefaultPrimary, ImagesSliceDefaultItem, ImagesSliceDefault, ImagesSliceVariation, ImagesSlice, PageHeadSectionSliceDefaultPrimary, PageHeadSectionSliceDefaultItem, PageHeadSectionSliceDefault, PageHeadSectionSliceProjectPageHeadPrimary, PageHeadSectionSliceProjectPageHeadItem, PageHeadSectionSliceProjectPageHead, PageHeadSectionSliceVariation, PageHeadSectionSlice, ProjectListSliceSliceDefaultPrimary, ProjectListSliceSliceDefaultItem, ProjectListSliceSliceDefault, ProjectListSliceSliceVariation, ProjectListSliceSlice, SoundsSliceDefaultPrimary, SoundsSliceDefaultItem, SoundsSliceDefault, SoundsSliceVariation, SoundsSlice, TextAndBoxesSliceDefaultPrimary, TextAndBoxesSliceDefaultItem, TextAndBoxesSliceDefault, TextAndBoxesSliceVariation, TextAndBoxesSlice };
     }
 }
