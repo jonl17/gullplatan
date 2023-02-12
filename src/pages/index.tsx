@@ -10,6 +10,7 @@ import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import Seperator from '~/components/Seperator/Seperator'
 import StickyNavbar from '~/components/StickyNavbar/StickyNavbar'
+import Voyager from '~/components/Voyager/Voyager'
 import {
   HomepageDocument,
   MenuDocument,
@@ -56,7 +57,7 @@ type HomePageProps = {
 
 const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
   return (
-    <>
+    <div className="relative">
       <SEO {...seo} />
       <Banner
         video={[
@@ -94,7 +95,8 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
         ))}
       </div>
       <Footer />
-    </>
+      <Voyager />
+    </div>
   )
 }
 

@@ -140,6 +140,22 @@ module.exports = {
           transform: 'rotate(10deg)',
         },
       },
+      'float-slow': {
+        '0%': {
+          transform: 'translateY(0px)',
+        },
+        '100%': {
+          transform: 'translateY(-5px)',
+        },
+      },
+      voyagerFlight: {
+        '0%': {
+          transform: 'translate(0px, 0px)',
+        },
+        '100%': {
+          transform: 'translate(3000px, 3000px)',
+        },
+      },
     },
     animation: {
       'border-appear-top-right': 'border-appear-top-right 0.5s forwards',
@@ -153,6 +169,8 @@ module.exports = {
       'album-spin': 'album-spin 5s linear forwards infinite',
       print: 'print 3s linear forwards',
       float: 'float 4s infinite alternate',
+      floatSlow: 'float-slow 4s infinite alternate',
+      voyagerFlight: 'voyagerFlight 100s forwards',
     },
     extend: {
       container: {

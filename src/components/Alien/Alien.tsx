@@ -46,7 +46,7 @@ export default function Alien({ children }: Props) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ x: mouse.x, y: mouse.y, opacity }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8, mass: 0.5, type: 'spring' }}
       className="z-50 hidden lg:inline-block h-[100px] w-[100px] fixed top-0 left-0 pointer-events-none"
     >
       {children}
