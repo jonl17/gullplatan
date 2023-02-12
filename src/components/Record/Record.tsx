@@ -9,7 +9,6 @@ export default function Record() {
   const [spin, setSpin] = useState(0)
 
   useEffect(() => {
-    console.log(globalAudioState)
     if (globalAudioState === 'playing') {
       let intervalId = setInterval(() => {
         setSpin((prev) => prev + 5)
