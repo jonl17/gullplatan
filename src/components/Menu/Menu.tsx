@@ -19,6 +19,7 @@ export default function Menu({ items }: MenuDocument['data']) {
       className="fixed right-0 top-0 h-screen w-full md:w-[500px] bg-purple z-50 grid gap-10"
     >
       <motion.button
+        aria-label="Close menu"
         whileTap={{ scale: 0.9 }}
         className="md:pr-5 pt-5 absolute top-5 right-10 text-green"
         onClick={() => setOpen(false)}

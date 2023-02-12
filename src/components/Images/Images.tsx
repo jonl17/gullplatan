@@ -45,6 +45,7 @@ export default function Images({ description, images }: IImages) {
           <div className="flex gap-3 justify-center py-10">
             {images.map((_, key) => (
               <motion.button
+                aria-label="Display next image"
                 whileTap={{ scale: 0.9 }}
                 key={key}
                 onClick={() => setIndex(key)}

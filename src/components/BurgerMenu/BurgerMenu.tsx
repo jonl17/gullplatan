@@ -47,6 +47,7 @@ export default function BurgerMenu() {
             </a>
           </Link>
           <motion.button
+            aria-label="Close burger menu"
             whileTap={{ scale: 0.9 }}
             className="md:pr-5 pt-5"
             onClick={() => setOpen(false)}

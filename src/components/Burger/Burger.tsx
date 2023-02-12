@@ -5,6 +5,7 @@ export default function Burger() {
   const { setOpen } = useBurgerMenu()
   return (
     <motion.button
+      aria-label="Open burger menu"
       onClick={() => setOpen(true)}
       className="pr-0 md:pr-5 fixed top-10 right-10 z-40"
       whileTap={{ scale: 0.9 }}

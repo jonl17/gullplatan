@@ -26,6 +26,7 @@ const AudioTrigger = ({ audioFile }: Props) => {
   if (globalAudioState === 'paused' || localAudioState === 'paused') {
     return (
       <motion.button
+        aria-label="Play audio"
         whileTap={{ scale: 0.9 }}
         className="md:flex md:place-content-center pb-2 md:pt-2"
         onClick={() => {
@@ -43,6 +44,7 @@ const AudioTrigger = ({ audioFile }: Props) => {
   return (
     <>
       <motion.button
+        aria-label="Stop audio"
         whileTap={{ scale: 0.9 }}
         className="md:flex md:place-content-center pb-2 md:pt-2"
         onClick={() => {
