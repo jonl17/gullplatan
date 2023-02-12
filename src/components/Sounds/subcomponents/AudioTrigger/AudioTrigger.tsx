@@ -23,7 +23,7 @@ const AudioTrigger = ({ audioFile }: Props) => {
     }
   }, [currentAudioFile, globalAudioState, audioFile])
 
-  if (localAudioState === 'paused') {
+  if (globalAudioState === 'paused' || localAudioState === 'paused') {
     return (
       <motion.button
         whileTap={{ scale: 0.9 }}

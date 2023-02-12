@@ -1,15 +1,14 @@
 import { ImageType, Video } from '~/types'
 import { Arrow } from '../Icon'
 import Text from '../Text'
-import Link from 'next/link'
 
 type Props = {
-  svgTitle: ImageType
   // alpha video has backup for browser compatibility
   video: [Video, Video]
+  placeholder: ImageType
 }
 
-export default function Banner({ svgTitle, video }: Props) {
+export default function Banner({ video, placeholder }: Props) {
   return (
     <section className="min-h-screen relative bg-green-blue grain grid place-content-center">
       <div className="max-w-4xl mx-auto relative text-center py-10">
@@ -19,6 +18,7 @@ export default function Banner({ svgTitle, video }: Props) {
             autoPlay
             muted
             loop
+            placeholder={placeholder.url}
           >
             {video.map((v, i) => (
               <source type={v.type} src={v.url} key={i} />

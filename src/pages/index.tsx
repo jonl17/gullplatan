@@ -69,7 +69,7 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
             type: 'video/webm',
           },
         ]}
-        svgTitle={homepage.data.image as ImageType}
+        placeholder={homepage.data.image as ImageType}
       />
 
       <div className="relative bg-deep-purple grain pt-16">
