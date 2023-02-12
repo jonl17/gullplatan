@@ -21,7 +21,11 @@ const MenuItem = ({ label, image, submenu, svgImage }: IMenu) => {
         }
       )}
     >
-      <button className="w-[200px]" onClick={() => setOpen(!open)}>
+      <button
+        aria-label="Close mobile menu"
+        className="w-[200px]"
+        onClick={() => setOpen(!open)}
+      >
         {svgImage ? (
           <SvgTitle image={svgImage} />
         ) : (

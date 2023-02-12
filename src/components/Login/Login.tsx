@@ -71,6 +71,7 @@ const LoginPage = () => {
             )}
 
             <button
+              aria-label="Sign in"
               type="submit"
               className="bg-green-blue py-5 px-10 rounded-lg max-w-md mx-auto focus-visible:outline-purple focus-visible:outline"
             >

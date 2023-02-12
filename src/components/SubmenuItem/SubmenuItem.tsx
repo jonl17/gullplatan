@@ -15,6 +15,7 @@ const SubmenuItem = ({ label, url }: MenuItemType) => {
     return (
       <Link passHref href={url}>
         <a
+          aria-label="Pause the audio and go to submenu url"
           className="relative inline-block"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}

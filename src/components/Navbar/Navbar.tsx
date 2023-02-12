@@ -21,6 +21,7 @@ const Navbar = () => {
         <div className="flex h-full justify-between relative w-full">
           <Link href="/" passHref>
             <motion.a
+              aria-label="Pause the audio"
               onClick={() => setGlobalAudioState('paused')}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

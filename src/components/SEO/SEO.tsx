@@ -18,6 +18,7 @@ export default function SEO({ title, description, image }: ISeo) {
         content={description}
       />
       <meta name="twitter:description" content={description} />
+      <html lang="is" />
     </Head>
   )
 }

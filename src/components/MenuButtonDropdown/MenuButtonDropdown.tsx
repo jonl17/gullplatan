@@ -10,6 +10,7 @@ const MenuButtonDropdown = ({ label, submenu, svgImage }: IMenu) => {
   const [open, setOpen] = useState(false)
   return (
     <button
+      aria-label="Close dropdown menu"
       onClick={() => setOpen(!open)}
       className={cn('overflow-hidden transition-colors', {
         'text-cream hover:text-green': !open,

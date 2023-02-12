@@ -36,7 +36,10 @@ export default function ProjectList({ svgTitle, projects }: Props) {
                   tags: [],
                 })}
               >
-                <a className="hover:text-green-blue">
+                <a
+                  aria-label="Open project page"
+                  className="hover:text-green-blue"
+                >
                   <BorderBox connector={key !== projects.length - 1}>
                     <div className="py-5">
                       <Text variant="heading2">{project.data.title}</Text>

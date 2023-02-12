@@ -31,7 +31,7 @@ export default function Images({ description, images }: IImages) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="aspect-video w-full md:w-auto md:h-[360px] relative mx-auto rounded-[60px] overflow-hidden border-[6px] md:border-[10px] border-green-blue"
+              className="aspect-video w-full md:w-auto md:h-[360px] relative mx-auto rounded-[18px] md:rounded-[60px] overflow-hidden border-[6px] md:border-[10px] border-green-blue"
             >
               <Image
                 objectFit="cover"

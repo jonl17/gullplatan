@@ -19,6 +19,7 @@ export default function Record() {
 
   return (
     <button
+      aria-label="Stop the audio playing"
       onClick={() => setGlobalAudioState('paused')}
       className="sticky left-5 top-5 z-40"
     >

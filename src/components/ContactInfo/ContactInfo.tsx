@@ -34,13 +34,23 @@ export default function ContactInfo() {
       >
         <Text variant="heading3">Hafa samband</Text>
         {email && (
-          <a className="underline" href={email}>
+          <a
+            aria-label="Open email provider"
+            className="underline"
+            href={email}
+          >
             <Text variant="paragraph3">{email.replace('mailto:', '')}</Text>
           </a>
         )}
         <div className="flex justify-center gap-3 mt-5">
           {socialMedia.map((item, key) => (
-            <a rel="noreferrer" target="_blank" href={item.link.url} key={key}>
+            <a
+              aria-label="Open social media platform"
+              rel="noreferrer"
+              target="_blank"
+              href={item.link.url}
+              key={key}
+            >
               {platformIcons[item.platform]}
             </a>
           ))}

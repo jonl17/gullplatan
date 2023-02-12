@@ -26,6 +26,7 @@ export default function BurgerMenu() {
   return (
     <div className="flex fixed top-0 right-0 w-full h-full z-[99] min-h-screen">
       <button
+        aria-label="Close the mobile menu"
         onClick={() => setOpen(false)}
         className="w-full bg-transparent h-full hidden lg:block"
       ></button>
@@ -33,6 +34,7 @@ export default function BurgerMenu() {
         <div className="flex justify-between h-36 items-baseline px-5 pt-10 text-cream">
           <Link href="/" passHref>
             <a
+              aria-label="Go to frontpage"
               onClick={() => {
                 setOpen(false)
                 setGlobalAudioState('paused')

@@ -67,6 +67,7 @@ export default function Menu({ items }: MenuDocument['data']) {
             key={idx}
           >
             <a
+              aria-label="Close the menu and go to menu item url"
               onClick={() => setOpen(false)}
               className="h-100 w-100 block mb-5"
             >
