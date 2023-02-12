@@ -36,7 +36,7 @@ export default function Images({ description, images }: IImages) {
               <Image
                 objectFit="cover"
                 src={currentImage.url}
-                alt={currentImage.alt}
+                alt={currentImage.alt ?? ''}
                 layout="fill"
                 className="h-full w-full"
               />

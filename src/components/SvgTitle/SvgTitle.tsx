@@ -22,7 +22,7 @@ export default function SvgTitle({ image, className }: Props) {
             'animate-print': inView,
           })}
           src={image.url}
-          alt={image.alt}
+          alt={image.alt ?? ''}
           height={image.dimensions.height}
           width={image.dimensions.width}
           layout="responsive"

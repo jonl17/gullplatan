@@ -20,7 +20,7 @@ const CrewBox = ({
       >
         <Image
           src={image.url}
-          alt={image.alt}
+          alt={image.alt ?? ''}
           layout="responsive"
           height={image.dimensions.height}
           width={image.dimensions.width}
