@@ -2,6 +2,7 @@ import { ImageType, Video } from '~/types'
 import { Arrow } from '../Icon'
 import Text from '../Text'
 import Image from 'next/image'
+import { Fragment } from 'react'
 
 type Props = {
   // alpha video has backup for browser compatibility
