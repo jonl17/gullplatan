@@ -63,7 +63,7 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
         video={[
           {
             url: asLink(homepage.data.video_backup) as string,
-            type: "video/mp4; codecs=hvc1'",
+            type: 'video/mp4; codecs=hvc1',
           },
           {
             url: asLink(homepage.data.video) as string,
