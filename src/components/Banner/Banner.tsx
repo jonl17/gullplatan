@@ -21,7 +21,8 @@ export default function Banner({ video, placeholder }: Props) {
             muted
             loop
             placeholder={placeholder.url}
-          >
+    	    playsInline
+           >
             {video.map((v, i) => (
               <source type={v.type} src={v.url} key={i} />
             ))}
