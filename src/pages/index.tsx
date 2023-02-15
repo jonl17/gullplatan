@@ -95,7 +95,9 @@ const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
         ))}
       </div>
       <Footer />
-      <Voyager />
+      <span className="h-full w-full overflow-hidden absolute top-0 left-0 pointer-events-none">
+        <Voyager />
+      </span>
     </div>
   )
 }
