@@ -34,7 +34,7 @@ module.exports = {
           'border-left-color': 'transparent',
           'border-right-color': 'transparent',
           'border-bottom-color': 'transparent',
-          'clip-path': 'inset(0 50% 0 50%)',
+          // 'clip-path': 'inset(0 50% 0 50%)',
         },
         '100%': {
           'border-top-color': '#41B3A3',

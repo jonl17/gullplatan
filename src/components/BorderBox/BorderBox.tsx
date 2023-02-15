@@ -29,7 +29,7 @@ const BorderBox = ({ children, connector = false }: Props) => {
 
       <span
         className={cn(
-          'pointer-events-none absolute top-0 left-0 h-full w-full border-[6px] md:border-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px] box-clip-top-center',
+          'pointer-events-none absolute top-0 left-0 h-full w-full border-0 border-l-[6px] md:border-l-[10px] border-t-[6px] md:border-t-[10px] border-transparent transition-all rounded-[18px] md:rounded-[53px] box-clip-top-center',
           {
             'animate-border-appear-top-left': discovered,
           }

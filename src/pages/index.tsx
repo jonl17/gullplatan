@@ -57,7 +57,7 @@ type HomePageProps = {
 
 const Home: NextPage<HomePageProps> = ({ seo, homepage, pages }) => {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <SEO {...seo} />
       <Banner
         video={[
