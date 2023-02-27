@@ -50,8 +50,8 @@ export default function Menu({ items }: MenuDocument['data']) {
               <Image
                 objectFit="contain"
                 src="/planeta.png"
-                height={150}
-                width={150}
+                height={125}
+                width={125}
                 alt="Pláneta"
               />
             </motion.span>
