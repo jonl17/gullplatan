@@ -27,7 +27,12 @@ export default function Record() {
       <motion.div
         style={{ transform: `rotate(${spin}deg)`, height: 57, width: 57 }}
       >
-        <Image src="/record.png" alt="Record image" height={57} width={57} />
+        <Image
+          src="/plata-betri.png"
+          alt="Record image"
+          height={57}
+          width={57}
+        />
       </motion.div>
     </button>
   )
