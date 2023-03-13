@@ -21,6 +21,16 @@ const nextConfig = {
     locales: ['is'],
     defaultLocale: 'is',
   },
+  async redirects() {
+    return [
+      {
+        source: '/senda',
+        destination: 'https://forms.gle/FScGsi9MwgAkVQP86',
+        permanent: true,
+        basePath: false,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
