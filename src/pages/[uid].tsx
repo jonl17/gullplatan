@@ -5,17 +5,19 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Footer from '~/components/Footer'
 import SEO from '~/components/SEO'
 import { PageDocument } from '~/prismic-types.generated'
-import { ImageType, ISeo } from '~/types'
+import { ISeo, ImageType } from '~/types'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient()
   const pages = await client.getAllByType('page')
 
+  const paths = pages
+    // protected routes are ssr
+    .filter((page) => !page.tags.includes('PROTECTED_ROUTE'))
+    .map((page) => ({ params: { uid: page.uid as string } }))
+
   return {
-    paths: pages
-      // protected routes are ssr
-      .filter((page) => !page.tags.includes('PROTECTED_ROUTE'))
-      .map((page) => ({ params: { uid: page.uid as string } })),
+    paths,
     fallback: false,
   }
 }
